@@ -1,0 +1,3 @@
+[submodule "libintfuorit"]
+	path = libintfuorit
+	url = https://github.com/Huessenbergnetz/libintfuorit.git
