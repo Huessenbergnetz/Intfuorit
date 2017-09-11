@@ -25,6 +25,16 @@ VERSION = $${VER_MAJ}.$${VER_MIN}.$${VER_PAT}
 
 DEFINES += VERSION_STRING=\"\\\"$${VERSION}\\\"\"
 
+CONFIG(release, debug|release) {
+    DEFINES += QT_NO_DEBUG_OUTPUT
+}
+
+contains(CONFIG, clazy) {
+    QT += quick qml
+    DEFINES += CLAZY
+    QMAKE_CXXFLAGS += "-Xclang -load -Xclang ClangLazy.so -Xclang -add-plugin -Xclang clang-lazy"
+}
+
 include(../common/common.pri)
 
 LIBS += -L$$OUT_PWD/../libintfuorit -lintfuorit
@@ -48,4 +58,7 @@ DISTFILES += \
     qml/phone/cover/CoverPage.qml \
     qml/tablet/pages/MainPage.qml \
     qml/tablet/cover/CoverPage.qml \
-    harbour-intfuorit.desktop
+    harbour-intfuorit.desktop \
+    qml/phone/pages/BreachPage.qml \
+    qml/phone/pages/BreachSearchPage.qml \
+    qml/phone/pages/BreachesListDelegate.qml

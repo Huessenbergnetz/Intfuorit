@@ -20,7 +20,7 @@
 #include <QtQuick>
 #endif
 
-#include <QtQml>
+#include <QQmlContext>
 #include <QGuiApplication>
 #include <QQuickView>
 #include <QLocale>
@@ -33,6 +33,11 @@
 #endif
 
 #include <Intfuorit/Error>
+#include <Intfuorit/API/GetAllBreaches>
+#include <Intfuorit/API/GetBreachesForAccount>
+#include <Intfuorit/Models/BreachesListModel>
+#include <Intfuorit/Models/BreachesListFilterModel>
+#include <Intfuorit/Objects/Breach>
 
 #include "../../common/configuration.h"
 
@@ -80,6 +85,9 @@ int main(int argc, char *argv[])
 
 #ifndef CLAZY
     const QString l10nDir = SailfishApp::pathTo(QStringLiteral("l10n")).toString(QUrl::RemoveScheme);
+#else
+    const QString l10nDir;
+#endif
 
     QTranslator *appTrans = new QTranslator(app.data());
     if (Q_LIKELY(appTrans->load(QLocale(), QStringLiteral("intfuorit"), QStringLiteral("_"), l10nDir, QStringLiteral(".qm")))) {
@@ -90,9 +98,11 @@ int main(int argc, char *argv[])
     if (Q_LIKELY(libTrans->load(QLocale(), QStringLiteral("libintfuorit"), QStringLiteral("_"), l10nDir, QStringLiteral(".qm")))) {
         app->installTranslator(libTrans);
     }
-#endif
 
     qmlRegisterType<Intfuorit::Error>("harbour.intfuorit", 1, 0, "IntfuoritError");
+    qmlRegisterType<Intfuorit::BreachesListModel>("harbour.intfuorit", 1, 0, "BreachesListModel");
+    qmlRegisterType<Intfuorit::BreachesListFilterModel>("harbour.intfuorit", 1, 0, "BreachesListFilterModel");
+    qmlRegisterType<Intfuorit::Breach>("harbour.intfuorit", 1, 0, "Breach");
 
 #ifndef CLAZY
     QScopedPointer<QQuickView> view(SailfishApp::createView());
@@ -100,7 +110,10 @@ int main(int argc, char *argv[])
     QScopedPointer<QQuickView> view(new QQuickView);
 #endif
 
-#ifndef CALZY
+    view->rootContext()->setContextProperty(QStringLiteral("config"), config.data());
+    view->rootContext()->setContextProperty(QStringLiteral("intfuoritUserAgent"), QStringLiteral("Intfuorit %1 - SailfishOS Pwnage Checker").arg(QGuiApplication::applicationVersion()));
+
+#ifndef CLAZY
     view->setSource(SailfishApp::pathTo(QStringLiteral("qml/harbour-intfuorit.qml")));
 #endif
 

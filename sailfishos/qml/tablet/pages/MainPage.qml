@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.2
+import QtQuick 2.6
 import Sailfish.Silica 1.0
 
 Page {
@@ -24,7 +24,7 @@ Page {
 
     allowedOrientations: Orientation.All
 
-    SilicaListView {
+    SilicaGridView {
         id: breachesListView
         anchors.fill: parent
 
@@ -50,6 +50,7 @@ Page {
 
         header: PageHeader {
             title: "Intfuorit"
+            description: error.text
             page: mainPage
         }
     }
