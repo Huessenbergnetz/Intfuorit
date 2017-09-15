@@ -27,7 +27,7 @@
     </message>
     <message id="intfuorit-sort-role-pwncount">
         <source>Count</source>
-        <translation>Anzah</translation>
+        <translation>Anzahl</translation>
     </message>
     <message id="intfuorit-affected-accounts-label">
         <source>Affected accounts</source>
@@ -71,9 +71,9 @@
         <translation>Prüfen Sie ob eines Ihrer Benutzerkonten von einem Datenleck betroffen ist oder in einem Paste veröffentlicht wurde. Geben Sie einfach Ihre E-Mail-Adresse oder Ihren Benutzernamen in das Suchfeld ein und starten Sie die Suche.</translation>
     </message>
     <message id="intfuorit-section-header-breached-sites">
-        <source>Breaches you were pwned in</source>
-        <oldsource>Breached sites</oldsource>
-        <translation>Gestohlene Datensätze mit Ihren Daten</translation>
+        <source>Breaches you were found in</source>
+        <oldsource>Breaches you were pwned in</oldsource>
+        <translation>Lecks in denen Sie gefunden wurden</translation>
     </message>
     <message id="intfuorit-all-breached-sites">
         <source>All breached sites</source>
@@ -92,13 +92,50 @@
         <source>Omit local cache</source>
         <translation>Lokalen Zwischenspeicher umgehen</translation>
     </message>
-    <message id="intfuorit-nothing-found-label">
-        <source>Good news — no pwnage found!</source>
-        <translation>Gute Nachrichten — Sie sind nicht dabei!</translation>
+    <message id="intfuorit-section-header-pastes">
+        <source>Pastes you were found in</source>
+        <translation>Pastes in denen Sie gefunden wurden</translation>
     </message>
-    <message id="intfuorit-nothing-found-text">
-        <source>No breached accounts and no pastes.</source>
-        <translation>Keine Kontodaten und keine Pastes.</translation>
+    <message id="intfuorit-emails-in-paste" numerus="yes">
+        <source>%1 email(s)</source>
+        <oldsource>%n email(s)</oldsource>
+        <translation><numerusform>%1 E-Mail</numerusform><numerusform>%1 E-Mails</numerusform></translation>
+    </message>
+    <message id="intfuorit-section-desc-pastes">
+        <source>A &lt;i&gt;paste&lt;/i&gt; is information that has been published to a publicly facing website designed to share content, usually anonymously. Often these are indicators of a data breach so review the paste and determine if your account has been compromised then take appropriate action such as changing passwords. Pastes are often removed shortly after having been posted.</source>
+        <translation>Ein &lt;i&gt;Paste&lt;/i&gt; ist eine Information, die, meist anonym, auf einer öffentlich erreichbaren Internetseite abgelegt ist, die sich darauf spezialisiert hat, Inhalte zu teilen. Pastes sind oft erste Indikatoren für Datenlecks, weshalb Sie diese prüfen sollten um festzustellen, ob Ihr Benutzerkonto betroffen ist, und um gegebenenfalls entsprechende Maßnahmen, wie das ändern Ihrer Passwörter, vorzunehmen. Pastes werden oft bereits kurz nach ihrer Veröffentlichung wieder entfernt.</translation>
+    </message>
+    <message id="intfuorit-clear-result">
+        <source>Clear result</source>
+        <translation>Ergebnis zurücksetzen</translation>
+    </message>
+    <message id="intfuorit-nothing-found">
+        <source>Nothing found</source>
+        <translation>Nichts gefunden</translation>
+    </message>
+    <message id="intfuorit-nothing-found-hint">
+        <source>There is no breached site matching your filter.</source>
+        <translation>Keine der Seiten entspricht Ihren Filterkriterien.</translation>
+    </message>
+    <message id="intfuorit-no-pwnage-found-label">
+        <source>Good news — no pwnage found!</source>
+        <translation>Gute Nachricht — keine Lecks gefunden!</translation>
+    </message>
+    <message id="intfuorit-no-pwnage-found-text">
+        <source>Your user account is not included in any of the data breach records available on HIBP.</source>
+        <translation>Ihr Benutzerkonto ist in keinem der auf HIBP verfügbaren Datensätze enthalten.</translation>
+    </message>
+    <message id="intfuorit-no-pastes-found-label">
+        <source>Good news — no pastes found!</source>
+        <translation>Gute Nachricht — keine Pastes gefunden!</translation>
+    </message>
+    <message id="intfuorit-no-pastes-found-text">
+        <source>Your email address is not included in any of the pastes available on HIBP.</source>
+        <translation>Ihre E-Mail-Adresse ist in keinem der auf HIBP verfügbaren Pastes enthalten.</translation>
+    </message>
+    <message id="intfuorit-error">
+        <source>Error</source>
+        <translation>Fehler</translation>
     </message>
 </context>
 </TS>
