@@ -35,69 +35,8 @@ Page {
     Label {
         id: dummyCount
         visible: false
-        text: "000,000,000"
+        text: Number(9999999999).toLocaleString(Qt.locale(), 'f', 0)
         font.pixelSize: Theme.fontSizeSmall
-    }
-
-    SilicaGridView {
-        id: breachesGridView
-        anchors { left: parent.left; right: parent.right; bottom: mainPageSorting.top; top: mainPage.top }
-        currentIndex: -1
-        clip: true
-
-        Component.onCompleted: {
-            blfm.getAllBreaches()
-        }
-
-        cellWidth: breachesGridView.width / (mainPage.isLandscape ? 2 : 1)
-        cellHeight: Theme.itemSizeMedium
-
-        PullDownMenu {
-            MenuItem {
-                //% "About"
-                text: qsTrId("intfuorit-about")
-            }
-            MenuItem {
-                //% "Settings"
-                text: qsTrId("intfuorit-settings")
-            }
-            MenuItem {
-                //% "Reload"
-                text: qsTrId("intfuorit-reload")
-                onClicked: blfm.getAllBreaches(true)
-            }
-        }
-
-        VerticalScrollDecorator {
-            flickable: breachesGridView
-            page: mainPage
-        }
-
-        header: PageHeader {
-            id: mainPageHeader
-            title: "Intfuorit"
-            //% "All breached sites"
-            description: qsTrId("intfuorit-all-breached-sites")
-            page: mainPage
-        }
-
-        model: BreachesListFilterModel {
-            id: blfm
-            userAgent: intfuoritUserAgent
-        }
-
-        delegate: BreachesListDelegate {
-            searchTerm: blfm.search
-            countWidth: dummyCount.width
-            width: breachesGridView.cellWidth
-        }
-
-        BusyIndicator {
-            anchors.centerIn: parent
-            size: BusyIndicatorSize.Large
-            running: visible
-            visible: blfm.inOperation
-        }
     }
 
     GridLayout {
@@ -107,7 +46,17 @@ Page {
 
         columns: mainPage.isPortrait ? 2 : 4
 
-        anchors { bottom: mainPage.bottom; left: mainPage.left; right: mainPage.right }
+        width: mainPage.width
+
+        PageHeader {
+            id: mainPageHeader
+            title: "Intfuorit"
+            //% "All breached sites"
+            description: qsTrId("intfuorit-all-breached-sites")
+            page: mainPage
+            Layout.fillWidth: true
+            Layout.columnSpan: mainPageSorting.columns
+        }
 
         SearchField {
             id: mainPageSearch
@@ -154,6 +103,91 @@ Page {
             text: qsTrId("intfuorit-order-descending")
             checked: blfm.sortOrder == Qt.DescendingOrder
             onCheckedChanged: blfm.sortOrder = (checked ? Qt.DescendingOrder : Qt.AscendingOrder)
+        }
+    }
+
+    SilicaGridView {
+        id: breachesGridView
+        anchors.fill: parent
+        currentIndex: -1
+
+        Component.onCompleted: {
+            blfm.getAllBreaches()
+        }
+
+        cellWidth: breachesGridView.width / (mainPage.isLandscape ? 2 : 1)
+        cellHeight: Theme.itemSizeMedium
+
+        PullDownMenu {
+            MenuItem {
+                //% "About"
+                text: qsTrId("intfuorit-about")
+            }
+            MenuItem {
+                //% "Settings"
+                text: qsTrId("intfuorit-settings")
+            }
+            MenuItem {
+                //% "Reload"
+                text: qsTrId("intfuorit-reload")
+                onClicked: blfm.getAllBreaches(true)
+            }
+        }
+
+        header: Item {
+            id: header
+            width: mainPageSorting.width
+            height: mainPageSorting.height
+            Component.onCompleted: mainPageSorting.parent = header
+        }
+
+
+        VerticalScrollDecorator {
+            flickable: breachesGridView
+            page: mainPage
+        }
+
+        model: BreachesListFilterModel {
+            id: blfm
+            userAgent: intfuoritUserAgent
+        }
+
+        delegate: BreachesListDelegate {
+            id: breachesListItem
+            searchTerm: blfm.search
+            countWidth: dummyCount.width
+            width: breachesGridView.cellWidth
+//            GridView.onAdd: AddAnimation {
+//                target: breachesListItem
+//            }
+
+//            GridView.onRemove: RemoveAnimation {
+//                target: breachesListItem
+//            }
+        }
+
+        BusyIndicator {
+            anchors.centerIn: parent
+            size: BusyIndicatorSize.Large
+            running: visible
+            visible: blfm.inOperation
+        }
+
+        ViewPlaceholder {
+            id: emptyListVp
+            enabled: !blfm.error && !blfm.inOperation && !breachesGridView.count
+            //% "Nothing found"
+            text: qsTrId("intfuorit-nothing-found")
+            //% "There is no breached site matching your filter."
+            hintText: qsTrId("intfuorit-nothing-found-hint")
+        }
+
+        ViewPlaceholder {
+            id: errorPh
+            enabled: !blfm.inOperation && blfm.error && (blfm.error.type !== IntfuoritError.NoError)
+            //% "Error"
+            text: qsTrId("intfuorit-error")
+            hintText: blfm.error ? blfm.error.text : ""
         }
     }
 }

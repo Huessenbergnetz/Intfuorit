@@ -28,14 +28,6 @@ ListItem {
 
     onClicked: pageStack.push(Qt.resolvedUrl("BreachPage.qml"), {breach: model.item})
 
-    GridView.onAdd: AddAnimation {
-        target: breachesListItem
-    }
-
-    GridView.onRemove: RemoveAnimation {
-        target: breachesListItem
-    }
-
     Row {
         id: breachesListItemRow
         anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
@@ -66,7 +58,7 @@ ListItem {
                 Label {
                     width: parent.width - countWidth - Theme.paddingSmall
                     //% "%1 account(s)"
-                    text: qsTrId("intfuorit-title-counts-label", model.pwnCount).arg(Theme.highlightText(model.title, searchTerm, Theme.highlightColor))
+                    text: qsTrId("intfuorit-title-counts-label", model.pwnCount ? model.pwnCount : 0).arg(Theme.highlightText(model.title, searchTerm, Theme.highlightColor))
                     truncationMode: TruncationMode.Fade
                     horizontalAlignment: Qt.AlignLeft
                     textFormat: Text.StyledText

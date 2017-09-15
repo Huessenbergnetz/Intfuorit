@@ -33,10 +33,33 @@ Page {
 
         anchors.fill: parent
 
+        PullDownMenu {
+            MenuItem {
+                //% "About"
+                text: qsTrId("intfuorit-about")
+            }
+            MenuItem {
+                //% "Settings"
+                text: qsTrId("intfuorit-settings")
+            }
+            MenuItem {
+                //% "Clear result"
+                text: qsTrId("intfuorit-clear-result")
+                onClicked: {
+                    blm.clear()
+                    plm.clear()
+                    infoText.visible = true
+                    noBreachesFound.visible = false
+                    noPastesFound.visible = false
+                    accountSearch.text = ""
+                }
+            }
+        }
+
         Label {
             id: dummyCount
             visible: false
-            text: "000,000,000"
+            text: Number(9999999999).toLocaleString(Qt.locale(), 'f', 0)
             font.pixelSize: Theme.fontSizeSmall
         }
 
@@ -64,8 +87,16 @@ Page {
                     if (text.length > 0) {
                         accountSearch.focus = false;
                         infoText.visible = false;
-                        nothingFound.visible = false
+                        noBreachesFound.visible = false
+                        noPastesFound.visible = false
                         blm.getBreachesForAccount(accountSearch.text, "", includeUnverified.checked, omitCache.checked)
+                        var atPos = text.lastIndexOf("@")
+                        var dotPos = text.lastIndexOf(".")
+                        if ((atPos > -1) && (dotPos > -1) && (dotPos > atPos) && ((text.length - dotPos + 1) > 1)) {
+                            plm.getPastesForAccount(accountSearch.text, omitCache.checked)
+                        } else {
+                            plm.clear()
+                        }
                     } else {
                         accountSearch.focus = false
                     }
@@ -112,44 +143,69 @@ Page {
                 size: BusyIndicatorSize.Large
                 Layout.alignment: Qt.AlignCenter
                 Layout.columnSpan: breachSearchGrid.columns
-                visible: blm.inOperation
+                visible: blm.inOperation || plm.inOperation
                 running: true
             }
 
+            SectionHeader {
+                //% "Breaches you were found in"
+                text: qsTrId("intfuorit-section-header-breached-sites")
+                Layout.columnSpan: breachSearchGrid.columns
+                Layout.preferredWidth: breachSearchGrid.width - Theme.horizontalPageMargin
+                visible: breachedSitesRepeater.count > 0
+            }
+
             Item {
-                id: nothingFound
+                id: noBreachesFound
                 Layout.columnSpan: breachSearchGrid.columns
                 Layout.fillWidth: true
-                Layout.preferredHeight: nothingFoundLabel.height + nothingFoundText.height
+                Layout.preferredHeight: noBreachesFoundLabel.height + noBreachesFoundText.height
                 visible: false
 
                 Label {
-                    id: nothingFoundLabel
+                    id: noBreachesFoundLabel
                     anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
                     horizontalAlignment: Text.AlignHCenter
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     color: Theme.highlightColor
                     //% "Good news — no pwnage found!"
-                    text: qsTrId("intfuorit-nothing-found-label")
+                    text: qsTrId("intfuorit-no-pwnage-found-label")
                 }
 
                 Text {
-                    id: nothingFoundText
-                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; top: nothingFoundLabel.bottom }
+                    id: noBreachesFoundText
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; top: noBreachesFoundLabel.bottom }
                     horizontalAlignment: Text.AlignHCenter
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     color: Theme.secondaryHighlightColor
-                    //% "No breached accounts and no pastes."
-                    text: qsTrId("intfuorit-nothing-found-text")
+                    //% "Your user account is not included in any of the data breach records available on HIBP."
+                    text: qsTrId("intfuorit-no-pwnage-found-text")
                 }
             }
 
-            SectionHeader {
-                //% "Breaches you were pwned in"
-                text: qsTrId("intfuorit-section-header-breached-sites")
+            Item {
+                id: breachesError
                 Layout.columnSpan: breachSearchGrid.columns
-                Layout.preferredWidth: breachSearchGrid.width - Theme.horizontalPageMargin
-                visible: breachedSitesRepeater.count > 0
+                Layout.fillWidth: true
+                visible: blm.error
+
+                Label {
+                    id: breachesErrorLabel
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
+                    horizontalAlignment: Text.AlignHCenter
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    color: Theme.highlightColor
+                    text: qsTrId("intfuorit-error")
+                }
+
+                Text {
+                    id: breachesErrorLabelText
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; top: breachesErrorLabel.bottom }
+                    horizontalAlignment: Text.AlignHCenter
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    color: Theme.secondaryHighlightColor
+                    text: blm.error ? blm.error.text : ""
+                }
             }
 
             Item {
@@ -175,12 +231,157 @@ Page {
                 id: breachedSitesRepeater
                 model: BreachesListModel {
                     id: blm
-                    onGotNoBreachesForAccount: nothingFound.visible = true
+                    onGotNoBreachesForAccount: noBreachesFound.visible = true
+                    userAgent: intfuoritUserAgent
                 }
                 BreachesListDelegate {
                     countWidth: dummyCount.width
-                    width: breachSearchGrid.width / (breachSearchPage.isLandscape ? 2 : 1)
+                    Layout.preferredWidth: breachSearchGrid.width / (breachSearchPage.isLandscape ? 2 : 1)
                 }
+            }
+
+            Item {
+                Layout.fillWidth: true
+                Layout.columnSpan: breachSearchGrid.columns
+                height: Theme.paddingLarge
+                visible: breachedSitesRepeater.count > 0
+            }
+
+            SectionHeader {
+                //% "Pastes you were found in"
+                text: qsTrId("intfuorit-section-header-pastes")
+                Layout.columnSpan: breachSearchGrid.columns
+                Layout.preferredWidth: breachSearchGrid.width - Theme.horizontalPageMargin
+                visible: pastesRepeater.count > 0
+            }
+
+            Item {
+                id: noPastesFound
+                Layout.columnSpan: breachSearchGrid.columns
+                Layout.fillWidth: true
+                Layout.preferredHeight:noPastesFoundLabel.height + noPastesFoundText.height
+                visible: false
+
+                Label {
+                    id: noPastesFoundLabel
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
+                    horizontalAlignment: Text.AlignHCenter
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    color: Theme.highlightColor
+                    //% "Good news — no pastes found!"
+                    text: qsTrId("intfuorit-no-pastes-found-label")
+                }
+
+                Text {
+                    id: noPastesFoundText
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; top: noPastesFoundLabel.bottom }
+                    horizontalAlignment: Text.AlignHCenter
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    color: Theme.secondaryHighlightColor
+                    //% "Your email address is not included in any of the pastes available on HIBP."
+                    text: qsTrId("intfuorit-no-pastes-found-text")
+                }
+            }
+
+            Item {
+                id: pastesError
+                Layout.columnSpan: breachSearchGrid.columns
+                Layout.fillWidth: true
+                visible: plm.error
+
+                Label {
+                    id: pastesErrorLabel
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
+                    horizontalAlignment: Text.AlignHCenter
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    color: Theme.highlightColor
+                    text: qsTrId("intfuorit-error")
+                }
+
+                Text {
+                    id: pastesErrorLabelText
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; top: pastesErrorLabel.bottom }
+                    horizontalAlignment: Text.AlignHCenter
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    color: Theme.secondaryHighlightColor
+                    text: plm.error ? plm.error.text : ""
+                }
+            }
+
+            Item {
+                Layout.columnSpan: breachSearchGrid.columns
+                Layout.fillWidth: true
+                Layout.preferredHeight: pastesDescText.height
+                visible: pastesRepeater.count > 0
+
+                Text {
+                    id: pastesDescText
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
+                    //% "A <i>paste</i> is information that has been published to a publicly facing website designed to share content, usually anonymously. Often these are indicators of a data breach so review the paste and determine if your account has been compromised then take appropriate action such as changing passwords. Pastes are often removed shortly after having been posted."
+                    text: qsTrId("intfuorit-section-desc-pastes")
+                    color: Theme.secondaryHighlightColor
+                    font.pixelSize: Theme.fontSizeExtraSmall
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    x: Theme.horizontalPageMargin
+                    textFormat: Text.StyledText
+                }
+            }
+
+            Repeater {
+                id: pastesRepeater
+                model: PastesListModel {
+                    id: plm
+                    userAgent: intfuoritUserAgent
+                    onGotNoPastesForAccount: noPastesFound.visible = true
+                }
+                ListItem {
+                    id: pastesListItem
+                    Layout.preferredWidth: breachSearchGrid.width / (breachSearchPage.isLandscape ? 2 : 1)
+                    height: Theme.itemSizeMedium
+                    contentHeight: Theme.itemSizeMedium
+
+                    enabled: model.url.toString() !== ""
+
+                    onClicked: Qt.openUrlExternally(model.url)
+
+                    Column {
+                        anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
+
+                        Label {
+                            width: parent.width
+                            text: model.title
+                            font.pixelSize: Theme.fontSizeSmall
+                            color: pastesListItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+                            truncationMode: TruncationMode.Fade
+                        }
+
+                        Row {
+                            width: parent.width
+                            Text {
+                                width: parent.width/2
+                                color: pastesListItem.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                                font.pixelSize: Theme.fontSizeSmall
+                                //% "%1 email(s)"
+                                text: qsTrId("intfuorit-emails-in-paste", model.emailCount).arg(model.emailCount.toLocaleString(Qt.locale(), 'f', 0))
+                            }
+
+                            Text {
+                                width: parent.width/2
+                                color: pastesListItem.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                                font.pixelSize: Theme.fontSizeSmall
+                                text: model.date.toLocaleString(Qt.locale(), Locale.ShortFormat)
+                                horizontalAlignment: Text.AlignRight
+                            }
+                        }
+                    }
+                }
+            }
+
+            Item {
+                Layout.fillWidth: true
+                Layout.columnSpan: breachSearchGrid.columns
+                height: Theme.paddingLarge
+                visible: pastesRepeater.count > 0
             }
         }
     }
