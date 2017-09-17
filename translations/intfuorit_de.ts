@@ -137,5 +137,54 @@
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
+    <message id="intfuorit-settings-display">
+        <source>Display</source>
+        <translation>Anzeige</translation>
+    </message>
+    <message id="intfuorit-lang-choser-label">
+        <source>Language</source>
+        <translation>Sprache</translation>
+    </message>
+    <message id="intfuorit-lang-choser-desc">
+        <source>To change the language, you have to restart the application.</source>
+        <translation>Um die Sprache zu ändern, müssen Sie die Anwendung neu starten.</translation>
+    </message>
+    <message id="intfuorit-settings-behavior">
+        <source>Behavior</source>
+        <translation>Verhalten</translation>
+    </message>
+    <message id="intfuorit-cache-period-choser-label">
+        <source>Cache period</source>
+        <translation>Zwischenspeicherperiode</translation>
+    </message>
+    <message id="intfuorit-cache-period-choser-desc">
+        <source>The cache period is used to store API results for the specified duration before sending a new request to the API.</source>
+        <oldsource>To change the language, you have to restart the application.</oldsource>
+        <translation>Die Zwischenspeicherperiode gibt die Zeitdauer an, in der API-Ergebnisse lokal gespeichert werden, ohne einen neuen API-Aufruf zu starten.</translation>
+    </message>
+    <message id="intfuorit-cache-period-disabled">
+        <source>Disabled</source>
+        <translation>Deaktiviert</translation>
+    </message>
+    <message id="intfuorit-cache-period-half-day">
+        <source>12 hours</source>
+        <translation>12 Stunden</translation>
+    </message>
+    <message id="intfuorit-cache-period-one-day">
+        <source>1 day</source>
+        <translation>1 Tag</translation>
+    </message>
+    <message id="intfuorit-cache-period-two-days">
+        <source>2 days</source>
+        <translation>2 Tage</translation>
+    </message>
+    <message id="intfuorit-cache-period-one-week">
+        <source>1 week</source>
+        <translation>1 Woche</translation>
+    </message>
+    <message id="intfuorit-default-lang">
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
 </context>
 </TS>

@@ -137,5 +137,54 @@
         <source>Error</source>
         <translation type="unfinished"/>
     </message>
+    <message id="intfuorit-settings-display">
+        <source>Display</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-lang-choser-label">
+        <source>Language</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-lang-choser-desc">
+        <source>To change the language, you have to restart the application.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-settings-behavior">
+        <source>Behavior</source>
+        <translation>Behaviour</translation>
+    </message>
+    <message id="intfuorit-cache-period-choser-label">
+        <source>Cache period</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-cache-period-choser-desc">
+        <source>The cache period is used to store API results for the specified duration before sending a new request to the API.</source>
+        <oldsource>To change the language, you have to restart the application.</oldsource>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-cache-period-disabled">
+        <source>Disabled</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-cache-period-half-day">
+        <source>12 hours</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-cache-period-one-day">
+        <source>1 day</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-cache-period-two-days">
+        <source>2 days</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-cache-period-one-week">
+        <source>1 week</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-default-lang">
+        <source>Default</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 </TS>
