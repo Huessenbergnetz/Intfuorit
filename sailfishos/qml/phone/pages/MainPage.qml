@@ -126,6 +126,7 @@ Page {
             MenuItem {
                 //% "Settings"
                 text: qsTrId("intfuorit-settings")
+                onClicked: pageStack.push(Qt.resolvedUrl("../../common/Settings.qml"))
             }
             MenuItem {
                 //% "Reload"

@@ -61,4 +61,5 @@ DISTFILES += \
     harbour-intfuorit.desktop \
     qml/phone/pages/BreachPage.qml \
     qml/phone/pages/BreachSearchPage.qml \
-    qml/phone/pages/BreachesListDelegate.qml
+    qml/phone/pages/BreachesListDelegate.qml \
+    qml/common/Settings.qml
