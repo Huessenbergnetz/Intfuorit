@@ -93,7 +93,7 @@ Page {
                     id: cachePeriodChoser
                     //% "Cache period"
                     label: qsTrId("intfuorit-cache-period-choser-label")
-                    //% "To change the language, you have to restart the application."
+                    //% "The cache period is used to store API results for the specified duration before sending a new request to the API."
                     description: qsTrId("intfuorit-cache-period-choser-desc")
                     menu: ContextMenu {
                         Repeater {
