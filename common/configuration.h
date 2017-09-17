@@ -27,7 +27,7 @@ class Configuration : public QSettings
     Q_OBJECT
     Q_DISABLE_COPY(Configuration)
     /*!
-     * \brief Stores the user defined language.
+     * This property holds the stored display language. The default value is empty.
      *
      * \par Access functions:
      * \li QString language() const
@@ -37,9 +37,20 @@ class Configuration : public QSettings
      * \li void languageChanged(const QString &language)
      */
     Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY languageChanged)
+    /*!
+     * This property holds the stored cache period in seconds. The default value is 2 days.
+     *
+     * \par Access functions:
+     * \li quint32 cachePeriod() const
+     * \li void setCachePeriod(quint32 nCachePeriod)
+     *
+     * \par Notifier signal:
+     * \li void cachePeriodChanged(quint32 cachePeriod)
+     */
+    Q_PROPERTY(quint32 cachePeriod READ cachePeriod WRITE setCachePeriod NOTIFY cachePeriodChanged)
 public:
     /*!
-     * \brief Constructs a new Configuration object with the given \a parent.
+     * Constructs a new Configuration object with the given \a parent.
      */
     explicit Configuration(QObject *parent = nullptr);
 
@@ -49,27 +60,46 @@ public:
      ~Configuration();
 
     /*!
-     * \brief Getter function for the \link Configuration::language language \endlink property.
-     * \sa Configuration::setLanguage() Configuration::languageChanged()
+     * Getter function for the \link Configuration::language language \endlink property.
+     * \sa setLanguage(), languageChanged()
      */
     QString language() const;
 
+    /*!
+     * Getter function for the \link Configuration::cachePeriod \endlink property.
+     * \sa setCachePeriod(), cachePeriodChanged()
+     */
+    quint32 cachePeriod() const;
+
 
     /*!
-     * \brief Setter function for the \link Configuration::language language \endlink property.
-     * \sa Configuration::language() Configuration::languageChanged()
+     * Setter function for the \link Configuration::language language \endlink property.
+     * \sa language(), languageChanged()
      */
     void setLanguage(const QString &nLanguage);
 
+    /*!
+     * Setter function for the \link Configuration::cachePeriod \endlink property.
+     * \sa cachePeriod(), cachePeriodChanged()
+     */
+    void setCachePeriod(quint32 nCachePeriod);
+
 signals:
     /*!
-     * \brief Notifier function for the \link Configuration::language language \endlink property.
-     * \sa Confiuration::setLanguage() Configuration::language()
+     * Notifier function for the \link Configuration::language language \endlink property.
+     * \sa setLanguage(), language()
      */
     void languageChanged(const QString &language);
 
+    /*!
+     * Notifier signal for the \link Configuration::language language \endlink property.
+     * \sa language(), setLanguage()
+     */
+    void cachePeriodChanged(quint32 cachePeriod);
+
 private:
     QString m_language;
+    quint32 m_cachePeriod = 3600*48;
 };
 
 #endif // CONFIGURATION_H

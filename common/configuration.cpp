@@ -18,9 +18,13 @@
 
 #include "configuration.h"
 
+#define KEY_LANGUAGE "display/language"
+#define KEY_CACHE_PERIOD "behavior/cacheperiod"
+
 Configuration::Configuration(QObject *parent) : QSettings(parent)
 {
-    m_language = value(QStringLiteral("display/language")).toString();
+    m_language = value(QStringLiteral(KEY_LANGUAGE)).toString();
+    m_cachePeriod = value(QStringLiteral(KEY_CACHE_PERIOD), 3600*48).value<quint32>();
 }
 
 
@@ -36,7 +40,21 @@ void Configuration::setLanguage(const QString &nLanguage)
 {
     if (nLanguage != m_language) {
         m_language = nLanguage;
-        qDebug("Lanugage changed to \"%s\".", qUtf8Printable(nLanguage));
-        emit languageChanged(nLanguage);
+        qDebug("Language changed to \"%s\".", qUtf8Printable(m_language));
+        setValue(QStringLiteral(KEY_LANGUAGE), m_language);
+        emit languageChanged(m_language);
+    }
+}
+
+
+quint32 Configuration::cachePeriod() const { return m_cachePeriod; }
+
+void Configuration::setCachePeriod(quint32 nCachePeriod)
+{
+    if (nCachePeriod != m_cachePeriod) {
+        m_cachePeriod = nCachePeriod;
+        qDebug("Cache period changed to %u.", m_cachePeriod);
+        setValue(QStringLiteral(KEY_CACHE_PERIOD), m_cachePeriod);
+        emit cachePeriodChanged(m_cachePeriod);
     }
 }
