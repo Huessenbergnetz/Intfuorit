@@ -44,6 +44,8 @@
 
 #include "../../common/configuration.h"
 #include "../../common/namfactory.h"
+#include "../../common/languagemodel.h"
+#include "../../common/cacheperiodmodel.h"
 
 int main(int argc, char *argv[])
 {
@@ -119,12 +121,16 @@ int main(int argc, char *argv[])
         app->installTranslator(libTrans);
     }
 
+    LanguageModel::setSupportedLangs(QStringList({QStringLiteral("en_US"), QStringLiteral("en_GB"), QStringLiteral("de")}));
+
     qmlRegisterType<Intfuorit::Error>("harbour.intfuorit", 1, 0, "IntfuoritError");
     qmlRegisterType<Intfuorit::Breach>("harbour.intfuorit", 1, 0, "Breach");
     qmlRegisterType<Intfuorit::BreachesListModel>("harbour.intfuorit", 1, 0, "BreachesListModel");
     qmlRegisterType<Intfuorit::BreachesListFilterModel>("harbour.intfuorit", 1, 0, "BreachesListFilterModel");
     qmlRegisterType<Intfuorit::Paste>("harbour.intfuorit", 1, 0, "Paste");
     qmlRegisterType<Intfuorit::PastesListModel>("harbour.intfuorit", 1, 0, "PastesListModel");
+    qmlRegisterType<LanguageModel>("harbour.intfuorit", 1, 0, "LanguageModel");
+    qmlRegisterType<CachePeriodModel>("harbour.intfuorit", 1, 0, "CachePeriodModel");
 
 #ifndef CLAZY
     QScopedPointer<QQuickView> view(SailfishApp::createView());
