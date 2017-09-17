@@ -38,6 +38,7 @@ Requires:
   - qt5-plugin-imageformat-gif
   - qt5-plugin-imageformat-ico
   - qt5-plugin-imageformat-jpeg
+  - qt5-qtquickcontrols-layouts
 
 # All installed files
 Files:
