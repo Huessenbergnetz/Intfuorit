@@ -24,6 +24,8 @@ import harbour.intfuorit 1.0
 Page {
     id: settingsPage
 
+    allowedOrientations: Orientation.All
+
     SilicaFlickable {
         id: settingsFlick
         anchors.fill: parent
