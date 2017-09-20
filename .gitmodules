@@ -1,3 +1,6 @@
 [submodule "libintfuorit"]
 	path = libintfuorit
 	url = https://github.com/Huessenbergnetz/libintfuorit.git
+[submodule "BT_SFOS_Components"]
+	path = BT_SFOS_Components
+	url = https://github.com/Buschtrommel/BT_SFOS_Components.git
