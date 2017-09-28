@@ -58,6 +58,11 @@ Page {
             }
         }
 
+        VerticalScrollDecorator {
+            flickable: breachSearchFlick
+            page: breachSearchPage
+        }
+
         Label {
             id: dummyCount
             visible: false
@@ -130,7 +135,9 @@ Page {
                 id: infoText
                 Layout.columnSpan: breachSearchGrid.columns
                 Layout.fillWidth: true
+                Layout.preferredHeight: infoTextText.height
                 Text {
+                    id: infoTextText
                     anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
                     color: Theme.secondaryColor
                     font.pixelSize: Theme.fontSizeExtraSmall
@@ -383,7 +390,22 @@ Page {
                 Layout.fillWidth: true
                 Layout.columnSpan: breachSearchGrid.columns
                 height: Theme.paddingLarge
-                visible: pastesRepeater.count > 0
+            }
+
+            Item {
+                Layout.fillWidth: true
+                Layout.columnSpan: breachSearchGrid.columns
+                height: Theme.itemSizeExtraSmall
+                Text {
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
+                    color: Theme.secondaryColor
+                    font.pixelSize: Theme.fontSizeSmall
+                    horizontalAlignment: Text.AlignHCenter
+                    textFormat: Text.StyledText
+                    text: qsTrId("intfuorit-hibp-attribution").arg("<a href='https://haveibeenpwned.com'>Have I been pwned?</a>")
+                    linkColor: Theme.secondaryHighlightColor
+                    wrapMode: Text.WordWrap
+                }
             }
         }
     }

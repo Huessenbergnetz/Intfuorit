@@ -122,11 +122,12 @@ Page {
             MenuItem {
                 //% "About"
                 text: qsTrId("intfuorit-about")
+                onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/About.qml"))
             }
             MenuItem {
                 //% "Settings"
                 text: qsTrId("intfuorit-settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("../../common/Settings.qml"))
+                onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/Settings.qml"))
             }
             MenuItem {
                 //% "Reload"
@@ -189,6 +190,22 @@ Page {
             //% "Error"
             text: qsTrId("intfuorit-error")
             hintText: blfm.error ? blfm.error.text : ""
+        }
+
+        footer: Item {
+            width: breachesGridView.width
+            height: Theme.itemSizeExtraSmall
+            Text {
+                anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
+                color: Theme.secondaryColor
+                font.pixelSize: Theme.fontSizeSmall
+                horizontalAlignment: Text.AlignHCenter
+                textFormat: Text.StyledText
+                //% "Data provided by %1"
+                text: qsTrId("intfuorit-hibp-attribution").arg("<a href='https://haveibeenpwned.com'>Have I been pwned?</a>")
+                linkColor: Theme.secondaryHighlightColor
+                wrapMode: Text.WordWrap
+            }
         }
     }
 }

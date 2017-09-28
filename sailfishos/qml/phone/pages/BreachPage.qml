@@ -103,12 +103,27 @@ Page {
                 font.pixelSize: Theme.fontSizeSmall
                 textFormat: Text.StyledText
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                text: breach.dataClasses.join(", ")
+                text: breach.dataClassesTranslated.join(", ")
             }
 
             Item {
                 width: parent.width
                 height: Theme.paddingLarge
+            }
+
+            Item {
+                width: parent.width
+                height: Theme.itemSizeExtraSmall
+                Text {
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
+                    color: Theme.secondaryColor
+                    font.pixelSize: Theme.fontSizeSmall
+                    horizontalAlignment: Text.AlignHCenter
+                    textFormat: Text.StyledText
+                    text: qsTrId("intfuorit-hibp-attribution").arg("<a href='https://haveibeenpwned.com'>Have I been pwned?</a>")
+                    linkColor: Theme.secondaryHighlightColor
+                    wrapMode: Text.WordWrap
+                }
             }
         }
     }
