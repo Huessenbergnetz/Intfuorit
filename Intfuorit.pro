@@ -3,7 +3,7 @@ TEMPLATE = subdirs
 sfos {
 
 SUBDIRS += libintfuorit
-SUBDIRS += sailfishos
+SUBDIRS += sailfishos BT_SFOS_Components
 
 sailfishos.depends = libintfuorit
 

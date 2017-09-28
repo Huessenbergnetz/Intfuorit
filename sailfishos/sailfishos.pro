@@ -51,6 +51,9 @@ langfiles.path = $$INSTALL_TRANSLATIONS_DIR
 langfiles.files = ../translations/*.qm
 INSTALLS += langfiles
 
+contimgs.path = /usr/share/harbour-intfuorit/images/contributors
+contimgs.files = images/contributors/*
+INSTALLS += contimgs
 
 DISTFILES += \
     qml/harbour-intfuorit.qml \
@@ -62,4 +65,8 @@ DISTFILES += \
     qml/phone/pages/BreachPage.qml \
     qml/phone/pages/BreachSearchPage.qml \
     qml/phone/pages/BreachesListDelegate.qml \
-    qml/common/Settings.qml
+    qml/common/pages/Settings.qml \
+    qml/common/pages/About.qml \
+    qml/common/models/ChangelogModel.qml \
+    qml/common/models/ContributorsModel.qml \
+    qml/common/models/LicensesModel.qml

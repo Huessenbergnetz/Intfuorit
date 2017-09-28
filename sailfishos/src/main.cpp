@@ -121,6 +121,11 @@ int main(int argc, char *argv[])
         app->installTranslator(libTrans);
     }
 
+    QTranslator *btscTrans = new QTranslator(app.data());
+    if (Q_LIKELY(btscTrans->load(QLocale(), QStringLiteral("btsc"), QStringLiteral("_"), l10nDir, QStringLiteral(".qm")))) {
+        app->installTranslator(btscTrans);
+    }
+
     LanguageModel::setSupportedLangs(QStringList({QStringLiteral("en_US"), QStringLiteral("en_GB"), QStringLiteral("de")}));
 
     qmlRegisterType<Intfuorit::Error>("harbour.intfuorit", 1, 0, "IntfuoritError");

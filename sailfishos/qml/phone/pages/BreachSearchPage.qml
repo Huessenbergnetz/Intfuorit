@@ -37,10 +37,12 @@ Page {
             MenuItem {
                 //% "About"
                 text: qsTrId("intfuorit-about")
+                onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/About.qml"))
             }
             MenuItem {
                 //% "Settings"
                 text: qsTrId("intfuorit-settings")
+                onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/Settings.qml"))
             }
             MenuItem {
                 //% "Clear result"
