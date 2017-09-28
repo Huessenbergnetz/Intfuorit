@@ -215,5 +215,45 @@
         <source>Author</source>
         <translation>Autor</translation>
     </message>
+    <message id="intfuorit-privacy-policy">
+        <source>Privacy policy</source>
+        <translation>Datenschutzerklärung</translation>
+    </message>
+    <message id="intfuorit-privacy-0">
+        <source>What information does Intfuorit collect?</source>
+        <translation>Welche Informationen sammelt Intfuorit?</translation>
+    </message>
+    <message id="intfuorit-privacy-1">
+        <source>Intfuorit does not require any data from you for the sole display of the breached sites and services. If you want to check one of your user accounts, Intfuorit sends the email addresses or usernames you have entered to the servers of haveibeenpwned.com. This information will not be shared with the author of Intfuorit or any third party other than haveibeenpwned.com. You provide your data voluntarily at any time.</source>
+        <translation>Für die alleinige Anzeige der betroffenen Seiten und Dienste benötigt Intfuorit keine Daten von Ihnen. Falls Sie eines Ihrer Benutzerkonten überprüfen wollen, sendet Intfuorit die von Ihnen eingegebene E-Mail-Adressen oder Benutzernamen an die Server von haveibeenpwned.com. Diese Informationen werden weder an den Autor von Intfuorit noch an andere Dritte außer haveibeenpwned.com weiter gegeben. Ihre Daten geben Sie dabei jederzeit freiwillig an.</translation>
+    </message>
+    <message id="intfuorit-privacy-2">
+        <source>What does Intfuorit use your information for?</source>
+        <translation>Wofür nutzt Intfuorit diese Informationen?</translation>
+    </message>
+    <message id="intfuorit-privacy-3">
+        <source>If you wish to have your e-mail address or user name checked, this data will be sent to the API of haveibeenpwned.com. Information about privacy at haveibeenpwned.com can be found &lt;a href=&apos;%1&apos;&gt;here&lt;/a&gt;.</source>
+        <translation>Falls Sie Ihre E-Mail-Adresse oder ihren Benutzernamen überprüfen lassen wollen, werden diese Daten an die API von haveibeenpwned.com gesendet. Informationen zum Datenschutz auf haveibeenpwned.com erhalten Sie &lt;a href=&apos;%1&apos;&gt;hier&lt;/a&gt;.</translation>
+    </message>
+    <message id="intfuorit-privacy-4">
+        <source>Does Intfuorit disclose any information to third parties?</source>
+        <translation>Gibt Intfuorit Informationen an Dritte weiter?</translation>
+    </message>
+    <message id="intfuorit-privacy-5">
+        <source>If you wish to have your e-mail address or user name checked, this data will be sent to the API of haveibeenpwned.com. Information about privacy at haveibeenpwned.com can be found &lt;a href=&apos;%1&apos;&gt;here&lt;/a&gt;.</source>
+        <translation>Falls Sie Ihre E-Mail-Adresse oder ihren Benutzernamen überprüfen lassen wollen, werden diese Daten an die API von haveibeenpwned.com gesendet. Informationen zum Datenschutz auf haveibeenpwned.com erhalten Sie &lt;a href=&apos;%1&apos;&gt;hier&lt;/a&gt;.</translation>
+    </message>
+    <message id="intfuorit-privacy-8">
+        <source>Your consent</source>
+        <translation>Ihr Einverständnis</translation>
+    </message>
+    <message id="intfuorit-privacy-9">
+        <source>By using Intfuorit, you consent to this privacy policy.</source>
+        <translation>Mit der Nutzung von Intfuorit stimmen Sie dieser Datenschutzerklärung zu.</translation>
+    </message>
+    <message id="intfuorit-privacy-10">
+        <source>Contact</source>
+        <translation>Kontakt</translation>
+    </message>
 </context>
 </TS>

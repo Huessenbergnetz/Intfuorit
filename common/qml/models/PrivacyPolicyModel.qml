@@ -71,23 +71,23 @@ ListModel {
 
     Component.onCompleted: {
         //% "What information does Intfuorit collect?"
-        ppmodel.get(0).text = qsTrId("fuoten-privacy-0")
+        ppmodel.get(0).text = qsTrId("intfuorit-privacy-0")
         //% "Intfuorit does not require any data from you for the sole display of the breached sites and services. If you want to check one of your user accounts, Intfuorit sends the email addresses or usernames you have entered to the servers of haveibeenpwned.com. This information will not be shared with the author of Intfuorit or any third party other than haveibeenpwned.com. You provide your data voluntarily at any time."
-        ppmodel.get(1).text = qsTrId("fuoten-privacy-1")
+        ppmodel.get(1).text = qsTrId("intfuorit-privacy-1")
         //% "What does Intfuorit use your information for?"
-        ppmodel.get(2).text = qsTrId("fuoten-privacy-2")
+        ppmodel.get(2).text = qsTrId("intfuorit-privacy-2")
         //% "If you wish to have your e-mail address or user name checked, this data will be sent to the API of haveibeenpwned.com. Information about privacy at haveibeenpwned.com can be found <a href='%1'>here</a>."
-        ppmodel.get(3).text = qsTrId("fuoten-privacy-3").arg("https://haveibeenpwned.com/FAQs")
+        ppmodel.get(3).text = qsTrId("intfuorit-privacy-3").arg("https://haveibeenpwned.com/FAQs")
         //% "Does Intfuorit disclose any information to third parties?"
-        ppmodel.get(4).text = qsTrId("fuoten-privacy-4")
+        ppmodel.get(4).text = qsTrId("intfuorit-privacy-4")
         //% "If you wish to have your e-mail address or user name checked, this data will be sent to the API of haveibeenpwned.com. Information about privacy at haveibeenpwned.com can be found <a href='%1'>here</a>."
-        ppmodel.get(5).text = qsTrId("fuoten-privacy-5").arg("https://haveibeenpwned.com/FAQs")
+        ppmodel.get(5).text = qsTrId("intfuorit-privacy-5").arg("https://haveibeenpwned.com/FAQs")
         //% "Your consent"
-        ppmodel.get(6).text = qsTrId("fuoten-privacy-8")
+        ppmodel.get(6).text = qsTrId("intfuorit-privacy-8")
         //% "By using Intfuorit, you consent to this privacy policy."
-        ppmodel.get(7).text = qsTrId("fuoten-privacy-9")
+        ppmodel.get(7).text = qsTrId("intfuorit-privacy-9")
         //% "Contact"
-        ppmodel.get(8).text = qsTrId("fuoten-privacy-10")
+        ppmodel.get(8).text = qsTrId("intfuorit-privacy-10")
         ppmodel.get(9).text = String("Hüssenbergnetz<br>Matthias Fehring<br>Zum Südholz 8<br>34439 Willebadessen-Eissen<br>%1<br><a href='https://www.huessenbergnetz.de'>www.huessenbergnetz.de</a><br><a href='mailto:%2'>%2</a>").arg(qsTrId("intfuorit-germany")).arg(cccmmm)
     }
 }

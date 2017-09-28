@@ -223,5 +223,45 @@
         <source>Author</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="intfuorit-privacy-policy">
+        <source>Privacy policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-privacy-0">
+        <source>What information does Intfuorit collect?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-privacy-1">
+        <source>Intfuorit does not require any data from you for the sole display of the breached sites and services. If you want to check one of your user accounts, Intfuorit sends the email addresses or usernames you have entered to the servers of haveibeenpwned.com. This information will not be shared with the author of Intfuorit or any third party other than haveibeenpwned.com. You provide your data voluntarily at any time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-privacy-2">
+        <source>What does Intfuorit use your information for?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-privacy-3">
+        <source>If you wish to have your e-mail address or user name checked, this data will be sent to the API of haveibeenpwned.com. Information about privacy at haveibeenpwned.com can be found &lt;a href=&apos;%1&apos;&gt;here&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-privacy-4">
+        <source>Does Intfuorit disclose any information to third parties?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-privacy-5">
+        <source>If you wish to have your e-mail address or user name checked, this data will be sent to the API of haveibeenpwned.com. Information about privacy at haveibeenpwned.com can be found &lt;a href=&apos;%1&apos;&gt;here&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-privacy-8">
+        <source>Your consent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-privacy-9">
+        <source>By using Intfuorit, you consent to this privacy policy.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-privacy-10">
+        <source>Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
