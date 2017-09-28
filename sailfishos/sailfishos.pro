@@ -70,4 +70,5 @@ DISTFILES += \
     qml/common/models/ChangelogModel.qml \
     qml/common/models/ContributorsModel.qml \
     qml/common/models/LicensesModel.qml \
-    qml/common/pages/PrivacyPolicy.qml
+    qml/common/pages/PrivacyPolicy.qml \
+    qml/common/pages/Help.qml

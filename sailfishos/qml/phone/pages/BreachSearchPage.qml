@@ -40,6 +40,11 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/About.qml"))
             }
             MenuItem {
+                //% "Help/FAQ"
+                text: qsTrId("intfuorit-help-faq")
+                onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/Help.qml"))
+            }
+            MenuItem {
                 //% "Settings"
                 text: qsTrId("intfuorit-settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/Settings.qml"))
@@ -226,7 +231,7 @@ Page {
                 Text {
                     id: breachesDescText
                     anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
-                    //% "A <i>breach</i> is an incident where a site's data has been illegally accessed by hackers and then released publicly. Review the types of data that were compromised (email addresses, passwords, credit cards etc.) and take appropriate action, such as changing passwords."
+                    //% "A <i>breach</i> is an incident where a site’s data has been illegally accessed by hackers and then released publicly. Review the types of data that were compromised (email addresses, passwords, credit cards etc.) and take appropriate action, such as changing passwords."
                     text: qsTrId("intfuorit-section-desc-breached-sites")
                     color: Theme.secondaryHighlightColor
                     font.pixelSize: Theme.fontSizeExtraSmall

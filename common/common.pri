@@ -13,7 +13,8 @@ SOURCES += \
     $$PWD/cacheperiodmodel.cpp
 
 DISTFILES += \
-    $$PWD/qml/models/PrivacyPolicyModel.qml
+    $$PWD/qml/models/PrivacyPolicyModel.qml \
+    $$PWD/qml/models/HelpModel.qml
 
 commonQmlFiles.files = $$PWD/qml/*
 

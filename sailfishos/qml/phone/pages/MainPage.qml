@@ -125,6 +125,11 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/About.qml"))
             }
             MenuItem {
+                //% "Help/FAQ"
+                text: qsTrId("intfuorit-help-faq")
+                onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/Help.qml"))
+            }
+            MenuItem {
                 //% "Settings"
                 text: qsTrId("intfuorit-settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/Settings.qml"))
