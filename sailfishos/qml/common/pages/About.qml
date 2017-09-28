@@ -41,8 +41,8 @@ AboutPage {
     contactCity: "Willebadessen-Eissen"
     //% "Germany"
     contactCountry: qsTrId("intfuorit-germany")
-    contactEmail: "kontakt@buschmann23.de"
-    contactWebsite: "https://www.buschmann23.de"
+    contactEmail: cccmmm
+    contactWebsite: "www.huessenbergnetz.de"
 
     bugUrl: "https://github.com/Huessenbergnetz/Intfuorit/issues"
     translateUrl: "https://www.transifex.com/buschtrommel/intfuorit/"
@@ -52,4 +52,6 @@ AboutPage {
     contributorsModel: ContributorsModel {}
     contributorsAvatarBasePath: "/usr/share/harbour-intfuorit/images/contributors"
     contributorsPlaceholderPath: "/usr/share/harbour-intfuorit/images/contributors/placeholder.png"
+
+    privacyPolicyQmlFile: Qt.resolvedUrl("PrivacyPolicy.qml")
 }
