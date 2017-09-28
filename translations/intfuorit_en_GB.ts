@@ -186,5 +186,34 @@
         <source>Default</source>
         <translation type="unfinished"/>
     </message>
+    <message id="intfuorit-libintfuorit-desc">
+        <source>Libintfuorit is a Qt based library that provides access to the haveibeenpwned.com API.</source>
+        <oldsource>Libintfuorit is a Qt based library that provides access the haveibeenpwned.com API.</oldsource>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-btsfoscmops-desc">
+        <source>BT SFOS Components are a set of QML components for Sailfish OS.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-app-description">
+        <source>Unofficial haveibeenpwned.com client</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-germany">
+        <source>Germany</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-hibp-attribution">
+        <source>Data provided by %1</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-author-role">
+        <source>Main developer, Intfuorit creator</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="Intfuorit-author-section">
+        <source>Author</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 </TS>

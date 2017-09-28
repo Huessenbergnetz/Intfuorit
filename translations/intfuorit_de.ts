@@ -15,7 +15,7 @@
     </message>
     <message id="intfuorit-title-counts-label" numerus="yes">
         <source>%1 account(s)</source>
-        <translation><numerusform>%1 Konto</numerusform><numerusform>%1 Konten</numerusform></translation>
+        <translation><numerusform>%1-Konto</numerusform><numerusform>%1-Konten</numerusform></translation>
     </message>
     <message id="intfuorit-sort-by-label">
         <source>Sort by</source>
@@ -185,6 +185,35 @@
     <message id="intfuorit-default-lang">
         <source>Default</source>
         <translation>Standard</translation>
+    </message>
+    <message id="intfuorit-libintfuorit-desc">
+        <source>Libintfuorit is a Qt based library that provides access to the haveibeenpwned.com API.</source>
+        <oldsource>Libintfuorit is a Qt based library that provides access the haveibeenpwned.com API.</oldsource>
+        <translation>Libintfuorit ist eine auf Qt basierende Bibliothek zum Zugriff auf die API von haveibeenpwned.com.</translation>
+    </message>
+    <message id="intfuorit-btsfoscmops-desc">
+        <source>BT SFOS Components are a set of QML components for Sailfish OS.</source>
+        <translation>BT SFOS Components sind ein Satz von QML-Komponenten für Sailfish OS.</translation>
+    </message>
+    <message id="intfuorit-app-description">
+        <source>Unofficial haveibeenpwned.com client</source>
+        <translation>Inoffizieller haveibeenpwned.com-Client</translation>
+    </message>
+    <message id="intfuorit-germany">
+        <source>Germany</source>
+        <translation>Deutschland</translation>
+    </message>
+    <message id="intfuorit-hibp-attribution">
+        <source>Data provided by %1</source>
+        <translation>Daten bereitgestellt von %1</translation>
+    </message>
+    <message id="intfuorit-author-role">
+        <source>Main developer, Intfuorit creator</source>
+        <translation>Hauptentwickler, Intfuorit-Urheber</translation>
+    </message>
+    <message id="Intfuorit-author-section">
+        <source>Author</source>
+        <translation>Autor</translation>
     </message>
 </context>
 </TS>
