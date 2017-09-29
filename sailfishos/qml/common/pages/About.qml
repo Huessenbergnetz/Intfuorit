@@ -54,4 +54,8 @@ AboutPage {
     contributorsPlaceholderPath: "/usr/share/harbour-intfuorit/images/contributors/placeholder.png"
 
     privacyPolicyQmlFile: Qt.resolvedUrl("PrivacyPolicy.qml")
+
+    paypalOrganization: "Hüssenbergnetz"
+    paypalItem: "Intfuorit"
+    paypalEmail: cccmmm
 }
