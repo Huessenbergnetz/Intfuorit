@@ -20,11 +20,13 @@
 
 #define KEY_LANGUAGE "display/language"
 #define KEY_CACHE_PERIOD "behavior/cacheperiod"
+#define KEY_FIRST_START "system/firststart"
 
 Configuration::Configuration(QObject *parent) : QSettings(parent)
 {
     m_language = value(QStringLiteral(KEY_LANGUAGE)).toString();
     m_cachePeriod = value(QStringLiteral(KEY_CACHE_PERIOD), 3600*48).value<quint32>();
+    m_firstStart = value(QStringLiteral(KEY_FIRST_START), true).toBool();
 }
 
 
@@ -56,5 +58,18 @@ void Configuration::setCachePeriod(quint32 nCachePeriod)
         qDebug("Cache period changed to %u.", m_cachePeriod);
         setValue(QStringLiteral(KEY_CACHE_PERIOD), m_cachePeriod);
         emit cachePeriodChanged(m_cachePeriod);
+    }
+}
+
+
+bool Configuration::firstStart() const { return m_firstStart; }
+
+void Configuration::setFirstStart(bool nFirstStart)
+{
+    if (nFirstStart != m_firstStart) {
+        m_firstStart = nFirstStart;
+        qDebug("First start changed to %s.", m_firstStart ? "true" : "false");
+        setValue(QStringLiteral(KEY_FIRST_START), m_firstStart);
+        emit firstStartChanged(m_firstStart);
     }
 }

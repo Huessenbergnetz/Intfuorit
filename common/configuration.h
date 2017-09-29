@@ -48,6 +48,17 @@ class Configuration : public QSettings
      * \li void cachePeriodChanged(quint32 cachePeriod)
      */
     Q_PROPERTY(quint32 cachePeriod READ cachePeriod WRITE setCachePeriod NOTIFY cachePeriodChanged)
+    /*!
+     * This property is \c true if it is the first start of the application.
+     *
+     * \par Access functions:
+     * bool firstStart() const
+     * void setFirstStart(bool nFirstStart)
+     *
+     * \par Notifier signal:
+     * void firstStartChanged(bool firstStart)
+     */
+    Q_PROPERTY(bool firstStart READ firstStart WRITE setFirstStart NOTIFY firstStartChanged)
 public:
     /*!
      * Constructs a new Configuration object with the given \a parent.
@@ -66,10 +77,16 @@ public:
     QString language() const;
 
     /*!
-     * Getter function for the \link Configuration::cachePeriod \endlink property.
+     * Getter function for the \link Configuration::cachePeriod cachePeriod \endlink property.
      * \sa setCachePeriod(), cachePeriodChanged()
      */
     quint32 cachePeriod() const;
+
+    /*!
+     * Getter function for the \link Configuration::firstStart firstStart \endlink property.
+     * \sa setFirstStart(), firstStartChanged()
+     */
+    bool firstStart() const;
 
 
     /*!
@@ -79,10 +96,16 @@ public:
     void setLanguage(const QString &nLanguage);
 
     /*!
-     * Setter function for the \link Configuration::cachePeriod \endlink property.
+     * Setter function for the \link Configuration::cachePeriod cachePeriod \endlink property.
      * \sa cachePeriod(), cachePeriodChanged()
      */
     void setCachePeriod(quint32 nCachePeriod);
+
+    /*!
+     * Setter function for the \link Configuration::firstStart firstStart \endlink property.
+     * \sa firstStart(), firstStartChanged()
+     */
+    void setFirstStart(bool nFirstStart);
 
 signals:
     /*!
@@ -92,14 +115,21 @@ signals:
     void languageChanged(const QString &language);
 
     /*!
-     * Notifier signal for the \link Configuration::language language \endlink property.
-     * \sa language(), setLanguage()
+     * Notifier signal for the \link Configuration::cachePeriod cachePeriod \endlink property.
+     * \sa cachePeriod(), setCachePeriod()
      */
     void cachePeriodChanged(quint32 cachePeriod);
+
+    /*!
+     * Notifier signal for the \link Configuration::firstStart firstStart \endlink property.
+     * \sa firstStart(), setFirstStart()
+     */
+    void firstStartChanged(bool firstStart);
 
 private:
     QString m_language;
     quint32 m_cachePeriod = 3600*48;
+    bool m_firstStart = true;
 };
 
 #endif // CONFIGURATION_H

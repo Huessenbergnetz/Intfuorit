@@ -55,7 +55,10 @@ AboutPage {
 
     privacyPolicyQmlFile: Qt.resolvedUrl("PrivacyPolicy.qml")
 
-    paypalOrganization: "Hüssenbergnetz"
+    paypalOrganization: "Huessenbergnetz"
     paypalItem: "Intfuorit"
     paypalEmail: cccmmm
+
+    bitcoinURI: "bitcoin:1JdTi61mX5n32jz1QzRAnZCsTo4f1daeBu?label=Intfuorit&message=Thank%20you%20for%20your%20donation%21"
+    bitcoinQRImage: Qt.resolvedUrl("/usr/share/harbour-intfuorit/images/intfuorit-bitcoin-donation.png")
 }

@@ -385,5 +385,18 @@
         <source>Read the &lt;a href=&apos;%1&apos;&gt;full FAQ&lt;/a&gt; on haveibeenpwned.com or visit &lt;a href=&apos;%2&apos;&gt;Troy Hunt’s blog&lt;/a&gt; to learn more about it.</source>
         <translation>Lesen Sie die &lt;a href=&apos;%1&apos;&gt;vollständige FAQ&lt;/a&gt; auf haveibeenpwned.com oder besuchen Sie &lt;a href=&apos;%2&apos;&gt;Troy Hunts Blog&lt;/a&gt; um mehr zu Erfahren.</translation>
     </message>
+    <message id="intfuorit-welcome">
+        <source>Welcome to Intfuorit</source>
+        <translation>Willkommen bei Intfuorit</translation>
+    </message>
+    <message id="intfuorit-welcome-description">
+        <source>Intfuorit is a client for haveibeenpwned.com (HIBP), a service created by Troy Hunt, that allows you to check if one of your user accounts is part of a data breach. Intfuorit is the old high german word for kidnapped.</source>
+        <oldsource>Intfuorit is a client for the haveibeenpwned.com API that allows you to check if one of your user accounts is part of a data breach. Intfuorit is the old high germand word for kidnapped.</oldsource>
+        <translation>Intfuorit ist ein Client für haveibeenpwned.com (HIBP), ein von Troy Hunt erstellter Dienst, der es Ihnen erlaubt, Ihre Benutzerkonten darauf hin zu prüfen, ob diese Teil eines Datenlecks sind. Intfuorit ist das althochdeutsche Wort für entführt.</translation>
+    </message>
+    <message id="intfuorit-welcome-privacy-consent">
+        <source>By using Intfuorit, you consent to the following privacy policy.</source>
+        <translation>Durch die Nutzung von Intfuorit stimmen Sie der folgenden Datenschutzerklärung zu.</translation>
+    </message>
 </context>
 </TS>

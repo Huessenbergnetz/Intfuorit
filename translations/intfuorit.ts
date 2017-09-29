@@ -393,5 +393,18 @@
         <source>Read the &lt;a href=&apos;%1&apos;&gt;full FAQ&lt;/a&gt; on haveibeenpwned.com or visit &lt;a href=&apos;%2&apos;&gt;Troy Hunt’s blog&lt;/a&gt; to learn more about it.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="intfuorit-welcome">
+        <source>Welcome to Intfuorit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-welcome-description">
+        <source>Intfuorit is a client for haveibeenpwned.com (HIBP), a service created by Troy Hunt, that allows you to check if one of your user accounts is part of a data breach. Intfuorit is the old high german word for kidnapped.</source>
+        <oldsource>Intfuorit is a client for the haveibeenpwned.com API that allows you to check if one of your user accounts is part of a data breach. Intfuorit is the old high germand word for kidnapped.</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-welcome-privacy-consent">
+        <source>By using Intfuorit, you consent to the following privacy policy.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
