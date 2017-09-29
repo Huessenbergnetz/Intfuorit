@@ -22,7 +22,7 @@ ListModel {
     id: licensesModel
 
     ListElement {
-        name: "libfuoten"
+        name: "libintfuorit"
         author: "Matthias Fehring"
         version: "1.0.0"
         license: "GNU Lesser General Public License, Version 3"
