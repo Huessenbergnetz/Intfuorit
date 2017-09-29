@@ -8,7 +8,5 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Sun Apr 13 2014 Jack Tar <jack.tar@example.com> 0.0.1-1
-- Scrubbed the deck
-- Hoisted the sails
-
+* Fri Sep 29 2017 Matthias Fehring <> 1.0.0-1
+- initial release

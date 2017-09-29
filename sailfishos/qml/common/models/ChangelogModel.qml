@@ -29,7 +29,7 @@ import QtQuick 2.6
 ListModel {
     ListElement {
         version: "1.0.0"
-        date: 1505984724000
+        date: 1506692990000
         entries: [
             ListElement { type: 3; issue: ""; description: "first released version" }
         ]
