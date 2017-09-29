@@ -59,6 +59,17 @@ class Configuration : public QSettings
      * void firstStartChanged(bool firstStart)
      */
     Q_PROPERTY(bool firstStart READ firstStart WRITE setFirstStart NOTIFY firstStartChanged)
+    /*!
+     * This property is \c true if unverified breaches should be included in the account search.
+     *
+     * \par Access functions:
+     * bool includeUnverified() const
+     * void setIncludeUnverified(bool nIncludeUnverified)
+     *
+     * \par Notifier signal:
+     * void includeUnverifiedChanged(bool includeUnverified)
+     */
+    Q_PROPERTY(bool includeUnverified READ includeUnverified WRITE setIncludeUnverified NOTIFY includeUnverifiedChanged)
 public:
     /*!
      * Constructs a new Configuration object with the given \a parent.
@@ -88,6 +99,12 @@ public:
      */
     bool firstStart() const;
 
+    /*!
+     * Getter function for the \link Configuration::includeUnverified includeUnverified \endlink property.
+     * \sa setIncludeUnverified(), includeUnverifiedChanged()
+     */
+    bool includeUnverified() const;
+
 
     /*!
      * Setter function for the \link Configuration::language language \endlink property.
@@ -106,6 +123,12 @@ public:
      * \sa firstStart(), firstStartChanged()
      */
     void setFirstStart(bool nFirstStart);
+
+    /*!
+     * Setter function for the \link Configuration::includeUnverified includeUnverified \endlink property.
+     * \sa includeUnverified(), includeUnverifiedChanged()
+     */
+    void setIncludeUnverified(bool nIncludeUnverified);
 
 signals:
     /*!
@@ -126,10 +149,17 @@ signals:
      */
     void firstStartChanged(bool firstStart);
 
+    /*!
+     * Notifier signal for the \link Configuration::includeUnverified includeUnverified \endlink property.
+     * \sa includeUnverified(), setIncludeUnverified()
+     */
+    void includeUnverifiedChanged(bool includeUnverified);
+
 private:
     QString m_language;
     quint32 m_cachePeriod = 3600*48;
     bool m_firstStart = true;
+    bool m_includeUnverified = false;
 };
 
 #endif // CONFIGURATION_H

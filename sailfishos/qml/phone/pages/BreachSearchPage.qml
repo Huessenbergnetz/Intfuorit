@@ -124,8 +124,11 @@ Page {
                 id: includeUnverified
                 //% "Inlcude unverified breaches"
                 text: qsTrId("intfuorit-switch-include-unverified")
-                Layout.columnSpan: 1
+                Layout.columnSpan: (config.cachePeriod > 0) ? 1 : breachSearchGrid.columns
                 Layout.fillWidth: true
+                automaticCheck: false
+                checked: config.includeUnverified
+                onClicked: config.includeUnverified = !config.includeUnverified
             }
 
             TextSwitch {
@@ -134,6 +137,7 @@ Page {
                 text: qsTrId("intfuorit-switch-omit-cache")
                 Layout.columnSpan: 1
                 Layout.fillWidth: true
+                visible: (config.cachePeriod > 0)
             }
 
             Item {

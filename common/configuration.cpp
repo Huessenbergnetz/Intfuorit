@@ -21,12 +21,14 @@
 #define KEY_LANGUAGE "display/language"
 #define KEY_CACHE_PERIOD "behavior/cacheperiod"
 #define KEY_FIRST_START "system/firststart"
+#define KEY_INC_UNVERIFIED "behavior/includeunverified"
 
 Configuration::Configuration(QObject *parent) : QSettings(parent)
 {
     m_language = value(QStringLiteral(KEY_LANGUAGE)).toString();
     m_cachePeriod = value(QStringLiteral(KEY_CACHE_PERIOD), 3600*48).value<quint32>();
     m_firstStart = value(QStringLiteral(KEY_FIRST_START), true).toBool();
+    m_includeUnverified = value(QStringLiteral(KEY_INC_UNVERIFIED), false).toBool();
 }
 
 
@@ -71,5 +73,18 @@ void Configuration::setFirstStart(bool nFirstStart)
         qDebug("First start changed to %s.", m_firstStart ? "true" : "false");
         setValue(QStringLiteral(KEY_FIRST_START), m_firstStart);
         emit firstStartChanged(m_firstStart);
+    }
+}
+
+
+bool Configuration::includeUnverified() const { return m_includeUnverified; }
+
+void Configuration::setIncludeUnverified(bool nIncludeUnverified)
+{
+    if (nIncludeUnverified != m_includeUnverified) {
+        m_includeUnverified = nIncludeUnverified;
+        qDebug("Include unverified changed to %s.", m_includeUnverified ? "true" : "false");
+        setValue(QStringLiteral(KEY_INC_UNVERIFIED), m_includeUnverified);
+        emit includeUnverifiedChanged(m_includeUnverified);
     }
 }
