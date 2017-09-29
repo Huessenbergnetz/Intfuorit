@@ -113,9 +113,9 @@ Page {
 
             Item {
                 width: parent.width
-                height: Theme.itemSizeExtraSmall
+                height: Theme.itemSizeMedium
                 Text {
-                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                     color: Theme.secondaryColor
                     font.pixelSize: Theme.fontSizeSmall
                     horizontalAlignment: Text.AlignHCenter

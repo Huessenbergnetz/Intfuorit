@@ -165,6 +165,12 @@ Page {
                 running: true
             }
 
+            Item {
+                Layout.columnSpan: breachSearchGrid.columns
+                Layout.fillWidth: true
+                Layout.preferredHeight: Theme.paddingLarge
+            }
+
             SectionHeader {
                 //% "Breaches you were found in"
                 text: qsTrId("intfuorit-section-header-breached-sites")
@@ -402,11 +408,12 @@ Page {
             }
 
             Item {
+                id: hibpAttribution
                 Layout.fillWidth: true
                 Layout.columnSpan: breachSearchGrid.columns
-                height: Theme.itemSizeExtraSmall
+                height: Theme.itemSizeMedium
                 Text {
-                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                     color: Theme.secondaryColor
                     font.pixelSize: Theme.fontSizeSmall
                     horizontalAlignment: Text.AlignHCenter
