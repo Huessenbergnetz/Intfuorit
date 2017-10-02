@@ -32,6 +32,7 @@ QNetworkAccessManager* NamFactory::create(QObject *parent)
     QNetworkAccessManager *nam = new QNetworkAccessManager(parent);
     if (m_dk) {
         nam->setCache(m_dk);
+        m_dk->setParent(nullptr);
     }
 
     return nam;
