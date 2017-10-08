@@ -57,6 +57,30 @@ ListModel {
         website: "https://www.transifex.com/buschtrommel/intfuorit"
     }
 
+    ListElement {
+        name: "Qt"
+        author: "The Qt Company"
+        license: "GNU Lesser General Public License, Version 3"
+        licenseFile: "LGPLv3.qml"
+        website: "https://www.qt.io/"
+    }
+
+    ListElement {
+        name: "libsailfishapp"
+        author: "Jolla Ltd."
+        license: "GNU Lesser General Public License, Version 2.1"
+        licenseFile: "LGPLv2_1.qml"
+        website: "https://sailfishos.org/develop/docs/libsailfishapp/"
+    }
+
+    ListElement {
+        name: "Sailfish Silica UI"
+        author: "Jolla Ltd."
+        license: "Modified BSD License"
+        licenseFile: "BSD-3.qml"
+        website: "https://sailfishos.org/develop/docs/silica/"
+    }
+
     Component.onCompleted: {
         //% "Libintfuorit is a Qt based library that provides access to the haveibeenpwned.com API."
         licensesModel.get(0).description = qsTrId("intfuorit-libintfuorit-desc")
