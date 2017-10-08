@@ -406,5 +406,13 @@
         <source>By using Intfuorit, you consent to the following privacy policy.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="intfuorit-swedish-translation">
+        <source>Swedish translation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-thanks-to">
+        <source>Thanks to</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

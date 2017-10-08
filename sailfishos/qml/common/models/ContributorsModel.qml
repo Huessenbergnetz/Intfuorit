@@ -30,11 +30,23 @@ ListModel {
         github: "buschmann23"
     }
 
+    ListElement {
+        name: "Åke Engelbrektson"
+        role: ""
+        section: ""
+        website: "https://svenskasprakfiler.se"
+    }
+
     Component.onCompleted: {
         //% "Main developer, Intfuorit creator"
         contModel.get(0).role = qsTrId("intfuorit-author-role")
         //% "Author"
         contModel.get(0).section = qsTrId("Intfuorit-author-section")
+
+        //% "Swedish translation"
+        contModel.get(1).role = qsTrId("intfuorit-swedish-translation")
+        //% "Thanks to"
+        contModel.get(1).section = qsTrId("intfuorit-thanks-to")
     }
 }
 

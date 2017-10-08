@@ -126,7 +126,7 @@ int main(int argc, char *argv[])
         app->installTranslator(btscTrans);
     }
 
-    LanguageModel::setSupportedLangs(QStringList({QStringLiteral("en_US"), QStringLiteral("en_GB"), QStringLiteral("de")}));
+    LanguageModel::setSupportedLangs(QStringList({QStringLiteral("en_US"), QStringLiteral("en_GB"), QStringLiteral("de"), QStringLiteral("sv")}));
 
     qmlRegisterType<Intfuorit::Error>("harbour.intfuorit", 1, 0, "IntfuoritError");
     qmlRegisterType<Intfuorit::Breach>("harbour.intfuorit", 1, 0, "Breach");
