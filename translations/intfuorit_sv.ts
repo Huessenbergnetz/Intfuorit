@@ -400,11 +400,11 @@
     </message>
     <message id="intfuorit-swedish-translation">
         <source>Swedish translation</source>
-        <translation type="unfinished"/>
+        <translation>Svensk översättning</translation>
     </message>
     <message id="intfuorit-thanks-to">
         <source>Thanks to</source>
-        <translation type="unfinished"/>
+        <translation>Tack till</translation>
     </message>
 </context>
 </TS>
