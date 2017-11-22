@@ -43,6 +43,7 @@ AboutPage {
     contactCountry: qsTrId("intfuorit-germany")
     contactEmail: cccmmm
     contactWebsite: "www.huessenbergnetz.de"
+    contactWebsiteLink: "https://www.huessenbergnetz.de"
 
     bugUrl: "https://github.com/Huessenbergnetz/Intfuorit/issues"
     translateUrl: "https://www.transifex.com/buschtrommel/intfuorit/"
