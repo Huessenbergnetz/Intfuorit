@@ -33,6 +33,7 @@
 
 #ifndef CLAZY
 #include <sailfishapp.h>
+#include "intfuoriticonprovider.h"
 #endif
 
 #include <Intfuorit/Error>
@@ -131,6 +132,7 @@ int main(int argc, char *argv[])
 
 #ifndef CLAZY
     QScopedPointer<QQuickView> view(SailfishApp::createView());
+    view->engine()->addImageProvider(QStringLiteral("intfuorit"), new IntfuoritIconProvider);
 #else
     QScopedPointer<QQuickView> view(new QQuickView);
 #endif

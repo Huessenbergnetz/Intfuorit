@@ -40,6 +40,9 @@ include(../common/common.pri)
 LIBS += -L$$OUT_PWD/../libintfuorit -lintfuorit
 INCLUDEPATH += $$PWD/../libintfuorit
 
+PKGCONFIG += sailfishsilica
+INCLUDEPATH += /usr/include/libsailfishsilica
+
 SOURCES += \
     src/main.cpp
 
@@ -73,3 +76,6 @@ DISTFILES += \
     qml/common/pages/PrivacyPolicy.qml \
     qml/common/pages/Help.qml \
     qml/common/pages/Welcome.qml
+
+HEADERS += \
+    src/intfuoriticonprovider.h
