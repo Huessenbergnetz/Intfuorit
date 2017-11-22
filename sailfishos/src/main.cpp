@@ -59,43 +59,33 @@ int main(int argc, char *argv[])
     app->setApplicationDisplayName(QStringLiteral("Intfuorit"));
     app->setApplicationVersion(QStringLiteral(VERSION_STRING));
 
-    auto dataDir = new QDir(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
-    auto cacheDir = new QDir(QStandardPaths::writableLocation(QStandardPaths::CacheLocation));
-    auto qmlCacheDir = new QDir(cacheDir->absolutePath() + QStringLiteral("/qmlcache"));
-
-    if (Q_UNLIKELY(!dataDir->exists())) {
-        if (!dataDir->mkpath(dataDir->absolutePath())) {
-            delete dataDir;
-            delete cacheDir;
-            delete qmlCacheDir;
-            qFatal("Failed to create data directory.");
-        }
-    }
-
-    if (Q_UNLIKELY(!cacheDir->exists())) {
-        if (!cacheDir->mkpath(cacheDir->absolutePath())) {
-            delete dataDir;
-            delete cacheDir;
-            delete qmlCacheDir;
-            qFatal("Failed to create cache directory.");
-        }
-    }
-
-    if (Q_UNLIKELY(!qmlCacheDir->exists())) {
-        if (!qmlCacheDir->mkpath(qmlCacheDir->absolutePath())) {
-            delete dataDir;
-            delete cacheDir;
-            delete qmlCacheDir;
-            qFatal("Failed to create qml cache directory.");
-        }
-    }
-
     QScopedPointer<QNetworkDiskCache> dk(new QNetworkDiskCache);
-    dk->setCacheDirectory(qmlCacheDir->absolutePath());
 
-    delete dataDir;
-    delete cacheDir;
-    delete qmlCacheDir;
+    {
+        QDir dataDir(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
+        QDir cacheDir(QStandardPaths::writableLocation(QStandardPaths::CacheLocation));
+        QDir qmlCacheDir(cacheDir.absolutePath() + QStringLiteral("/qmlcache"));
+
+        if (Q_UNLIKELY(!dataDir.exists())) {
+            if (Q_UNLIKELY(!dataDir.mkpath(dataDir.absolutePath()))) {
+                qFatal("Failed to create data directory.");
+            }
+        }
+
+        if (Q_UNLIKELY(!cacheDir.exists())) {
+            if (Q_UNLIKELY(!cacheDir.mkpath(cacheDir.absolutePath()))) {
+                qFatal("Failed to create cache directory.");
+            }
+        }
+
+        if (Q_UNLIKELY(!qmlCacheDir.exists())) {
+            if (Q_UNLIKELY(!qmlCacheDir.mkpath(qmlCacheDir.absolutePath()))) {
+                qFatal("Failed to create qml cache directory.");
+            }
+        }
+
+        dk->setCacheDirectory(qmlCacheDir.absolutePath());
+    }
 
     QScopedPointer<Configuration> config(new Configuration);
 
@@ -105,25 +95,27 @@ int main(int argc, char *argv[])
         QLocale::setDefault(QLocale::system());
     }
 
+    {
 #ifndef CLAZY
-    const QString l10nDir = SailfishApp::pathTo(QStringLiteral("l10n")).toString(QUrl::RemoveScheme);
+        const QString l10nDir = SailfishApp::pathTo(QStringLiteral("l10n")).toString(QUrl::RemoveScheme);
 #else
-    const QString l10nDir;
+        const QString l10nDir;
 #endif
 
-    QTranslator *appTrans = new QTranslator(app.data());
-    if (Q_LIKELY(appTrans->load(QLocale(), QStringLiteral("intfuorit"), QStringLiteral("_"), l10nDir, QStringLiteral(".qm")))) {
-        app->installTranslator(appTrans);
-    }
+        QTranslator *appTrans = new QTranslator(app.data());
+        if (Q_LIKELY(appTrans->load(QLocale(), QStringLiteral("intfuorit"), QStringLiteral("_"), l10nDir, QStringLiteral(".qm")))) {
+            app->installTranslator(appTrans);
+        }
 
-    QTranslator *libTrans = new QTranslator(app.data());
-    if (Q_LIKELY(libTrans->load(QLocale(), QStringLiteral("libintfuorit"), QStringLiteral("_"), l10nDir, QStringLiteral(".qm")))) {
-        app->installTranslator(libTrans);
-    }
+        QTranslator *libTrans = new QTranslator(app.data());
+        if (Q_LIKELY(libTrans->load(QLocale(), QStringLiteral("libintfuorit"), QStringLiteral("_"), l10nDir, QStringLiteral(".qm")))) {
+            app->installTranslator(libTrans);
+        }
 
-    QTranslator *btscTrans = new QTranslator(app.data());
-    if (Q_LIKELY(btscTrans->load(QLocale(), QStringLiteral("btsc"), QStringLiteral("_"), l10nDir, QStringLiteral(".qm")))) {
-        app->installTranslator(btscTrans);
+        QTranslator *btscTrans = new QTranslator(app.data());
+        if (Q_LIKELY(btscTrans->load(QLocale(), QStringLiteral("btsc"), QStringLiteral("_"), l10nDir, QStringLiteral(".qm")))) {
+            app->installTranslator(btscTrans);
+        }
     }
 
     LanguageModel::setSupportedLangs(QStringList({QStringLiteral("en_US"), QStringLiteral("en_GB"), QStringLiteral("de"), QStringLiteral("sv")}));
