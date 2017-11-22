@@ -130,7 +130,7 @@ void LanguageModel::init()
 
     endInsertRows();
 
-    qDebug("Initialized language model with %u languages.", m_langs.size());
+    qDebug("Initialized language model with %lu languages.", m_langs.size());
 }
 
 
@@ -142,7 +142,7 @@ int LanguageModel::findIndex(const QString &langCode) const
         for (size_t i = 0; i < m_langs.size(); ++i) {
             if (m_langs.at(i).first == langCode) {
                 idx = static_cast<int>(i);
-                qDebug("Found index for language \"%s\" at %i in model with %u items.", qUtf8Printable(langCode), idx, m_langs.size());
+                qDebug("Found index for language \"%s\" at %i in model with %lu items.", qUtf8Printable(langCode), idx, m_langs.size());
                 break;
             }
         }
@@ -150,7 +150,7 @@ int LanguageModel::findIndex(const QString &langCode) const
 
 #ifdef QT_DEBUG
     if (idx < 0) {
-        qDebug("Did not find index for language \"%s\" in model with %u items.", qUtf8Printable(langCode), m_langs.size());
+        qDebug("Did not find index for language \"%s\" in model with %lu items.", qUtf8Printable(langCode), m_langs.size());
     }
 #endif
 

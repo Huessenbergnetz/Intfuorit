@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 
     auto dataDir = new QDir(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
     auto cacheDir = new QDir(QStandardPaths::writableLocation(QStandardPaths::CacheLocation));
-    auto qmlCacheDir = new QDir(cacheDir->absolutePath() + QLatin1String("/qmlcache"));
+    auto qmlCacheDir = new QDir(cacheDir->absolutePath() + QStringLiteral("/qmlcache"));
 
     if (Q_UNLIKELY(!dataDir->exists())) {
         if (!dataDir->mkpath(dataDir->absolutePath())) {

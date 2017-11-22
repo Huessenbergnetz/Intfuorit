@@ -26,6 +26,7 @@ class QNetworkDiskCache;
 
 class NamFactory : public QQmlNetworkAccessManagerFactory
 {
+    Q_DISABLE_COPY(NamFactory)
 public:
     NamFactory(QNetworkDiskCache *dk);
 
