@@ -19,15 +19,15 @@
     </message>
     <message id="intfuorit-sort-by-label">
         <source>Sort by</source>
-        <translation>Sortera efter</translation>
+        <translation>Sortera</translation>
     </message>
     <message id="intfuorit-sort-role-title">
         <source>Title</source>
-        <translation>Titel</translation>
+        <translation>namn</translation>
     </message>
     <message id="intfuorit-sort-role-pwncount">
         <source>Count</source>
-        <translation>Antal</translation>
+        <translation>antal</translation>
     </message>
     <message id="intfuorit-affected-accounts-label">
         <source>Affected accounts</source>
@@ -56,11 +56,11 @@
     </message>
     <message id="intfuorit-order-descending">
         <source>Descending</source>
-        <translation>Sjunkande</translation>
+        <translation>sjunkande</translation>
     </message>
     <message id="intfuorit-filter-title-domain-placeholder">
         <source>Filter by title or domain</source>
-        <translation>Filtrera efter titel eller domän</translation>
+        <translation>Filtrera efter namn/domän</translation>
     </message>
     <message id="intfuorit-check-account-header">
         <source>Check account</source>
