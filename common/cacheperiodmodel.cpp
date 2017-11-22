@@ -127,7 +127,7 @@ void CachePeriodModel::init()
 
     endInsertRows();
 
-    qDebug("Initialized cache period model with %lu periods.", m_periods.size());
+    qDebug("Initialized cache period model with %u periods.", m_periods.size());
 }
 
 
@@ -139,7 +139,7 @@ int CachePeriodModel::findIndex(quint32 period) const
         for (size_t i = 0; i < m_periods.size(); ++i) {
             if (m_periods.at(i).first == period) {
                 idx = static_cast<int>(i);
-                qDebug("Found index for period %u at %i in model with %lu items.", period, idx, m_periods.size());
+                qDebug("Found index for period %u at %i in model with %u items.", period, idx, m_periods.size());
                 break;
             }
         }
@@ -147,7 +147,7 @@ int CachePeriodModel::findIndex(quint32 period) const
 
 #ifdef QT_DEBUG
     if (idx < 0) {
-        qDebug("Did not find index for period %u in model with %lu items.", period, m_periods.size());
+        qDebug("Did not find index for period %u in model with %u items.", period, m_periods.size());
     }
 #endif
 
