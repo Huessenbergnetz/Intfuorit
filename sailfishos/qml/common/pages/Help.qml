@@ -60,6 +60,112 @@ Page {
                 }
             }
 
+            Text {
+                anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
+                color: Theme.highlightColor
+                font.pixelSize: Theme.fontSizeMedium
+                textFormat: Text.PlainText
+                wrapMode: Text.WordWrap
+                //% "Meaning of the icons"
+                text: qsTrId("intfuorit-icon-meanings")
+            }
+
+            Item {
+                anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
+                height: iconsCol.height
+
+                Column {
+                    id: iconsCol
+                    width: parent.width
+                    spacing: 0
+
+                    Row {
+                        width: parent.width
+                        spacing: Theme.paddingMedium
+
+                        Image {
+                            source: "image://intfuorit/icon-s-sensitive-breach"
+                        }
+
+                        Text {
+                            color: Theme.primaryColor
+                            font.pixelSize: Theme.fontSizeSmall
+                            textFormat: Text.PlainText
+                            wrapMode: Text.WordWrap
+                            text: qsTrId("intfuorit-sensitive-breach-hint")
+                        }
+                    }
+
+                    Row {
+                        width: parent.width
+                        spacing: Theme.paddingMedium
+
+                        Image {
+                            source: "image://intfuorit/icon-s-retired-breach"
+                        }
+
+                        Text {
+                            color: Theme.primaryColor
+                            font.pixelSize: Theme.fontSizeSmall
+                            textFormat: Text.PlainText
+                            wrapMode: Text.WordWrap
+                            text: qsTrId("intfuorit-retired-breach-hint")
+                        }
+                    }
+
+                    Row {
+                        width: parent.width
+                        spacing: Theme.paddingMedium
+
+                        Image {
+                            source: "image://intfuorit/icon-s-unverified-breach"
+                        }
+
+                        Text {
+                            color: Theme.primaryColor
+                            font.pixelSize: Theme.fontSizeSmall
+                            textFormat: Text.PlainText
+                            wrapMode: Text.WordWrap
+                            text: qsTrId("intfuorit-unverified-breach-hint")
+                        }
+                    }
+
+                    Row {
+                        width: parent.width
+                        spacing: Theme.paddingMedium
+
+                        Image {
+                            source: "image://intfuorit/icon-s-fabricated-breach"
+                        }
+
+                        Text {
+                            color: Theme.primaryColor
+                            font.pixelSize: Theme.fontSizeSmall
+                            textFormat: Text.PlainText
+                            wrapMode: Text.WordWrap
+                            text: qsTrId("intfuorit-fabricated-breach-hint")
+                        }
+                    }
+
+                    Row {
+                        width: parent.width
+                        spacing: Theme.paddingMedium
+
+                        Image {
+                            source: "image://intfuorit/icon-s-spam-list"
+                        }
+
+                        Text {
+                            color: Theme.primaryColor
+                            font.pixelSize: Theme.fontSizeSmall
+                            textFormat: Text.PlainText
+                            wrapMode: Text.WordWrap
+                            text: qsTrId("intfuorit-spam-list-hint")
+                        }
+                    }
+                }
+            }
+
             Item {
                 width: parent.width
                 height: Theme.paddingLarge
