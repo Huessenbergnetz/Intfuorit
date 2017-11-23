@@ -34,7 +34,7 @@ ListModel {
     ListElement {
         name: "BT SFOS Components"
         author: "Matthias Fehring"
-        version: "1.1.2"
+        version: "1.1.3"
         license: "Modified BSD License"
         licenseFile: "BSD-3.qml"
         website: "https://github.com/Buschtrommel/BT_SFOS_Components"
@@ -79,6 +79,14 @@ ListModel {
         license: "Modified BSD License"
         licenseFile: "BSD-3.qml"
         website: "https://sailfishos.org/develop/docs/silica/"
+    }
+
+    ListElement {
+        name: "Font Awesome"
+        author: "Dave Gandy"
+        license: "SIL Open Font License 1.1"
+        licenseFile: "SIL-OFL-1_1.qml"
+        website: "http://fontawesome.io/"
     }
 
     Component.onCompleted: {
