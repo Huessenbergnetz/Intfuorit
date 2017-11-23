@@ -84,6 +84,7 @@ Page {
                         spacing: Theme.paddingMedium
 
                         Image {
+                            id: sensitiveIcon
                             source: "image://intfuorit/icon-s-sensitive-breach"
                         }
 
@@ -93,6 +94,7 @@ Page {
                             textFormat: Text.PlainText
                             wrapMode: Text.WordWrap
                             text: qsTrId("intfuorit-sensitive-breach-hint")
+                            width: parent.width - sensitiveIcon.width - parent.spacing
                         }
                     }
 
@@ -101,6 +103,7 @@ Page {
                         spacing: Theme.paddingMedium
 
                         Image {
+                            id: retiredIcon
                             source: "image://intfuorit/icon-s-retired-breach"
                         }
 
@@ -110,6 +113,7 @@ Page {
                             textFormat: Text.PlainText
                             wrapMode: Text.WordWrap
                             text: qsTrId("intfuorit-retired-breach-hint")
+                            width: parent.width - retiredIcon.width - parent.spacing
                         }
                     }
 
@@ -118,6 +122,7 @@ Page {
                         spacing: Theme.paddingMedium
 
                         Image {
+                            id: unverifiedIcon
                             source: "image://intfuorit/icon-s-unverified-breach"
                         }
 
@@ -127,6 +132,7 @@ Page {
                             textFormat: Text.PlainText
                             wrapMode: Text.WordWrap
                             text: qsTrId("intfuorit-unverified-breach-hint")
+                            width: parent.width - fabricatedIcon.width - parent.spacing
                         }
                     }
 
@@ -135,6 +141,7 @@ Page {
                         spacing: Theme.paddingMedium
 
                         Image {
+                            id: fabricatedIcon
                             source: "image://intfuorit/icon-s-fabricated-breach"
                         }
 
@@ -144,6 +151,7 @@ Page {
                             textFormat: Text.PlainText
                             wrapMode: Text.WordWrap
                             text: qsTrId("intfuorit-fabricated-breach-hint")
+                            width: parent.width - fabricatedIcon.width - parent.spacing
                         }
                     }
 
@@ -152,6 +160,7 @@ Page {
                         spacing: Theme.paddingMedium
 
                         Image {
+                            id: spamListIcon
                             source: "image://intfuorit/icon-s-spam-list"
                         }
 
@@ -161,6 +170,7 @@ Page {
                             textFormat: Text.PlainText
                             wrapMode: Text.WordWrap
                             text: qsTrId("intfuorit-spam-list-hint")
+                            width: parent.width - spamListIcon.width - parent.spacing
                         }
                     }
                 }
