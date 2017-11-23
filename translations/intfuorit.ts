@@ -438,5 +438,13 @@
         <source>Spam list, used for spam marketing</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="intfuorit-sort-role-breachdate">
+        <source>Breach date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-sort-role-addeddate">
+        <source>Added date</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

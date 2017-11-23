@@ -89,6 +89,10 @@ Page {
                     MenuItem { text: qsTrId("intfuorit-sort-role-title"); readonly property int value: BreachesListModel.Title }
                     //% "Count"
                     MenuItem { text: qsTrId("intfuorit-sort-role-pwncount"); readonly property int value: BreachesListModel.PwnCount }
+                    //% "Breach date"
+                    MenuItem { text: qsTrId("intfuorit-sort-role-breachdate"); readonly property int value: BreachesListModel.BreachDate }
+                    //% "Added date"
+                    MenuItem { text: qsTrId("intfuorit-sort-role-addeddate"); readonly property int value: BreachesListModel.AddedDate }
                 }
                 onCurrentIndexChanged: if (currentItem) { blfm.sortRole = currentItem.value }
                 currentIndex: 1

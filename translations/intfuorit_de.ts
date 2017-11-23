@@ -430,5 +430,13 @@
         <source>Spam list, used for spam marketing</source>
         <translation>Spam-Liste, für die Verteilung von Spam genutzt</translation>
     </message>
+    <message id="intfuorit-sort-role-breachdate">
+        <source>Breach date</source>
+        <translation>Einbruchsdatum</translation>
+    </message>
+    <message id="intfuorit-sort-role-addeddate">
+        <source>Added date</source>
+        <translation>Hinzugefügt</translation>
+    </message>
 </context>
 </TS>
