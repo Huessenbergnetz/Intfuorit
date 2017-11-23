@@ -406,5 +406,29 @@
         <source>Thanks to</source>
         <translation>Tack till</translation>
     </message>
+    <message id="intfuorit-icon-meanings">
+        <source>Meaning of the icons</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-sensitive-breach-hint">
+        <source>Sensitive breach, not publicly searchable</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-retired-breach-hint">
+        <source>Retired breach, removed from system</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-unverified-breach-hint">
+        <source>Unverified breach, may be sourced from elsewhere</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-fabricated-breach-hint">
+        <source>Fabricated breach, likely not legitimate</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-spam-list-hint">
+        <source>Spam list, used for spam marketing</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 </TS>

@@ -406,5 +406,29 @@
         <source>Thanks to</source>
         <translation>Danke an</translation>
     </message>
+    <message id="intfuorit-icon-meanings">
+        <source>Meaning of the icons</source>
+        <translation>Bedeutung der Symbole</translation>
+    </message>
+    <message id="intfuorit-sensitive-breach-hint">
+        <source>Sensitive breach, not publicly searchable</source>
+        <translation>Heikler Einbruch, nicht öffentlich durchsuchbar.</translation>
+    </message>
+    <message id="intfuorit-retired-breach-hint">
+        <source>Retired breach, removed from system</source>
+        <translation>Pensionierter Einbruch, aus dem System entfernt</translation>
+    </message>
+    <message id="intfuorit-unverified-breach-hint">
+        <source>Unverified breach, may be sourced from elsewhere</source>
+        <translation>Unbestätigter Einbruch, kann von woanders stammen</translation>
+    </message>
+    <message id="intfuorit-fabricated-breach-hint">
+        <source>Fabricated breach, likely not legitimate</source>
+        <translation>Fabrizierter Einbruch, wahrscheinlich nicht echt</translation>
+    </message>
+    <message id="intfuorit-spam-list-hint">
+        <source>Spam list, used for spam marketing</source>
+        <translation>Spam-Liste, für die Verteilung von Spam genutzt</translation>
+    </message>
 </context>
 </TS>
