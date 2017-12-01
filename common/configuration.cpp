@@ -88,3 +88,5 @@ void Configuration::setIncludeUnverified(bool nIncludeUnverified)
         emit includeUnverifiedChanged(m_includeUnverified);
     }
 }
+
+#include "moc_configuration.cpp"

@@ -123,3 +123,5 @@ int CachePeriodModel::findIndex(quint32 period) const
 
     return idx;
 }
+
+#include "moc_cacheperiodmodel.cpp"
