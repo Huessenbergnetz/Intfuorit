@@ -22,6 +22,7 @@
 #include <QAbstractListModel>
 #include <QStringList>
 #include <vector>
+#include <utility>
 
 class LanguageModel : public QAbstractListModel
 {
@@ -30,7 +31,7 @@ class LanguageModel : public QAbstractListModel
 public:
     explicit LanguageModel(QObject *parent = nullptr);
 
-    ~LanguageModel();
+    ~LanguageModel() override;
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QModelIndex index(int row, int column = 0, const QModelIndex &parent = QModelIndex()) const override;
@@ -48,8 +49,6 @@ private:
     };
 
     static QStringList m_supportedLangs;
-
-    void init();
 
     std::vector<std::pair<QString,QString>> m_langs;
 };

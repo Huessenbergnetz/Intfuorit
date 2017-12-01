@@ -19,12 +19,43 @@
 #include "languagemodel.h"
 #include <QLocale>
 #include <QStringBuilder>
+#include <algorithm>
 
 QStringList LanguageModel::m_supportedLangs = QStringList();
 
+bool langLessThan(const std::pair<QString,QString> &a, const std::pair<QString,QString> &b)
+{
+    return (QString::localeAwareCompare(a.second, b.second) < 0);
+}
+
 LanguageModel::LanguageModel(QObject *parent) : QAbstractListModel(parent)
 {
-    init();
+    m_langs.reserve(m_supportedLangs.size() + 1);
+
+    beginInsertRows(QModelIndex(), 0, LanguageModel::m_supportedLangs.size());
+
+    if (!LanguageModel::m_supportedLangs.empty()) {
+
+        const QStringList _supList = m_supportedLangs;
+        for (const QString &supLang : _supList) {
+            QLocale locale(supLang);
+            const QString langName = locale.nativeLanguageName() % QLatin1String(" (") % QLocale::languageToString(locale.language()) % QLatin1Char(')');
+            m_langs.push_back(std::make_pair(supLang, langName));
+        }
+
+        std::sort(m_langs.begin(), m_langs.end(), langLessThan);
+
+        //% "Default"
+        m_langs.insert(m_langs.begin(), std::make_pair(QStringLiteral(""), qtTrId("intfuorit-default-lang")));
+
+    } else {
+
+        m_langs.push_back(std::make_pair(QStringLiteral(""), qtTrId("intfuorit-default-lang")));
+    }
+
+    endInsertRows();
+
+    qDebug("Initialized language model with %zu languages.", m_langs.size());
 }
 
 
@@ -89,60 +120,15 @@ void LanguageModel::setSupportedLangs(const QStringList &supportedLangs)
 }
 
 
-bool langLessThan(const std::pair<QString,QString> &a, const std::pair<QString,QString> &b)
-{
-    return (QString::localeAwareCompare(a.second, b.second) < 0);
-}
-
-
-void LanguageModel::init()
-{
-    m_langs.clear();
-
-    std::pair<QString,QString> defLang;
-    defLang.first = QStringLiteral("");
-    //% "Default"
-    defLang.second = qtTrId("intfuorit-default-lang");
-
-    m_langs.reserve(m_supportedLangs.size() + 1);
-
-    beginInsertRows(QModelIndex(), 0, LanguageModel::m_supportedLangs.size());
-
-    if (!LanguageModel::m_supportedLangs.empty()) {
-
-        const QStringList _supList = m_supportedLangs;
-        for (const QString &supLang : _supList) {
-            QLocale locale(supLang);
-            std::pair<QString,QString> l;
-            l.first = supLang;
-            l.second = locale.nativeLanguageName() % QLatin1String(" (") % QLocale::languageToString(locale.language()) % QLatin1Char(')');
-            m_langs.push_back(l);
-        }
-
-        std::sort(m_langs.begin(), m_langs.end(), langLessThan);
-
-        m_langs.insert(m_langs.begin(), defLang);
-
-    } else {
-
-        m_langs.push_back(defLang);
-    }
-
-    endInsertRows();
-
-    qDebug("Initialized language model with %u languages.", m_langs.size());
-}
-
-
 int LanguageModel::findIndex(const QString &langCode) const
 {
     int idx = -1;
 
     if (!m_langs.empty()) {
-        for (size_t i = 0; i < m_langs.size(); ++i) {
+        for (std::size_t i = 0; i < m_langs.size(); ++i) {
             if (m_langs.at(i).first == langCode) {
                 idx = static_cast<int>(i);
-                qDebug("Found index for language \"%s\" at %i in model with %u items.", qUtf8Printable(langCode), idx, m_langs.size());
+                qDebug("Found index for language \"%s\" at %i in model with %zu languages.", qUtf8Printable(langCode), idx, m_langs.size());
                 break;
             }
         }
@@ -150,7 +136,7 @@ int LanguageModel::findIndex(const QString &langCode) const
 
 #ifdef QT_DEBUG
     if (idx < 0) {
-        qDebug("Did not find index for language \"%s\" in model with %u items.", qUtf8Printable(langCode), m_langs.size());
+        qDebug("Did not find index for language \"%s\" in model with %zu languages.", qUtf8Printable(langCode), m_langs.size());
     }
 #endif
 

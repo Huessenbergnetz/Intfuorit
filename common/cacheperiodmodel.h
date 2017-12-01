@@ -21,6 +21,7 @@
 
 #include <QAbstractListModel>
 #include <vector>
+#include <utility>
 
 class CachePeriodModel : public QAbstractListModel
 {
@@ -29,7 +30,7 @@ class CachePeriodModel : public QAbstractListModel
 public:
     explicit CachePeriodModel(QObject *parent = nullptr);
 
-    ~CachePeriodModel();
+    ~CachePeriodModel() override;
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QModelIndex index(int row, int column = 0, const QModelIndex &parent = QModelIndex()) const override;
@@ -43,9 +44,6 @@ private:
         Period = Qt::UserRole + 1,
         Name
     };
-
-    void init();
-    void clear();
 
     std::vector<std::pair<quint32,QString>> m_periods;
 };
