@@ -30,6 +30,7 @@ PkgConfigBR:
   - Qt5Qml
   - Qt5Quick
   - Qt5Network
+  - sailfishsilica
 
 # Build dependencies without a pkgconfig setup can be listed here
 # PkgBR:
