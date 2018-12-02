@@ -138,7 +138,7 @@ int main(int argc, char *argv[])
     QScopedPointer<QQmlNetworkAccessManagerFactory> qmlNamFactory(new NamFactory(dk.data()));
     view->engine()->setNetworkAccessManagerFactory(qmlNamFactory.data());
 
-    view->rootContext()->setContextProperty(QStringLiteral("config"), config.data());
+    view->rootContext()->setContextProperty(QStringLiteral("config"), config);
     view->rootContext()->setContextProperty(QStringLiteral("intfuoritUserAgent"), QStringLiteral("Intfuorit %1 - SailfishOS Pwnage Checker").arg(QGuiApplication::applicationVersion()));
     view->rootContext()->setContextProperty(QStringLiteral("cccmmm"), QString::fromUtf8(QByteArray::fromBase64(QByteArrayLiteral("a29udGFrdEBodWVzc2VuYmVyZ25ldHouZGU="))));
 
