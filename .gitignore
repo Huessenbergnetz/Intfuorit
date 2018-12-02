@@ -1,5 +1,4 @@
 *.qm
-harbour-intfuorit.spec
 sailfishos/images/z*
 
 # C++ objects and libs
