@@ -60,6 +60,14 @@ int main(int argc, char *argv[])
     app->setApplicationDisplayName(QStringLiteral("Intfuorit"));
     app->setApplicationVersion(QStringLiteral(VERSION_STRING));
 
+    auto config = new Configuration(app.data());
+
+    if (!config->language().isEmpty()) {
+        QLocale::setDefault(QLocale(config->language()));
+    } else {
+        QLocale::setDefault(QLocale::system());
+    }
+
     QScopedPointer<QNetworkDiskCache> dk(new QNetworkDiskCache);
 
     {
@@ -88,34 +96,24 @@ int main(int argc, char *argv[])
         dk->setCacheDirectory(qmlCacheDir.absolutePath());
     }
 
-    auto config = new Configuration(app.data());
-
-    if (!config->language().isEmpty()) {
-        QLocale::setDefault(QLocale(config->language()));
-    } else {
-        QLocale::setDefault(QLocale::system());
-    }
-
     {
 #ifndef CLAZY
         const QString l10nDir = SailfishApp::pathTo(QStringLiteral("l10n")).toString(QUrl::RemoveScheme);
 #else
         const QString l10nDir;
 #endif
+        qDebug("Loading translations from %s", qUtf8Printable(l10nDir));
+        const QLocale locale;
 
-        QTranslator *appTrans = new QTranslator(app.data());
-        if (Q_LIKELY(appTrans->load(QLocale(), QStringLiteral("intfuorit"), QStringLiteral("_"), l10nDir, QStringLiteral(".qm")))) {
-            app->installTranslator(appTrans);
-        }
-
-        QTranslator *libTrans = new QTranslator(app.data());
-        if (Q_LIKELY(libTrans->load(QLocale(), QStringLiteral("libintfuorit"), QStringLiteral("_"), l10nDir, QStringLiteral(".qm")))) {
-            app->installTranslator(libTrans);
-        }
-
-        QTranslator *btscTrans = new QTranslator(app.data());
-        if (Q_LIKELY(btscTrans->load(QLocale(), QStringLiteral("btsc"), QStringLiteral("_"), l10nDir, QStringLiteral(".qm")))) {
-            app->installTranslator(btscTrans);
+        for (const QString &name : {QStringLiteral("intfuorit"), QStringLiteral("libintfuorit"), QStringLiteral("btsc")}) {
+            auto trans = new QTranslator(app.data());
+            if (Q_LIKELY(trans->load(locale, name, QStringLiteral("_"), l10nDir, QStringLiteral(".qm")))) {
+                if (Q_UNLIKELY(!app->installTranslator(trans))) {
+                    qWarning("Can not install translator for component \"%s\" and locale \"%s\".", qUtf8Printable(name), qUtf8Printable(locale.name()));
+                }
+            } else {
+                qWarning("Can not load translations for component \"%s\" and locale \"%s\".", qUtf8Printable(name), qUtf8Printable(locale.name()));
+            }
         }
     }
 
