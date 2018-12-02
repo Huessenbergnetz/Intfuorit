@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
         dk->setCacheDirectory(qmlCacheDir.absolutePath());
     }
 
-    QScopedPointer<Configuration> config(new Configuration);
+    auto config = new Configuration(app.data());
 
     if (!config->language().isEmpty()) {
         QLocale::setDefault(QLocale(config->language()));
