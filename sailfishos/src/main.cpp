@@ -119,7 +119,9 @@ int main(int argc, char *argv[])
 
     LanguageModel::setSupportedLangs(QStringList({QStringLiteral("en_US"), QStringLiteral("en_GB"), QStringLiteral("de"), QStringLiteral("sv")}));
 
-    qmlRegisterType<Intfuorit::Error>("harbour.intfuorit", 1, 0, "IntfuoritError");
+    qRegisterMetaType<Intfuorit::Error>();
+    QMetaType::registerEqualsComparator<Intfuorit::Error>();
+    qmlRegisterUncreatableType<Intfuorit::Error>("harbour.intfuorit", 1, 0, "Error", QStringLiteral("Can not create Error in QML!"));
     qmlRegisterType<Intfuorit::Breach>("harbour.intfuorit", 1, 0, "Breach");
     qmlRegisterType<Intfuorit::BreachesListModel>("harbour.intfuorit", 1, 0, "BreachesListModel");
     qmlRegisterType<Intfuorit::BreachesListFilterModel>("harbour.intfuorit", 1, 0, "BreachesListFilterModel");
