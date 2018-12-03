@@ -186,7 +186,7 @@ Page {
 
         ViewPlaceholder {
             id: emptyListVp
-            enabled: !blfm.error && !blfm.inOperation && !breachesGridView.count
+            enabled: blfm.error.type === Error.NoError && !blfm.inOperation && !breachesGridView.count
             //% "Nothing found"
             text: qsTrId("intfuorit-nothing-found")
             //% "There is no breached site matching your filter."
@@ -195,10 +195,10 @@ Page {
 
         ViewPlaceholder {
             id: errorPh
-            enabled: !blfm.inOperation && blfm.error && (blfm.error.type !== IntfuoritError.NoError)
+            enabled: !blfm.inOperation && blfm.error.type !== Error.NoError
             //% "Error"
             text: qsTrId("intfuorit-error")
-            hintText: blfm.error ? blfm.error.text : ""
+            hintText: blfm.error.text
         }
 
         footer: Item {

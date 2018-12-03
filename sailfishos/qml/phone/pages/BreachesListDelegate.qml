@@ -36,7 +36,7 @@ ListItem {
             id: logo
             height: textCol.height
             width: height * 1.5
-            source: "https://haveibeenpwned.com/Content/Images/PwnedLogos/" + model.name + "." + model.logoType
+            source: model.logoPath
             fillMode: Image.PreserveAspectFit
         }
 

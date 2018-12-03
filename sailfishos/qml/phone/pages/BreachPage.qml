@@ -49,7 +49,7 @@ Page {
 
             Image {
                 anchors.horizontalCenter: parent.horizontalCenter
-                source: "https://haveibeenpwned.com/Content/Images/PwnedLogos/" + breach.name + "." + breach.logoType
+                source: breach.logoPath
                 fillMode: Image.PreserveAspectFit
                 height: Theme.iconSizeExtraLarge
             }

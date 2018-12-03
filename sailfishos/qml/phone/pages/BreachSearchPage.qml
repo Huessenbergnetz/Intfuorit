@@ -211,7 +211,7 @@ Page {
                 id: breachesError
                 Layout.columnSpan: breachSearchGrid.columns
                 Layout.fillWidth: true
-                visible: blm.error
+                visible: blm.error.type !== Error.NoError
 
                 Label {
                     id: breachesErrorLabel
@@ -228,7 +228,7 @@ Page {
                     horizontalAlignment: Text.AlignHCenter
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     color: Theme.secondaryHighlightColor
-                    text: blm.error ? blm.error.text : ""
+                    text: blm.error.text
                 }
             }
 
@@ -311,7 +311,7 @@ Page {
                 id: pastesError
                 Layout.columnSpan: breachSearchGrid.columns
                 Layout.fillWidth: true
-                visible: plm.error
+                visible: plm.error.type !== Error.NoError
 
                 Label {
                     id: pastesErrorLabel
@@ -328,7 +328,7 @@ Page {
                     horizontalAlignment: Text.AlignHCenter
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     color: Theme.secondaryHighlightColor
-                    text: plm.error ? plm.error.text : ""
+                    text: plm.error.text
                 }
             }
 
