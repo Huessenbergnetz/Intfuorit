@@ -14,7 +14,7 @@
    height="86"
    id="svg2"
    version="1.1"
-   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="harbour-intfuorit.svg"
    inkscape:export-filename="/home/buschmann/Dokumente/Entwicklung/Projekte/Intfuorit/sailfishos/icons/256x256/harbour-intfuorit.png"
    inkscape:export-xdpi="285.76746"
@@ -52,14 +52,14 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="4"
-     inkscape:cx="-57.184254"
-     inkscape:cy="36.697546"
+     inkscape:cx="30.940746"
+     inkscape:cy="6.447546"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1051"
-     inkscape:window-x="0"
+     inkscape:window-width="1280"
+     inkscape:window-height="995"
+     inkscape:window-x="1920"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-bbox="true"
@@ -80,7 +80,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -90,23 +90,27 @@
      inkscape:label="Ebene"
      style="display:inline"
      transform="translate(0,-4)">
-    <path
-       style="display:inline;fill:url(#linearGradient3911);fill-opacity:1;stroke:#ffffff;stroke-width:4.71141577;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 83.644292,47 C 83.644292,24.552778 65.447222,6.3557079 43,6.3557079 H 4.4443728 c -1.1610772,0 -2.0886649,0.9275876 -2.0886649,2.088665 V 47 85.555628 c 0,1.161075 0.9275877,2.088664 2.0886649,2.088664 H 43 c 22.447222,0 40.644292,-18.19707 40.644292,-40.644292 z"
-       id="rect3059"
-       inkscape:connector-curvature="0" />
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot4531"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;line-height:25px;font-family:Verdana;-inkscape-font-specification:Verdana;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="matrix(2.0377668,0,0,2.0377668,-9.0585737,-41.027644)"><flowRegion
-         id="flowRegion4533"
-         style="font-size:32px;fill:#ffffff;fill-opacity:1"><rect
-           id="rect4535"
-           width="55"
-           height="25"
-           x="10"
-           y="31"
-           style="font-size:32px;fill:#ffffff;fill-opacity:1" /></flowRegion><flowPara
-         id="flowPara4537">';--</flowPara></flowRoot>  </g>
+    <g
+       id="g830"
+       transform="matrix(0.98286181,0,0,0.98286182,0.73694201,0.80549429)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3059"
+         d="M 83.644292,47 C 83.644292,24.552778 65.447222,6.3557079 43,6.3557079 H 4.4443728 c -1.1610772,0 -2.0886649,0.9275876 -2.0886649,2.088665 V 47 85.555628 c 0,1.161075 0.9275877,2.088664 2.0886649,2.088664 H 43 c 22.447222,0 40.644292,-18.19707 40.644292,-40.644292 z"
+         style="display:inline;fill:url(#linearGradient3911);fill-opacity:1;stroke:#ffffff;stroke-width:6.21099997;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <flowRoot
+         transform="matrix(2.0377668,0,0,2.0377668,-9.0585737,-41.027644)"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;line-height:25px;font-family:Verdana;-inkscape-font-specification:Verdana;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         id="flowRoot4531"
+         xml:space="preserve"><flowRegion
+           style="font-size:32px;fill:#ffffff;fill-opacity:1"
+           id="flowRegion4533"><rect
+             style="font-size:32px;fill:#ffffff;fill-opacity:1"
+             y="31"
+             x="10"
+             height="25"
+             width="55"
+             id="rect4535" /></flowRegion><flowPara
+           id="flowPara4537">';--</flowPara></flowRoot>    </g>
+  </g>
 </svg>
