@@ -25,7 +25,20 @@ Page {
     id: breachPage
     allowedOrientations: Orientation.All
 
-    property Breach breach
+    property alias title: bTitle.title
+    property alias domain: bTitle.description
+    property alias logoPath: bLogo.source
+    property alias pwnCount: bPwnCount.value
+    property alias breachDate: bBreachDate.value
+    property alias addedDate: bAddedDate.value
+    property alias modifiedDate: bModifiedDate.value
+    property alias isSensitive: bIsSensitive.visible
+    property alias isVerified: bIsVerified.visible
+    property alias isFabricated: bIsFrabricated.visible
+    property alias isRetired: bIsRetired.visible
+    property alias isSpamList: bIsSpamList.visible
+    property alias description: bDescription.text
+    property alias dataClasses: bDataClasses.text
 
     SilicaFlickable {
         id: breachPageFlick
@@ -42,41 +55,40 @@ Page {
             width: parent.width
 
             PageHeader {
-                title: breach.title
-                description: breach.domain
+                id: bTitle
                 page: breachPage
             }
 
             Image {
+                id: bLogo
                 anchors.horizontalCenter: parent.horizontalCenter
-                source: breach.logoPath
                 fillMode: Image.PreserveAspectFit
                 height: Theme.iconSizeExtraLarge
             }
 
             DetailItem {
+                id: bPwnCount
                 //% "Affected accounts"
                 label: qsTrId("intfuorit-affected-accounts-label")
-                value: breach.pwnCount.toLocaleString(Qt.locale(), 'f', 0)
             }
 
             DetailItem {
+                id: bBreachDate
                 //% "Breach date"
                 label: qsTrId("intfuorit-breach-date-label")
-                value: breach.breachDate.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
             }
 
             DetailItem {
+                id: bAddedDate
                 //% "Added to HIBP"
                 label: qsTrId("intfuorit-added-to-hibp-label")
-                value: breach.addedDate.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
             }
 
             DetailItem {
+                id: bModifiedDate
                 //% "Modified on HIBP"
                 label: qsTrId("intfuorit-modified-on-hibp-label")
-                value: breach.modifiedDate.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
-                visible: breach.modifiedDate !== breach.addedDate
+                visible: value !== bAddedDate.value
             }
 
             Row {
@@ -84,38 +96,38 @@ Page {
                 spacing: Theme.paddingLarge
 
                 IconWithHint {
+                    id: bIsSensitive
                     icon.source: "image://intfuorit/icon-m-sensitive-breach"
                     //% "Sensitive breach, not publicly searchable"
                     hintText: qsTrId("intfuorit-sensitive-breach-hint")
-                    visible: breach.isSensitive
                 }
 
                 IconWithHint {
+                    id: bIsVerified
                     icon.source: "image://intfuorit/icon-m-unverified-breach"
                     //% "Unverified breach, may be sourced from elsewhere"
                     hintText: qsTrId("intfuorit-unverified-breach-hint")
-                    visible: !breach.isVerified
                 }
 
                 IconWithHint {
+                    id: bIsFrabricated
                     icon.source: "image://intfuorit/icon-m-fabricated-breach"
                     //% "Fabricated breach, likely not legitimate"
                     hintText: qsTrId("intfuorit-fabricated-breach-hint")
-                    visible: breach.isFabricated
                 }
 
                 IconWithHint {
+                    id: bIsRetired
                     icon.source: "image://intfuorit/icon-m-retired-breach"
                     //% "Retired breach, removed from system"
                     hintText: qsTrId("intfuorit-retired-breach-hint")
-                    visible: breach.isRetired
                 }
 
                 IconWithHint {
+                    id: bIsSpamList
                     icon.source: "image://intfuorit/icon-m-spam-list"
                     //% "Spam list, used for spam marketing"
                     hintText: qsTrId("intfuorit-spam-list-hint")
-                    visible: breach.isSpamList
                 }
             }
 
@@ -125,12 +137,12 @@ Page {
             }
 
             Text {
+                id: bDescription
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeSmall
                 textFormat: Text.StyledText
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                text: breach.description
                 linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally(link)
             }
@@ -141,12 +153,12 @@ Page {
             }
 
             Text {
+                id: bDataClasses
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeSmall
                 textFormat: Text.StyledText
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                text: breach.dataClassesTranslated.join(", ")
             }
 
             Item {

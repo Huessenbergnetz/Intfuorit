@@ -121,11 +121,13 @@ int main(int argc, char *argv[])
 
     qRegisterMetaType<Intfuorit::Error>();
     QMetaType::registerEqualsComparator<Intfuorit::Error>();
-    qmlRegisterUncreatableType<Intfuorit::Error>("harbour.intfuorit", 1, 0, "Error", QStringLiteral("Can not create Error in QML!"));
-    qmlRegisterType<Intfuorit::Breach>("harbour.intfuorit", 1, 0, "Breach");
+    qmlRegisterUncreatableType<Intfuorit::Error>("harbour.intfuorit", 1, 0, "Error", QStringLiteral("Can not create Intfuorit::Error in QML!"));
+    qRegisterMetaType<Intfuorit::Breach>();
+    QMetaType::registerEqualsComparator<Intfuorit::Breach>();
+    qRegisterMetaType<Intfuorit::Paste>();
+    QMetaType::registerEqualsComparator<Intfuorit::Paste>();
     qmlRegisterType<Intfuorit::BreachesListModel>("harbour.intfuorit", 1, 0, "BreachesListModel");
     qmlRegisterType<Intfuorit::BreachesListFilterModel>("harbour.intfuorit", 1, 0, "BreachesListFilterModel");
-    qmlRegisterType<Intfuorit::Paste>("harbour.intfuorit", 1, 0, "Paste");
     qmlRegisterType<Intfuorit::PastesListModel>("harbour.intfuorit", 1, 0, "PastesListModel");
     qmlRegisterType<LanguageModel>("harbour.intfuorit", 1, 0, "LanguageModel");
     qmlRegisterType<CachePeriodModel>("harbour.intfuorit", 1, 0, "CachePeriodModel");
@@ -145,7 +147,7 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty(QStringLiteral("cccmmm"), QString::fromUtf8(QByteArray::fromBase64(QByteArrayLiteral("a29udGFrdEBodWVzc2VuYmVyZ25ldHouZGU="))));
 
 #ifndef CLAZY
-    view->setSource(SailfishApp::pathTo(QStringLiteral("qml/harbour-intfuorit.qml")));
+    view->setSource(SailfishApp::pathToMainQml());
 #endif
 
     view->show();

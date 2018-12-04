@@ -26,7 +26,21 @@ ListItem {
     property string searchTerm
     property real countWidth
 
-    onClicked: pageStack.push(Qt.resolvedUrl("BreachPage.qml"), {breach: model.item})
+    onClicked: pageStack.push(Qt.resolvedUrl("BreachPage.qml"), {
+                              title: model.title,
+                              domain: model.domain,
+                              logoPath: model.logoPath,
+                              pwnCount: model.pwnCount.toLocaleString(Qt.locale(), 'f', 0),
+                              breachDate: model.breachDate.toLocaleDateString(Qt.locale(), Locale.ShortFormat),
+                              addedDate: model.addedDate.toLocaleDateString(Qt.locale(), Locale.ShortFormat),
+                              modifiedDate: model.modifiedDate.toLocaleDateString(Qt.locale(), Locale.ShortFormat),
+                              isSensitive: model.isSensitive,
+                              isVerified: !model.isVerified,
+                              isFabricated: model.isFabricated,
+                              isRetired: model.isRetired,
+                              isSpamList: model.isSpamList,
+                              description: model.description,
+                              dataClasses: model.dataClassesTranslatedString})
 
     Row {
         id: breachesListItemRow
