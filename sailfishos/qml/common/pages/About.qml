@@ -17,16 +17,17 @@
  */
 
 import QtQuick 2.6
-import harbour.intfuorit.btsc 1.0
+import de.huessenbergnetz.hbnsc 1.0
 import "../models"
 
 AboutPage {
     pageTitle: qsTrId("intfuorit-about")
     appTitle: "Intfuorit"
+    //: Description on the About page
     //% "Unofficial haveibeenpwned.com client"
     appDescription: qsTrId("intfuorit-app-description")
     appHomepage: "https://github.com/Huessenbergnetz/Intfuorit"
-    appCopyrightYear: "2017"
+    appCopyrightYear: "2017-2018"
     appCopyrightHolder: "Matthias Fehring"
     appLicense: "GNU General Public License, Version 3"
     appLicenseFile: "GPLv3.qml"
@@ -41,25 +42,21 @@ AboutPage {
     contactCity: "Willebadessen-Eissen"
     //% "Germany"
     contactCountry: qsTrId("intfuorit-germany")
-    contactEmail: cccmmm
+    contactEmail: Qt.atob("a29udGFrdEBodWVzc2VuYmVyZ25ldHouZGU=")
     contactWebsite: "www.huessenbergnetz.de"
     contactWebsiteLink: "https://www.huessenbergnetz.de"
 
     bugUrl: "https://github.com/Huessenbergnetz/Intfuorit/issues"
-    translateUrl: "https://www.transifex.com/buschtrommel/intfuorit/"
+    translateUrl: "https://www.transifex.com/huessenbergnetz/intfuorit/"
 
     licensesModel: LicensesModel {}
     changelogModel: ChangelogModel {}
     contributorsModel: ContributorsModel {}
     contributorsAvatarBasePath: "/usr/share/harbour-intfuorit/images/contributors"
-    contributorsPlaceholderPath: "/usr/share/harbour-intfuorit/images/contributors/placeholder.png"
 
     privacyPolicyQmlFile: Qt.resolvedUrl("PrivacyPolicy.qml")
 
     paypalOrganization: "Huessenbergnetz"
     paypalItem: "Intfuorit"
-    paypalEmail: cccmmm
-
-    bitcoinURI: "bitcoin:1JdTi61mX5n32jz1QzRAnZCsTo4f1daeBu?label=Intfuorit&message=Thank%20you%20for%20your%20donation%21"
-    bitcoinQRImage: Qt.resolvedUrl("/usr/share/harbour-intfuorit/images/intfuorit-bitcoin-donation.png")
+    paypalEmail: Qt.atob("a29udGFrdEBodWVzc2VuYmVyZ25ldHouZGU=")
 }

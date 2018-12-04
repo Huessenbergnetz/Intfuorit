@@ -88,7 +88,7 @@ ListModel {
         ppmodel.get(7).text = qsTrId("intfuorit-privacy-9")
         //% "Contact"
         ppmodel.get(8).text = qsTrId("intfuorit-privacy-10")
-        ppmodel.get(9).text = String("Hüssenbergnetz<br>Matthias Fehring<br>Zum Südholz 8<br>34439 Willebadessen-Eissen<br>%1<br><a href='https://www.huessenbergnetz.de'>www.huessenbergnetz.de</a><br><a href='mailto:%2'>%2</a>").arg(qsTrId("intfuorit-germany")).arg(cccmmm)
+        ppmodel.get(9).text = String("Hüssenbergnetz<br>Matthias Fehring<br>Zum Südholz 8<br>34439 Willebadessen-Eissen<br>%1<br><a href='https://www.huessenbergnetz.de'>www.huessenbergnetz.de</a><br><a href='mailto:%2'>%2</a>").arg(qsTrId("intfuorit-germany")).arg(Qt.atob("a29udGFrdEBodWVzc2VuYmVyZ25ldHouZGU="))
     }
 }
 

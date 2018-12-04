@@ -35,6 +35,7 @@
 #include <sailfishapp.h>
 #include "intfuoriticonprovider.h"
 #endif
+#include "hbnsciconprovider.h"
 
 #include <Intfuorit/Error>
 #include <Intfuorit/Objects/Breach>
@@ -105,7 +106,7 @@ int main(int argc, char *argv[])
         qDebug("Loading translations from %s", qUtf8Printable(l10nDir));
         const QLocale locale;
 
-        for (const QString &name : {QStringLiteral("intfuorit"), QStringLiteral("libintfuorit"), QStringLiteral("btsc")}) {
+        for (const QString &name : {QStringLiteral("intfuorit"), QStringLiteral("libintfuorit"), QStringLiteral("hbnsc")}) {
             auto trans = new QTranslator(app.data());
             if (Q_LIKELY(trans->load(locale, name, QStringLiteral("_"), l10nDir, QStringLiteral(".qm")))) {
                 if (Q_UNLIKELY(!app->installTranslator(trans))) {
@@ -135,6 +136,7 @@ int main(int argc, char *argv[])
 #ifndef CLAZY
     QScopedPointer<QQuickView> view(SailfishApp::createView());
     view->engine()->addImageProvider(QStringLiteral("intfuorit"), new IntfuoritIconProvider);
+    QScopedPointer<Hbnsc::HbnscIconProvider> hbnscIconProvider(new Hbnsc::HbnscIconProvider(view->engine()));
 #else
     QScopedPointer<QQuickView> view(new QQuickView);
 #endif
@@ -144,7 +146,6 @@ int main(int argc, char *argv[])
 
     view->rootContext()->setContextProperty(QStringLiteral("config"), config);
     view->rootContext()->setContextProperty(QStringLiteral("intfuoritUserAgent"), QStringLiteral("Intfuorit %1 - SailfishOS Pwnage Checker").arg(QGuiApplication::applicationVersion()));
-    view->rootContext()->setContextProperty(QStringLiteral("cccmmm"), QString::fromUtf8(QByteArray::fromBase64(QByteArrayLiteral("a29udGFrdEBodWVzc2VuYmVyZ25ldHouZGU="))));
 
 #ifndef CLAZY
     view->setSource(SailfishApp::pathToMainQml());

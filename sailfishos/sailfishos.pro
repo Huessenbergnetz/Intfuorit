@@ -40,15 +40,16 @@ include(../common/common.pri)
 LIBS += -L$$OUT_PWD/../libintfuorit -lintfuorit
 INCLUDEPATH += $$PWD/../libintfuorit
 
-PKGCONFIG += sailfishsilica
-INCLUDEPATH += /usr/include/libsailfishsilica
+!contains(CONFIG, clazy) {
+    PKGCONFIG += sailfishsilica
+}
 
 SOURCES += \
     src/main.cpp
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 
-isEmpty(INSTALL_TRANSLATIONS_DIR): INSTALL_TRANSLATIONS_DIR = /usr/share/harbour-fuoten/l10n
+isEmpty(INSTALL_TRANSLATIONS_DIR): INSTALL_TRANSLATIONS_DIR = /usr/share/harbour-intfuorit/l10n
 
 langfiles.path = $$INSTALL_TRANSLATIONS_DIR
 langfiles.files = ../translations/*.qm
@@ -79,3 +80,5 @@ DISTFILES += \
 
 HEADERS += \
     src/intfuoriticonprovider.h
+
+include(../HBN_SFOS_Components/HBN_SFOS_Components.pri)
