@@ -33,8 +33,8 @@
 
 #ifndef CLAZY
 #include <sailfishapp.h>
-#include "intfuoriticonprovider.h"
 #endif
+#include "hbnsc.h"
 #include "hbnsciconprovider.h"
 
 #include <Intfuorit/Error>
@@ -135,17 +135,18 @@ int main(int argc, char *argv[])
 
 #ifndef CLAZY
     QScopedPointer<QQuickView> view(SailfishApp::createView());
-    view->engine()->addImageProvider(QStringLiteral("intfuorit"), new IntfuoritIconProvider);
-    QScopedPointer<Hbnsc::HbnscIconProvider> hbnscIconProvider(new Hbnsc::HbnscIconProvider(view->engine()));
 #else
     QScopedPointer<QQuickView> view(new QQuickView);
 #endif
+    QScopedPointer<Hbnsc::BaseIconProvider> iconProvider(new Hbnsc::BaseIconProvider({1.0,1.25,1.5,1.75,2.0}, QString(), false, QStringLiteral("intfuorit"), view->engine()));
+    QScopedPointer<Hbnsc::HbnscIconProvider> hbnscIconProvider(new Hbnsc::HbnscIconProvider(view->engine()));
 
     QScopedPointer<QQmlNetworkAccessManagerFactory> qmlNamFactory(new NamFactory(dk.data()));
     view->engine()->setNetworkAccessManagerFactory(qmlNamFactory.data());
 
     view->rootContext()->setContextProperty(QStringLiteral("config"), config);
     view->rootContext()->setContextProperty(QStringLiteral("intfuoritUserAgent"), QStringLiteral("Intfuorit %1 - SailfishOS Pwnage Checker").arg(QGuiApplication::applicationVersion()));
+    view->rootContext()->setContextProperty(QStringLiteral("appLauncherIcon"), Hbnsc::getLauncherIcon({86,108,128,150,172}));
 
 #ifndef CLAZY
     view->setSource(SailfishApp::pathToMainQml());

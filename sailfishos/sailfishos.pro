@@ -79,7 +79,4 @@ DISTFILES += \
     qml/common/pages/Help.qml \
     qml/common/pages/Welcome.qml
 
-HEADERS += \
-    src/intfuoriticonprovider.h
-
 include(../HBN_SFOS_Components/HBN_SFOS_Components.pri)
