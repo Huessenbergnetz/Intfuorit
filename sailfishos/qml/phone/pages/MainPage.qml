@@ -79,34 +79,33 @@ Page {
         Item {
             Layout.preferredHeight: sortChooser.height
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.preferredWidth: mainPage.isLandscape ? (mainPageSorting.width/4) : (mainPageSorting.width/2)
+            Layout.fillWidth: true
+            Layout.columnSpan: 2
             ComboBox {
                 id: sortChooser
                 //% "Sort by"
                 label: qsTrId("intfuorit-sort-by-label")
                 menu: ContextMenu {
-                    //% "Title"
-                    MenuItem { text: qsTrId("intfuorit-sort-role-title"); readonly property int value: BreachesListModel.Title }
-                    //% "Count"
-                    MenuItem { text: qsTrId("intfuorit-sort-role-pwncount"); readonly property int value: BreachesListModel.PwnCount }
-                    //% "Breach date"
-                    MenuItem { text: qsTrId("intfuorit-sort-role-breachdate"); readonly property int value: BreachesListModel.BreachDate }
-                    //% "Added date"
-                    MenuItem { text: qsTrId("intfuorit-sort-role-addeddate"); readonly property int value: BreachesListModel.AddedDate }
+                    //% "Title (ascending)"
+                    MenuItem { text: qsTrId("intfuorit-sort-by-title-asc"); readonly property int role: BreachesListModel.Title; readonly property int order: Qt.AscendingOrder }
+                    //% "Title (descending)"
+                    MenuItem { text: qsTrId("intfuorit-sort-by-title-desc"); readonly property int role: BreachesListModel.Title; readonly property int order: Qt.DescendingOrder }
+                    //% "Count (ascending)"
+                    MenuItem { text: qsTrId("intfuorit-sort-by-count-asc"); readonly property int role: BreachesListModel.PwnCount; readonly property int order: Qt.AscendingOrder }
+                    //% "Count (descending)"
+                    MenuItem { text: qsTrId("intfuorit-sort-by-count-desc"); readonly property int role: BreachesListModel.PwnCount; readonly property int order: Qt.DescendingOrder }
+                    //% "Breach date (ascending)"
+                    MenuItem { text: qsTrId("intfuorit-sort-by-breachdate-asc"); readonly property int role: BreachesListModel.BreachDate; readonly property int order: Qt.AscendingOrder }
+                    //% "Breach date (descending)"
+                    MenuItem { text: qsTrId("intfuorit-sort-by-breachdate-desc"); readonly property int role: BreachesListModel.BreachDate; readonly property int order: Qt.DescendingOrder }
+                    //% "Added date (ascending)"
+                    MenuItem { text: qsTrId("intfuorit-sort-by-addeddate-asc"); readonly property int role: BreachesListModel.AddedDate; readonly property int order: Qt.AscendingOrder }
+                    //% "Added date (descending)"
+                    MenuItem { text: qsTrId("intfuorit-sort-by-addeddate-desc"); readonly property int role: BreachesListModel.AddedDate; readonly property int order: Qt.DescendingOrder }
                 }
-                onCurrentIndexChanged: if (currentItem) { blfm.sortRole = currentItem.value }
-                currentIndex: 1
+                onCurrentIndexChanged: if (currentItem) { blfm.sortRole = currentItem.role; blfm.sortOrder = currentItem.order }
+                currentIndex: 7
             }
-        }
-
-        TextSwitch {
-            id: orderChooser
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.preferredWidth: mainPage.isLandscape ? (mainPageSorting.width/4) : (mainPageSorting.width/2)
-            //% "Descending"
-            text: qsTrId("intfuorit-order-descending")
-            checked: blfm.sortOrder == Qt.DescendingOrder
-            onCheckedChanged: blfm.sortOrder = (checked ? Qt.DescendingOrder : Qt.AscendingOrder)
         }
     }
 
