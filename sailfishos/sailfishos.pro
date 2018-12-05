@@ -41,14 +41,10 @@ include(../common/common.pri)
 LIBS += -L$$OUT_PWD/../libintfuorit -lintfuorit
 INCLUDEPATH += $$PWD/../libintfuorit
 
-!contains(CONFIG, clazy) {
-    PKGCONFIG += sailfishsilica
-}
-
 SOURCES += \
     src/main.cpp
 
-SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
+SAILFISHAPP_ICONS = 86x86 108x108 128x128 150x150 172x172
 
 isEmpty(INSTALL_TRANSLATIONS_DIR): INSTALL_TRANSLATIONS_DIR = /usr/share/harbour-intfuorit/l10n
 
@@ -59,6 +55,10 @@ INSTALLS += langfiles
 imgs.path = /usr/share/harbour-intfuorit/images
 imgs.files = images/*
 INSTALLS += imgs
+
+icons.path = /usr/share/harbour-intfuorit/icons
+icons.files = icons/z*
+INSTALLS += icons
 
 DISTFILES += \
     qml/harbour-intfuorit.qml \
