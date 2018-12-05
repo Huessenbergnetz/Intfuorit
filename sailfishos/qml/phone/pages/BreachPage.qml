@@ -97,35 +97,40 @@ Page {
 
                 IconWithHint {
                     id: bIsSensitive
-                    icon.source: "image://intfuorit/icon-m-sensitive-breach"
+                    icon.source: visible ? "image://intfuorit/icon-m-sensitive-breach" : ""
+                    icon.width: Theme.iconSizeMedium; icon.height: icon.width
                     //% "Sensitive breach, not publicly searchable"
                     hintText: qsTrId("intfuorit-sensitive-breach-hint")
                 }
 
                 IconWithHint {
                     id: bIsVerified
-                    icon.source: "image://intfuorit/icon-m-unverified-breach"
+                    icon.source: visible ? "image://intfuorit/icon-m-unverified-breach" : ""
+                    icon.width: Theme.iconSizeMedium; icon.height: icon.width
                     //% "Unverified breach, may be sourced from elsewhere"
                     hintText: qsTrId("intfuorit-unverified-breach-hint")
                 }
 
                 IconWithHint {
                     id: bIsFrabricated
-                    icon.source: "image://intfuorit/icon-m-fabricated-breach"
+                    icon.source: visible ? "image://intfuorit/icon-m-fabricated-breach" : ""
+                    icon.width: Theme.iconSizeMedium; icon.height: icon.width
                     //% "Fabricated breach, likely not legitimate"
                     hintText: qsTrId("intfuorit-fabricated-breach-hint")
                 }
 
                 IconWithHint {
                     id: bIsRetired
-                    icon.source: "image://intfuorit/icon-m-retired-breach"
+                    icon.source: visible ? "image://intfuorit/icon-m-retired-breach" : ""
+                    icon.width: Theme.iconSizeMedium; icon.height: icon.width
                     //% "Retired breach, removed from system"
                     hintText: qsTrId("intfuorit-retired-breach-hint")
                 }
 
                 IconWithHint {
                     id: bIsSpamList
-                    icon.source: "image://intfuorit/icon-m-spam-list"
+                    icon.source: visible ? "image://intfuorit/icon-m-spam-list" : ""
+                    icon.width: Theme.iconSizeMedium; icon.height: icon.width
                     //% "Spam list, used for spam marketing"
                     hintText: qsTrId("intfuorit-spam-list-hint")
                 }
