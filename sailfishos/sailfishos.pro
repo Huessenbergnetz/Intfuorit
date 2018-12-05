@@ -29,10 +29,11 @@ CONFIG(release, debug|release) {
     DEFINES += QT_NO_DEBUG_OUTPUT
 }
 
-contains(CONFIG, clazy) {
+clazy {
     QT += quick qml
     DEFINES += CLAZY
-    QMAKE_CXXFLAGS += "-Xclang -load -Xclang ClangLazy.so -Xclang -add-plugin -Xclang clang-lazy"
+    QMAKE_CXX = clang
+    QMAKE_CXXFLAGS += "-Xclang -load -Xclang ClangLazy.so -Xclang -add-plugin -Xclang clang-lazy -Xclang -plugin-arg-clazy -Xclang level0,level1,level2"
 }
 
 include(../common/common.pri)
@@ -47,7 +48,7 @@ INCLUDEPATH += $$PWD/../libintfuorit
 SOURCES += \
     src/main.cpp
 
-SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
+SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 isEmpty(INSTALL_TRANSLATIONS_DIR): INSTALL_TRANSLATIONS_DIR = /usr/share/harbour-intfuorit/l10n
 
