@@ -27,7 +27,8 @@ AboutPage {
     //% "Unofficial haveibeenpwned.com client"
     appDescription: qsTrId("intfuorit-app-description")
     appHomepage: "https://github.com/Huessenbergnetz/Intfuorit"
-    appCopyrightYear: "2017-2018"
+    appCopyrightYearFrom: "2017"
+    appCopyrightYearTo: "2018"
     appCopyrightHolder: "Matthias Fehring"
     appLicense: "GNU General Public License, Version 3"
     appLicenseFile: "GPLv3.qml"

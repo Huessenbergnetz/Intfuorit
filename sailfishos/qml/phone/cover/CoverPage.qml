@@ -24,7 +24,7 @@ CoverBackground {
 
     CoverPlaceholder {
         text: "Intfuorit"
-        icon.source: Screen.sizeCategory <= Screen.Medium ? "/usr/share/icons/hicolor/86x86/apps/harbour-intfuorit.png" : "/usr/share/icons/hicolor/128x128/apps/harbour-intfuorit.png"
+        icon.source: appLauncherIcon
     }
 }
 
