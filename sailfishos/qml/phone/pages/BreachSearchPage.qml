@@ -35,21 +35,19 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                //% "About"
                 text: qsTrId("intfuorit-about")
                 onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/About.qml"))
             }
             MenuItem {
-                //% "Help/FAQ"
                 text: qsTrId("intfuorit-help-faq")
                 onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/Help.qml"))
             }
             MenuItem {
-                //% "Settings"
                 text: qsTrId("intfuorit-settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/Settings.qml"))
             }
             MenuItem {
+                //: Pull down menu entry
                 //% "Clear result"
                 text: qsTrId("intfuorit-clear-result")
                 onClicked: {
@@ -83,6 +81,7 @@ Page {
             columnSpacing: 0
 
             PageHeader {
+                //: Page header
                 //% "Check account"
                 title: qsTrId("intfuorit-check-account-header")
                 description: "Have I been pwned?"

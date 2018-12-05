@@ -51,6 +51,7 @@ Page {
             }
 
             SectionHeader {
+                //: Section header on the settings page
                 //% "Display"
                 text: qsTrId("intfuorit-settings-display")
                 Layout.columnSpan: settingsGrid.columns
@@ -64,8 +65,10 @@ Page {
 
                 ComboBox {
                     id: langChoser
+                    //: Label for a combobox (drop down menu)
                     //% "Language"
                     label: qsTrId("intfuorit-lang-choser-label")
+                    //: Description for a combobox (drop down menu)
                     //% "To change the language, you have to restart the application."
                     description: qsTrId("intfuorit-lang-choser-desc")
                     menu: ContextMenu {
@@ -80,6 +83,7 @@ Page {
             }
 
             SectionHeader {
+                //: Section header on the settings page
                 //% "Behavior"
                 text: qsTrId("intfuorit-settings-behavior")
                 Layout.columnSpan: settingsGrid.columns
@@ -93,8 +97,10 @@ Page {
 
                 ComboBox {
                     id: cachePeriodChoser
+                    //: Label for a combobox (drop down menu)
                     //% "Cache period"
                     label: qsTrId("intfuorit-cache-period-choser-label")
+                    //: Description for a combobox (drop down menu)
                     //% "The cache period is used to store API results for the specified duration before sending a new request to the API."
                     description: qsTrId("intfuorit-cache-period-choser-desc")
                     menu: ContextMenu {

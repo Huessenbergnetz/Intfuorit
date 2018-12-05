@@ -41,7 +41,6 @@ Page {
 
             PageHeader {
                 page: help
-                //% "Help/FAQ"
                 title: qsTrId("intfuorit-help-faq")
             }
 

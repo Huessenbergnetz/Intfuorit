@@ -83,23 +83,32 @@ Page {
             Layout.columnSpan: 2
             ComboBox {
                 id: sortChooser
+                //: Label for a combobox (drop down menu)
                 //% "Sort by"
                 label: qsTrId("intfuorit-sort-by-label")
                 menu: ContextMenu {
+                    //: Label in a combobox (drop down menu)
                     //% "Title (ascending)"
                     MenuItem { text: qsTrId("intfuorit-sort-by-title-asc"); readonly property int role: BreachesListModel.Title; readonly property int order: Qt.AscendingOrder }
+                    //: Label in a combobox (drop down menu)
                     //% "Title (descending)"
                     MenuItem { text: qsTrId("intfuorit-sort-by-title-desc"); readonly property int role: BreachesListModel.Title; readonly property int order: Qt.DescendingOrder }
+                    //: Label in a combobox (drop down menu)
                     //% "Count (ascending)"
                     MenuItem { text: qsTrId("intfuorit-sort-by-count-asc"); readonly property int role: BreachesListModel.PwnCount; readonly property int order: Qt.AscendingOrder }
+                    //: Label in a combobox (drop down menu)
                     //% "Count (descending)"
                     MenuItem { text: qsTrId("intfuorit-sort-by-count-desc"); readonly property int role: BreachesListModel.PwnCount; readonly property int order: Qt.DescendingOrder }
+                    //: Label in a combobox (drop down menu)
                     //% "Breach date (ascending)"
                     MenuItem { text: qsTrId("intfuorit-sort-by-breachdate-asc"); readonly property int role: BreachesListModel.BreachDate; readonly property int order: Qt.AscendingOrder }
+                    //: Label in a combobox (drop down menu)
                     //% "Breach date (descending)"
                     MenuItem { text: qsTrId("intfuorit-sort-by-breachdate-desc"); readonly property int role: BreachesListModel.BreachDate; readonly property int order: Qt.DescendingOrder }
+                    //: Label in a combobox (drop down menu)
                     //% "Added date (ascending)"
                     MenuItem { text: qsTrId("intfuorit-sort-by-addeddate-asc"); readonly property int role: BreachesListModel.AddedDate; readonly property int order: Qt.AscendingOrder }
+                    //: Label in a combobox (drop down menu)
                     //% "Added date (descending)"
                     MenuItem { text: qsTrId("intfuorit-sort-by-addeddate-desc"); readonly property int role: BreachesListModel.AddedDate; readonly property int order: Qt.DescendingOrder }
                 }
@@ -123,21 +132,25 @@ Page {
 
         PullDownMenu {
             MenuItem {
+                //: Pull down menu entry and page header
                 //% "About"
                 text: qsTrId("intfuorit-about")
                 onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/About.qml"))
             }
             MenuItem {
+                //: Pull down menu entry and page header
                 //% "Help/FAQ"
                 text: qsTrId("intfuorit-help-faq")
                 onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/Help.qml"))
             }
             MenuItem {
+                //: Pull down menu entry and page header
                 //% "Settings"
                 text: qsTrId("intfuorit-settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("../../common/pages/Settings.qml"))
             }
             MenuItem {
+                //: Pull down menu entry
                 //% "Reload"
                 text: qsTrId("intfuorit-reload")
                 onClicked: blfm.getAllBreaches(true)

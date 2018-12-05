@@ -71,7 +71,8 @@ ListItem {
 
                 Label {
                     width: parent.width - countWidth - Theme.paddingSmall
-                    //% "%1 account(s)"
+                    //: Text in the list of breaches. %1 will be substituted by the name of the breached service, like Adobe.
+                    //% "%1 accounts"
                     text: qsTrId("intfuorit-title-counts-label", model.pwnCount ? model.pwnCount : 0).arg(Theme.highlightText(model.title, searchTerm, Theme.highlightColor))
                     truncationMode: TruncationMode.Fade
                     horizontalAlignment: Qt.AlignLeft
