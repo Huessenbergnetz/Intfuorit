@@ -46,11 +46,11 @@ LanguageModel::LanguageModel(QObject *parent) : QAbstractListModel(parent)
         std::sort(m_langs.begin(), m_langs.end(), langLessThan);
 
         //% "Default"
-        m_langs.insert(m_langs.begin(), std::make_pair(QStringLiteral(""), qtTrId("intfuorit-default-lang")));
+        m_langs.insert(m_langs.begin(), std::make_pair(QString(), qtTrId("intfuorit-default-lang")));
 
     } else {
 
-        m_langs.push_back(std::make_pair(QStringLiteral(""), qtTrId("intfuorit-default-lang")));
+        m_langs.push_back(std::make_pair(QString(), qtTrId("intfuorit-default-lang")));
     }
 
     endInsertRows();
