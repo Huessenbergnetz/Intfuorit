@@ -13,7 +13,7 @@
    version="1.1"
    id="svg4"
    sodipodi:docname="fabricated-breach.svg"
-   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -22,12 +22,20 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs8" />
+     id="defs8">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 896 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="1792 : 896 : 1"
+       inkscape:persp3d-origin="896 : 597.33333 : 1"
+       id="perspective812" />
+  </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -37,20 +45,32 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="765"
-     inkscape:window-height="480"
+     inkscape:window-width="1123"
+     inkscape:window-height="723"
      id="namedview6"
      showgrid="false"
-     inkscape:zoom="0.13169643"
-     inkscape:cx="2205.8305"
-     inkscape:cy="896"
+     inkscape:zoom="0.18624688"
+     inkscape:cx="1132.3773"
+     inkscape:cy="954.65054"
      inkscape:window-x="446"
      inkscape:window-y="141"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg4" />
-  <path
-     d="m 1024,1439 v -190 q 0,-14 -9.5,-23.5 Q 1005,1216 992,1216 H 800 q -13,0 -22.5,9.5 -9.5,9.5 -9.5,23.5 v 190 q 0,14 9.5,23.5 9.5,9.5 22.5,9.5 h 192 q 13,0 22.5,-9.5 9.5,-9.5 9.5,-23.5 z m -2,-374 18,-459 q 0,-12 -10,-19 -13,-11 -24,-11 H 786 q -11,0 -24,11 -10,7 -10,21 l 17,457 q 0,10 10,16.5 10,6.5 24,6.5 h 185 q 14,0 23.5,-6.5 9.5,-6.5 10.5,-16.5 z m -14,-934 768,1408 q 35,63 -2,126 -17,29 -46.5,46 -29.5,17 -63.5,17 H 128 Q 94,1728 64.5,1711 35,1694 18,1665 -19,1602 16,1539 L 784,131 q 17,-31 47,-49 30,-18 65,-18 35,0 65,18 30,18 47,49 z"
-     id="path2"
-     inkscape:connector-curvature="0"
-     style="fill:#ffffff" />
+     inkscape:current-layer="svg4"
+     inkscape:pagecheckerboard="true" />
+  <g
+     id="g13">
+    <path
+       id="rect828"
+       d="M 786 576 C 778.66667 576 770.66667 579.66667 762 587 C 755.33333 591.66667 752 598.66667 752 608 L 769 1065 C 769 1071.6667 772.33333 1077.1667 779 1081.5 C 785.66667 1085.8333 793.66667 1088 803 1088 L 988 1088 C 997.33333 1088 1005.1667 1085.8333 1011.5 1081.5 C 1017.8333 1077.1667 1021.3333 1071.6667 1022 1065 L 1040 606 C 1040 598 1036.6667 591.66667 1030 587 C 1021.3333 579.66667 1013.3333 576 1006 576 L 786 576 z "
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.27576447;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="rect864"
+       d="M 800 1216 C 791.33333 1216 783.83333 1219.1667 777.5 1225.5 C 771.16667 1231.8333 768 1239.6667 768 1249 L 768 1439 C 768 1448.3333 771.16667 1456.1667 777.5 1462.5 C 783.83333 1468.8333 791.33333 1472 800 1472 L 992 1472 C 1000.6667 1472 1008.1667 1468.8333 1014.5 1462.5 C 1020.8333 1456.1667 1024 1448.3333 1024 1439 L 1024 1249 C 1024 1239.6667 1020.8333 1231.8333 1014.5 1225.5 C 1008.1667 1219.1667 1000.6667 1216 992 1216 L 800 1216 z "
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.61290789;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:#ffffff;fill-opacity:0.50588223"
+       inkscape:connector-curvature="0"
+       id="path2-3"
+       d="m 1024,1439 v -190 q 0,-14 -9.5,-23.5 Q 1005,1216 992,1216 H 800 q -13,0 -22.5,9.5 -9.5,9.5 -9.5,23.5 v 190 q 0,14 9.5,23.5 9.5,9.5 22.5,9.5 h 192 q 13,0 22.5,-9.5 9.5,-9.5 9.5,-23.5 z m -2,-374 18,-459.00001 q 0,-12 -10,-19 -13,-11 -24,-11 H 786 q -11,0 -24,11 -10,7 -10,21 L 769,1065 q 0,10 10,16.5 10,6.5 24,6.5 h 185 q 14,0 23.5,-6.5 9.5,-6.5 10.5,-16.5 z M 1008,130.99999 1776,1539 q 35,63 -2,126 -17,29 -46.5,46 -29.5,17 -63.5,17 H 128 Q 94,1728 64.5,1711 35,1694 18,1665 -19,1602 16,1539 L 784,130.99999 q 17,-31 47,-49 30,-18 65,-18 35,0 65,18 30,18 47,49 z" />
+  </g>
 </svg>
