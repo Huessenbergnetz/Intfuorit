@@ -7,7 +7,7 @@ BASENAME=$(find $ICONSDIR -maxdepth 1 -type f -name "*.svg" -exec basename -s .s
 else
 BASENAME=$1
 fi
-SIZES="86 108 128 172"
+SIZES="86 108 128 150 172"
 
 if [ ! -x /usr/bin/inkscape ]
 then
