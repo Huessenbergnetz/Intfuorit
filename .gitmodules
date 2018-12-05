@@ -1,6 +1,6 @@
 [submodule "libintfuorit"]
 	path = libintfuorit
-	url = git@githubg.com:Huessenbergnetz/libintfuorit.git
+	url = git@github.com:Huessenbergnetz/libintfuorit.git
 [submodule "HBN_SFOS_Components"]
 	path = HBN_SFOS_Components
 	url = git@github.com:Huessenbergnetz/HBN_SFOS_Components.git
