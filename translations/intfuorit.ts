@@ -18,14 +18,11 @@
         <extracomment>Pull down menu entry</extracomment>
         <translation type="unfinished"></translation>
     </message>
-    <message id="intfuorit-title-counts-label" numerus="yes">
+    <message id="intfuorit-title-counts-label">
         <source>%1 accounts</source>
         <oldsource>%1 account(s)</oldsource>
-        <extracomment>Text in the list of breaches. %1 will be substituted by the name of the breached service, like Adobe.</extracomment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+        <extracomment>Text in the list of breaches. %1 will be substituted by the name of the breached service, like “Adobe accounts”</extracomment>
+        <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-sort-by-label">
         <source>Sort by</source>
