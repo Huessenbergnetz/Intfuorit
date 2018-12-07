@@ -26,6 +26,23 @@ Page {
 
     allowedOrientations: Orientation.All
 
+    property bool noPwnedAcc: false
+    property bool noPaste: false
+    property bool apiInOperation: cpp.inOperation || blm.inOperation || plm.inOperation
+
+    function clear() {
+        breachSearchPage.noPaste = false
+        breachSearchPage.noPwnedAcc = false
+        cpp.clear()
+        plm.clear()
+        blm.clear()
+    }
+
+    CheckPwnedPassword {
+        id: cpp
+        userAgent: intfuoritUserAgent
+    }
+
     SilicaFlickable {
         id: breachSearchFlick
 
@@ -51,11 +68,7 @@ Page {
                 //% "Clear result"
                 text: qsTrId("intfuorit-clear-result")
                 onClicked: {
-                    blm.clear()
-                    plm.clear()
-                    infoText.visible = true
-                    noBreachesFound.visible = false
-                    noPastesFound.visible = false
+                    breachSearchPage.clear()
                     accountSearch.text = ""
                 }
             }
@@ -81,9 +94,13 @@ Page {
             columnSpacing: 0
 
             PageHeader {
-                //: Page header
-                //% "Check account"
-                title: qsTrId("intfuorit-check-account-header")
+                title: searchTarget.currentIndex === 0
+                        //: Page header
+                        //% "Check account"
+                       ? qsTrId("intfuorit-check-account-header")
+                        //: Page header
+                        //% "Check password"
+                       : qsTrId("intfuorit-check-password-header")
                 description: "Have I been pwned?"
                 page: breachSearchPage
                 Layout.columnSpan: breachSearchGrid.columns
@@ -93,20 +110,21 @@ Page {
             SearchField {
                 id: accountSearch
                 width: parent.width
-                inputMethodHints: Qt.ImhEmailCharactersOnly
+                echoMode: searchTarget.currentIndex === 0 ? TextInput.Normal : TextInput.Password
+                inputMethodHints: searchTarget.currentIndex === 0 ? Qt.ImhSensitiveData|Qt.ImhEmailCharactersOnly : Qt.ImhSensitiveData|Qt.ImhNoPredictiveText
                 EnterKey.onClicked: {
                     if (text.length > 0) {
                         accountSearch.focus = false;
-                        infoText.visible = false;
-                        noBreachesFound.visible = false
-                        noPastesFound.visible = false
-                        blm.getBreachesForAccount(accountSearch.text, "", includeUnverified.checked, omitCache.checked)
-                        var atPos = text.lastIndexOf("@")
-                        var dotPos = text.lastIndexOf(".")
-                        if ((atPos > -1) && (dotPos > -1) && (dotPos > atPos) && ((text.length - dotPos + 1) > 1)) {
-                            plm.getPastesForAccount(accountSearch.text, omitCache.checked)
+                        breachSearchPage.clear()
+                        if (searchTarget.currentIndex === 0) {
+                            blm.getBreachesForAccount(accountSearch.text, "", includeUnverified.checked, omitCache.checked)
+                            var atPos = text.lastIndexOf("@")
+                            var dotPos = text.lastIndexOf(".")
+                            if ((atPos > -1) && (dotPos > -1) && (dotPos > atPos) && ((text.length - dotPos + 1) > 1)) {
+                                plm.getPastesForAccount(accountSearch.text, omitCache.checked)
+                            }
                         } else {
-                            plm.clear()
+                            cpp.execute(accountSearch.text, omitCache.checked)
                         }
                     } else {
                         accountSearch.focus = false
@@ -119,24 +137,26 @@ Page {
                 Layout.fillWidth: true
             }
 
-            TextSwitch {
-                id: includeUnverified
-                //% "Inlcude unverified breaches"
-                text: qsTrId("intfuorit-switch-include-unverified")
-                Layout.columnSpan: (config.cachePeriod > 0) ? 1 : breachSearchGrid.columns
+            Item {
+                Layout.columnSpan: breachSearchGrid.columns
                 Layout.fillWidth: true
-                automaticCheck: false
-                checked: config.includeUnverified
-                onClicked: config.includeUnverified = !config.includeUnverified
-            }
-
-            TextSwitch {
-                id: omitCache
-                //% "Omit local cache"
-                text: qsTrId("intfuorit-switch-omit-cache")
-                Layout.columnSpan: 1
-                Layout.fillWidth: true
-                visible: (config.cachePeriod > 0)
+                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                Layout.preferredHeight: searchTarget.height
+                ComboBox {
+                    id: searchTarget
+                    //: Label for a combobox (drop down menu), value will be either Account or Password
+                    //% "Search for"
+                    label: qsTrId("intfuorit-search-for-label")
+                    menu: ContextMenu {
+                        //: Value for a combobox (drop down menu)
+                        //% "Account"
+                        MenuItem { text: qsTrId("intfuorit-search-for-account") }
+                        //: Value for a combobox (drop down menu)
+                        //% "Password"
+                        MenuItem { text: qsTrId("intfuorit-search-for-password") }
+                    }
+                    onCurrentIndexChanged: accountSearch.text = ""
+                }
             }
 
             Item {
@@ -151,17 +171,45 @@ Page {
                     font.pixelSize: Theme.fontSizeExtraSmall
                     x: Theme.horizontalPageMargin
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                    //% "Check if you have an account that has been compromised in a data breach or that is published in a Paste. Simply enter your email address or user name into the search field and start searching."
-                    text: qsTrId("intfuorit-check-account-desc")
+                    textFormat: Text.PlainText
+                    text: searchTarget.currentIndex === 0
+                          //% "Check if you have an account that has been compromised in a data breach or that is published in a Paste."
+                          ? qsTrId("intfuorit-check-account-desc")
+                          //% "Check if one of your passwords has previously been exposed in data breaches.
+                          : qsTrId("intfuorit-check-password-desc")
                 }
             }
 
-            BusyIndicator {
-                size: BusyIndicatorSize.Large
-                Layout.alignment: Qt.AlignCenter
-                Layout.columnSpan: breachSearchGrid.columns
-                visible: blm.inOperation || plm.inOperation
-                running: true
+            Item {
+                Layout.columnSpan: config.cachePeriod > 0 ? 1 : breachSearchGrid.columns
+                Layout.fillWidth: true
+                Layout.preferredHeight: includeUnverified.height
+                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                visible: searchTarget.currentIndex === 0
+                TextSwitch {
+                    id: includeUnverified
+                    //: Label on a text switch
+                    //% "Include unverified breaches"
+                    text: qsTrId("intfuorit-switch-include-unverified")
+                    automaticCheck: false
+                    checked: config.includeUnverified
+                    onClicked: config.includeUnverified = !config.includeUnverified
+                }
+            }
+
+            Item {
+                Layout.fillWidth: true
+                Layout.preferredHeight: omitCache.height
+                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                Layout.columnSpan: searchTarget.currentIndex === 0 ? 1 : breachSearchGrid.columns
+                visible: config.cachePeriod > 0
+                TextSwitch {
+                    id: omitCache
+                    //: Label on a text switch
+                    //% "Omit local cache"
+                    text: qsTrId("intfuorit-switch-omit-cache")
+                    Layout.columnSpan: 1
+                }
             }
 
             Item {
@@ -170,40 +218,114 @@ Page {
                 Layout.preferredHeight: Theme.paddingLarge
             }
 
+            BusyIndicator {
+                size: BusyIndicatorSize.Large
+                Layout.alignment: Qt.AlignCenter
+                Layout.columnSpan: breachSearchGrid.columns
+                visible: blm.inOperation || plm.inOperation || cpp.inOperation
+                running: true
+            }
+
+            Item {
+                id: pwned
+                Layout.columnSpan: breachSearchGrid.columns
+                Layout.fillWidth: true
+                Layout.preferredHeight: pwnedLabel.height + pwnedPassDesc1.height + pwnedPassDesc2.height + pwndAccDesc.height
+                visible: cpp.count > 0 || breachedSitesRepeater.count > 0 || pastesRepeater.count > 0
+                Label {
+                    id: pwnedLabel
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; top: parent.top }
+                    //% "Oh no — pwned!"
+                    text: qsTrId("intfuorit-label-pwned")
+                    font.pixelSize: Theme.fontSizeLarge
+                    horizontalAlignment: Qt.AlignHCenter
+                    color: Theme.highlightColor
+                    textFormat: Text.PlainText
+                }
+
+                Text {
+                    id: pwnedPassDesc1
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; top: pwnedLabel.bottom }
+                    visible: cpp.count > 0
+                    horizontalAlignment: Qt.AlignHCenter
+                    color: Theme.primaryColor
+                    font.pixelSize: Theme.fontSizeMedium
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    textFormat: Text.PlainText
+                    //% "This password has been seen %n time(s) before."
+                    text: qsTrId("intfuorit-pwned-password-count", cpp.count)
+                }
+
+                Text {
+                    id: pwnedPassDesc2
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; top: pwnedPassDesc1.bottom }
+                    visible: cpp.count > 0
+                    horizontalAlignment: Qt.AlignHCenter
+                    color: Theme.primaryColor
+                    font.pixelSize: Theme.fontSizeSmall
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    textFormat: Text.PlainText
+                    //% "This password has previously appeared in a data breach and should never be used. If you've ever used it anywhere before, change it!"
+                    text: qsTrId("intfuorit-pwned-password-hint")
+                }
+
+                Text {
+                    id: pwndAccDesc
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; top: pwnedLabel.bottom }
+                    visible: breachedSitesRepeater.count > 0 || pastesRepeater.count > 0
+                    horizontalAlignment: Qt.AlignHCenter
+                    color: Theme.primaryColor
+                    font.pixelSize: Theme.fontSizeSmall
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    textFormat: Text.PlainText
+                    //% "Pwned on %n breached site(s)."
+                    text: qsTrId("intfuorit-pwned-acc-summary", breachedSitesRepeater.count) + " " +
+                    //% "Found %n paste(s)."
+                    qsTrId("intfuorit-pwned-paste-summary", pastesRepeater.count)
+                }
+            }
+
+            Item {
+                Layout.columnSpan: breachSearchGrid.columns
+                Layout.fillWidth: true
+                Layout.preferredHeight: notPwnedLabel.height + notPwnedDesc.height
+                visible: cpp.count === 0 || (breachSearchPage.noPaste && breachSearchPage.noPwnedAcc)
+                Label {
+                    id: notPwnedLabel
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; top: parent.top }
+                    font.pixelSize: Theme.fontSizeLarge
+                    horizontalAlignment: Qt.AlignHCenter
+                    color: Theme.secondaryHighlightColor
+                    textFormat: Text.PlainText
+                    //% "Good news — no pwnage found!"
+                    text: qsTrId("intfuorit-label-not-pwned")
+                }
+
+                Text {
+                    id: notPwnedDesc
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; top: notPwnedLabel.bottom }
+                    font.pixelSize: Theme.fontSizeSmall
+                    horizontalAlignment: Qt.AlignHCenter
+                    color: Theme.secondaryColor
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    textFormat: searchTarget.currentIndex === 0 ? Text.StyledText : Text.PlainText
+                    linkColor: Theme.secondaryHighlightColor
+                    onLinkActivated: Qt.openUrlExternally(link)
+                    text: searchTarget.currentIndex === 0
+                          //% "No breached accounts and no pastes (<a href='%1'>subscribe</a> to search sensitive breaches)."
+                          ? qsTrId("intfuorit-desc-not-pwned-acc").arg("https://haveibeenpwned.com/NotifyMe")
+                          //% "This password wasn't found in any of the Pwned Passwords loaded into Have I Been Pwned. That doesn't necessarily mean it's a good password, merely that it's not indexed on the site."
+                          : qsTrId("intfuorit-desc-not-pwned-pass")
+                }
+            }
+
             SectionHeader {
                 //% "Breaches you were found in"
                 text: qsTrId("intfuorit-section-header-breached-sites")
                 Layout.columnSpan: breachSearchGrid.columns
                 Layout.preferredWidth: breachSearchGrid.width - Theme.horizontalPageMargin
-                visible: breachedSitesRepeater.count > 0
-            }
-
-            Item {
-                id: noBreachesFound
-                Layout.columnSpan: breachSearchGrid.columns
-                Layout.fillWidth: true
-                Layout.preferredHeight: noBreachesFoundLabel.height + noBreachesFoundText.height
-                visible: false
-
-                Label {
-                    id: noBreachesFoundLabel
-                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
-                    horizontalAlignment: Text.AlignHCenter
-                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                    color: Theme.highlightColor
-                    //% "Good news — no pwnage found!"
-                    text: qsTrId("intfuorit-no-pwnage-found-label")
-                }
-
-                Text {
-                    id: noBreachesFoundText
-                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; top: noBreachesFoundLabel.bottom }
-                    horizontalAlignment: Text.AlignHCenter
-                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                    color: Theme.secondaryHighlightColor
-                    //% "Your user account is not included in any of the data breach records available on HIBP."
-                    text: qsTrId("intfuorit-no-pwnage-found-text")
-                }
+                textFormat: Text.PlainText
+                visible: breachedSitesRepeater.count > 0 || breachesError.visible
             }
 
             Item {
@@ -218,6 +340,7 @@ Page {
                     horizontalAlignment: Text.AlignHCenter
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     color: Theme.highlightColor
+                    textFormat: Text.PlainText
                     text: qsTrId("intfuorit-error")
                 }
 
@@ -227,6 +350,8 @@ Page {
                     horizontalAlignment: Text.AlignHCenter
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     color: Theme.secondaryHighlightColor
+                    textFormat: Text.PlainText
+                    font.pixelSize: Theme.fontSizeSmall
                     text: blm.error.text
                 }
             }
@@ -254,7 +379,7 @@ Page {
                 id: breachedSitesRepeater
                 model: BreachesListModel {
                     id: blm
-                    onGotNoBreachesForAccount: noBreachesFound.visible = true
+                    onGotNoBreachesForAccount: breachSearchPage.noPwnedAcc = true
                     userAgent: intfuoritUserAgent
                 }
                 BreachesListDelegate {
@@ -275,35 +400,8 @@ Page {
                 text: qsTrId("intfuorit-section-header-pastes")
                 Layout.columnSpan: breachSearchGrid.columns
                 Layout.preferredWidth: breachSearchGrid.width - Theme.horizontalPageMargin
-                visible: pastesRepeater.count > 0
-            }
-
-            Item {
-                id: noPastesFound
-                Layout.columnSpan: breachSearchGrid.columns
-                Layout.fillWidth: true
-                Layout.preferredHeight:noPastesFoundLabel.height + noPastesFoundText.height
-                visible: false
-
-                Label {
-                    id: noPastesFoundLabel
-                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
-                    horizontalAlignment: Text.AlignHCenter
-                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                    color: Theme.highlightColor
-                    //% "Good news — no pastes found!"
-                    text: qsTrId("intfuorit-no-pastes-found-label")
-                }
-
-                Text {
-                    id: noPastesFoundText
-                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; top: noPastesFoundLabel.bottom }
-                    horizontalAlignment: Text.AlignHCenter
-                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                    color: Theme.secondaryHighlightColor
-                    //% "Your email address is not included in any of the pastes available on HIBP."
-                    text: qsTrId("intfuorit-no-pastes-found-text")
-                }
+                visible: pastesRepeater.count > 0 || pastesError.visible
+                textFormat: Text.PlainText
             }
 
             Item {
@@ -319,6 +417,7 @@ Page {
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     color: Theme.highlightColor
                     text: qsTrId("intfuorit-error")
+                    textFormat: Text.PlainText
                 }
 
                 Text {
@@ -328,6 +427,7 @@ Page {
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     color: Theme.secondaryHighlightColor
                     text: plm.error.text
+                    textFormat: Text.PlainText
                 }
             }
 
@@ -355,7 +455,7 @@ Page {
                 model: PastesListModel {
                     id: plm
                     userAgent: intfuoritUserAgent
-                    onGotNoPastesForAccount: noPastesFound.visible = true
+                    onGotNoPastesForAccount: breachSearchPage.noPaste = true;
                 }
                 ListItem {
                     id: pastesListItem
@@ -376,6 +476,7 @@ Page {
                             font.pixelSize: Theme.fontSizeSmall
                             color: pastesListItem.highlighted ? Theme.highlightColor : Theme.primaryColor
                             truncationMode: TruncationMode.Fade
+                            textFormat: Text.PlainText
                         }
 
                         Row {
@@ -384,6 +485,7 @@ Page {
                                 width: parent.width/2
                                 color: pastesListItem.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
                                 font.pixelSize: Theme.fontSizeSmall
+                                textFormat: Text.StyledText
                                 //% "%1 email(s)"
                                 text: qsTrId("intfuorit-emails-in-paste", model.emailCount).arg(model.emailCount.toLocaleString(Qt.locale(), 'f', 0))
                             }
@@ -394,6 +496,7 @@ Page {
                                 font.pixelSize: Theme.fontSizeSmall
                                 text: model.date.toLocaleString(Qt.locale(), Locale.ShortFormat)
                                 horizontalAlignment: Text.AlignRight
+                                textFormat: Text.PlainText
                             }
                         }
                     }
@@ -420,6 +523,7 @@ Page {
                     text: qsTrId("intfuorit-hibp-attribution").arg("<a href='https://haveibeenpwned.com'>Have I been pwned?</a>")
                     linkColor: Theme.secondaryHighlightColor
                     wrapMode: Text.WordWrap
+                    onLinkActivated: Qt.openUrlExternally(link)
                 }
             }
         }

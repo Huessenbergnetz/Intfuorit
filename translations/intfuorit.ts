@@ -5,18 +5,23 @@
     <name></name>
     <message id="intfuorit-about">
         <source>About</source>
+        <extracomment>Pull down menu entry and page header</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-settings">
         <source>Settings</source>
+        <extracomment>Pull down menu entry and page header</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-reload">
         <source>Reload</source>
+        <extracomment>Pull down menu entry</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-title-counts-label" numerus="yes">
-        <source>%1 account(s)</source>
+        <source>%1 accounts</source>
+        <oldsource>%1 account(s)</oldsource>
+        <extracomment>Text in the list of breaches. %1 will be substituted by the name of the breached service, like Adobe.</extracomment>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -24,14 +29,7 @@
     </message>
     <message id="intfuorit-sort-by-label">
         <source>Sort by</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="intfuorit-sort-role-title">
-        <source>Title</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="intfuorit-sort-role-pwncount">
-        <source>Count</source>
+        <extracomment>Label for a combobox (drop down menu), value will be something like: Title (ascending)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-affected-accounts-label">
@@ -59,20 +57,18 @@
         <oldsource>Comporomised data</oldsource>
         <translation type="unfinished"></translation>
     </message>
-    <message id="intfuorit-order-descending">
-        <source>Descending</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="intfuorit-filter-title-domain-placeholder">
         <source>Filter by title or domain</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-check-account-header">
         <source>Check account</source>
+        <extracomment>Page header</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-check-account-desc">
-        <source>Check if you have an account that has been compromised in a data breach or that is published in a Paste. Simply enter your email address or user name into the search field and start searching.</source>
+        <source>Check if you have an account that has been compromised in a data breach or that is published in a Paste.</source>
+        <oldsource>Check if you have an account that has been compromised in a data breach or that is published in a Paste. Simply enter your email address or user name into the search field and start searching.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-section-header-breached-sites">
@@ -90,11 +86,14 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-switch-include-unverified">
-        <source>Inlcude unverified breaches</source>
+        <source>Include unverified breaches</source>
+        <oldsource>Inlcude unverified breaches</oldsource>
+        <extracomment>Label on a text switch</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-switch-omit-cache">
         <source>Omit local cache</source>
+        <extracomment>Label on a text switch</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-section-header-pastes">
@@ -115,6 +114,7 @@
     </message>
     <message id="intfuorit-clear-result">
         <source>Clear result</source>
+        <extracomment>Pull down menu entry</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-nothing-found">
@@ -125,49 +125,39 @@
         <source>There is no breached site matching your filter.</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="intfuorit-no-pwnage-found-label">
-        <source>Good news — no pwnage found!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="intfuorit-no-pwnage-found-text">
-        <source>Your user account is not included in any of the data breach records available on HIBP.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="intfuorit-no-pastes-found-label">
-        <source>Good news — no pastes found!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="intfuorit-no-pastes-found-text">
-        <source>Your email address is not included in any of the pastes available on HIBP.</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="intfuorit-error">
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-settings-display">
         <source>Display</source>
+        <extracomment>Section header on the settings page</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-lang-choser-label">
         <source>Language</source>
+        <extracomment>Label for a combobox (drop down menu)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-lang-choser-desc">
         <source>To change the language, you have to restart the application.</source>
+        <extracomment>Description for a combobox (drop down menu)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-settings-behavior">
         <source>Behavior</source>
+        <extracomment>Section header on the settings page</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-cache-period-choser-label">
         <source>Cache period</source>
+        <extracomment>Label for a combobox (drop down menu)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-cache-period-choser-desc">
         <source>The cache period is used to store API results for the specified duration before sending a new request to the API.</source>
         <oldsource>To change the language, you have to restart the application.</oldsource>
+        <extracomment>Description for a combobox (drop down menu)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-cache-period-disabled">
@@ -205,6 +195,7 @@
     </message>
     <message id="intfuorit-app-description">
         <source>Unofficial haveibeenpwned.com client</source>
+        <extracomment>Description on the About page</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-germany">
@@ -265,6 +256,7 @@
     </message>
     <message id="intfuorit-help-faq">
         <source>Help/FAQ</source>
+        <extracomment>Pull down menu entry and page header</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-help-0-head">
@@ -438,12 +430,109 @@
         <source>Spam list, used for spam marketing</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="intfuorit-sort-role-breachdate">
-        <source>Breach date</source>
+    <message id="intfuorit-check-password-header">
+        <source>Check password</source>
+        <extracomment>Page header</extracomment>
         <translation type="unfinished"></translation>
     </message>
-    <message id="intfuorit-sort-role-addeddate">
-        <source>Added date</source>
+    <message id="intfuorit-search-for-label">
+        <source>Search for</source>
+        <extracomment>Label for a combobox (drop down menu), value will be either Account or Password</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-search-for-account">
+        <source>Account</source>
+        <extracomment>Value for a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-search-for-password">
+        <source>Password</source>
+        <extracomment>Value for a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-check-password-desc">
+        <source>Check if one of your passwords has previously been exposed in data breaches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-label-pwned">
+        <source>Oh no — pwned!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-pwned-password-count" numerus="yes">
+        <source>This password has been seen %n time(s) before.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message id="intfuorit-pwned-password-hint">
+        <source>This password has previously appeared in a data breach and should never be used. If you&apos;ve ever used it anywhere before, change it!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-pwned-acc-summary" numerus="yes">
+        <source>Pwned on %n breached site(s).</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message id="intfuorit-pwned-paste-summary" numerus="yes">
+        <source>Found %n paste(s).</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message id="intfuorit-label-not-pwned">
+        <source>Good news — no pwnage found!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-desc-not-pwned-acc">
+        <source>No breached accounts and no pastes (&lt;a href=&apos;%1&apos;&gt;subscribe&lt;/a&gt; to search sensitive breaches).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-desc-not-pwned-pass">
+        <source>This password wasn&apos;t found in any of the Pwned Passwords loaded into Have I Been Pwned. That doesn&apos;t necessarily mean it&apos;s a good password, merely that it&apos;s not indexed on the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-sort-by-title-asc">
+        <source>Title (ascending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-sort-by-title-desc">
+        <source>Title (descending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-sort-by-count-asc">
+        <source>Count (ascending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-sort-by-count-desc">
+        <source>Count (descending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-sort-by-breachdate-asc">
+        <source>Breach date (ascending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-sort-by-breachdate-desc">
+        <source>Breach date (descending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-sort-by-addeddate-asc">
+        <source>Added date (ascending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-sort-by-addeddate-desc">
+        <source>Added date (descending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>

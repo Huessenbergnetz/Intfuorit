@@ -43,6 +43,7 @@
 #include <Intfuorit/Models/BreachesListFilterModel>
 #include <Intfuorit/Objects/Paste>
 #include <Intfuorit/Models/PastesListModel>
+#include <Intfuorit/API/CheckPwnedPassword>
 
 #include "../../common/configuration.h"
 #include "../../common/namfactory.h"
@@ -130,6 +131,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<Intfuorit::BreachesListModel>("harbour.intfuorit", 1, 0, "BreachesListModel");
     qmlRegisterType<Intfuorit::BreachesListFilterModel>("harbour.intfuorit", 1, 0, "BreachesListFilterModel");
     qmlRegisterType<Intfuorit::PastesListModel>("harbour.intfuorit", 1, 0, "PastesListModel");
+    qmlRegisterType<Intfuorit::CheckPwnedPassword>("harbour.intfuorit", 1, 0, "CheckPwnedPassword");
     qmlRegisterType<LanguageModel>("harbour.intfuorit", 1, 0, "LanguageModel");
     qmlRegisterType<CachePeriodModel>("harbour.intfuorit", 1, 0, "CachePeriodModel");
 
