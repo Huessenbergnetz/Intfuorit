@@ -230,7 +230,7 @@ Page {
                 id: pwned
                 Layout.columnSpan: breachSearchGrid.columns
                 Layout.fillWidth: true
-                Layout.preferredHeight: pwnedLabel.height + pwnedPassDesc1.height + pwnedPassDesc2.height + pwndAccDesc.height
+                Layout.preferredHeight: visible ? (pwnedLabel.height + pwnedPassDesc1.height + pwnedPassDesc2.height + pwndAccDesc.height) : 0
                 visible: cpp.count > 0 || breachedSitesRepeater.count > 0 || pastesRepeater.count > 0
                 Label {
                     id: pwnedLabel
@@ -241,6 +241,7 @@ Page {
                     horizontalAlignment: Qt.AlignHCenter
                     color: Theme.highlightColor
                     textFormat: Text.PlainText
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 }
 
                 Text {
@@ -288,7 +289,7 @@ Page {
             Item {
                 Layout.columnSpan: breachSearchGrid.columns
                 Layout.fillWidth: true
-                Layout.preferredHeight: notPwnedLabel.height + notPwnedDesc.height
+                Layout.preferredHeight: visible ? (notPwnedLabel.height + notPwnedDesc.height) : 0
                 visible: cpp.count === 0 || (breachSearchPage.noPaste && breachSearchPage.noPwnedAcc)
                 Label {
                     id: notPwnedLabel
@@ -297,6 +298,7 @@ Page {
                     horizontalAlignment: Qt.AlignHCenter
                     color: Theme.secondaryHighlightColor
                     textFormat: Text.PlainText
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     //% "Good news — no pwnage found!"
                     text: qsTrId("intfuorit-label-not-pwned")
                 }
