@@ -186,10 +186,6 @@
         <oldsource>Libintfuorit is a Qt based library that provides access the haveibeenpwned.com API.</oldsource>
         <translation type="unfinished"></translation>
     </message>
-    <message id="intfuorit-btsfoscmops-desc">
-        <source>BT SFOS Components are a set of QML components for Sailfish OS.</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="intfuorit-app-description">
         <source>Unofficial haveibeenpwned.com client</source>
         <extracomment>Description on the About page</extracomment>
@@ -530,6 +526,10 @@
     <message id="intfuorit-sort-by-addeddate-desc">
         <source>Added date (descending)</source>
         <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-hbnsfoscmops-desc">
+        <source>HBN SFOS Components are a set of Qt/QML components for Sailfish OS.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

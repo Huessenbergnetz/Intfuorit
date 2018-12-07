@@ -32,12 +32,12 @@ ListModel {
     }
 
     ListElement {
-        name: "BT SFOS Components"
+        name: "HBN SFOS Components"
         author: "Matthias Fehring"
         version: "1.1.3"
         license: "Modified BSD License"
         licenseFile: "BSD-3.qml"
-        website: "https://github.com/Buschtrommel/BT_SFOS_Components"
+        website: "https://github.com/Huessenbergnetz/HBN_SFOS_Components"
         description: ""
     }
 
@@ -92,8 +92,8 @@ ListModel {
     Component.onCompleted: {
         //% "Libintfuorit is a Qt based library that provides access to the haveibeenpwned.com API."
         licensesModel.get(0).description = qsTrId("intfuorit-libintfuorit-desc")
-        //% "BT SFOS Components are a set of QML components for Sailfish OS."
-        licensesModel.get(1).description = qsTrId("intfuorit-btsfoscmops-desc")
+        //% "HBN SFOS Components are a set of Qt/QML components for Sailfish OS."
+        licensesModel.get(1).description = qsTrId("intfuorit-hbnsfoscmops-desc")
     }
 }
 
