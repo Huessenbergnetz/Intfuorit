@@ -84,7 +84,7 @@ Page {
 
                         Image {
                             id: sensitiveIcon
-                            source: "image://intfuorit/icon-s-sensitive-breach"
+                            source: "image://intfuorit/icon-s-sensitive-breach?" + Theme.primaryColor
                         }
 
                         Text {
@@ -103,7 +103,7 @@ Page {
 
                         Image {
                             id: retiredIcon
-                            source: "image://intfuorit/icon-s-retired-breach"
+                            source: "image://intfuorit/icon-s-retired-breach?" + Theme.primaryColor
                         }
 
                         Text {
@@ -122,7 +122,7 @@ Page {
 
                         Image {
                             id: unverifiedIcon
-                            source: "image://intfuorit/icon-s-unverified-breach"
+                            source: "image://intfuorit/icon-s-unverified-breach?" + Theme.primaryColor
                         }
 
                         Text {
@@ -141,7 +141,7 @@ Page {
 
                         Image {
                             id: fabricatedIcon
-                            source: "image://intfuorit/icon-s-fabricated-breach"
+                            source: "image://intfuorit/icon-s-fabricated-breach?" + Theme.primaryColor
                         }
 
                         Text {
@@ -160,7 +160,7 @@ Page {
 
                         Image {
                             id: spamListIcon
-                            source: "image://intfuorit/icon-s-spam-list"
+                            source: "image://intfuorit/icon-s-spam-list?" + Theme.primaryColor
                         }
 
                         Text {
