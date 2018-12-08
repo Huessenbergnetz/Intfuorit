@@ -199,7 +199,7 @@ Page {
 
         ViewPlaceholder {
             id: emptyListVp
-            enabled: blfm.error.type === Error.NoError && !blfm.inOperation && !breachesGridView.count
+            enabled: !blfm.inOperation && !breachesGridView.count && blfm.error.type === Error.NoError
             //% "Nothing found"
             text: qsTrId("intfuorit-nothing-found")
             //% "There is no breached site matching your filter."
