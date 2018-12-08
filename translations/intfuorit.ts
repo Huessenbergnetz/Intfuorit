@@ -532,5 +532,75 @@
         <source>HBN SFOS Components are a set of Qt/QML components for Sailfish OS.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="intfuorit-help-pw-stored-head">
+        <source>Are user passwords stored on HIBP?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-pw-stored-text">
+        <source>When email addresses from a data breach are loaded into the site, no corresponding passwords are loaded with them. Separately to the pwned address search feature, the Pwned Passwords service allows you to check if an individual password has previously been seen in a data breach. No password is stored next to any personally identifiable data (such as an email address) and every password is SHA-1 hashed (&lt;a href=&apos;%1&apos;&gt;read why SHA-1 was chosen in the Pwned Passwords launch blog post&lt;/a&gt;.)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-breach-wo-pw-head">
+        <source>What about breaches where passwords aren&apos;t leaked?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-breach-wo-pw-text">
+        <source>Occasionally, a breach will be added to the system which doesn&apos;t include credentials for an online service. This may occur when data about individuals is leaked and it may not include a username and password. However this data still has a privacy impact; it is data that those impacted would not reasonably expect to be publicly released and as such they have a vested interest in having the ability to be notified of this.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-paste-info-head">
+        <source>What is a “paste” and why include it on this site?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-paste-info-text-par1">
+        <source>A “paste” is information that has been “pasted” to a publicly facing website designed to share content such as Pastebin. These services are favoured by hackers due to the ease of anonymously sharing information and they&apos;re frequently the first place a breach appears.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-plus-address-head">
+        <source>How does HIBP handle “plus aliasing” in email addresses?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-plus-address-text">
+        <source>Some people choose to create accounts using a pattern known as “plus aliasing” in their email addresses. This allows them to express their email address with an additional piece of data in the alias, usually reflecting the site they&apos;ve signed up to such as test+netflix@example.com or test+amazon@example.com. There is presently &lt;a href=&apos;%1&apos;&gt;a UserVoice suggestion&lt;/a&gt; requesting support of this pattern in HIBP. However, as explained in that suggestion, usage of plus aliasing is extremely rare, appearing in approximately only 0.03% of addresses loaded into HIBP. Vote for the suggestion and follow its progress if this feature is important to you.</source>
+        <oldsource>Some people choose to create accounts using a pattern known as </oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-data-stored-head">
+        <source>How is the data stored on HIBP?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-data-stored-text">
+        <source>The breached accounts sit in Windows Azure table storage which contains nothing more than the email address or username and a list of sites it appeared in breaches on. If you&apos;re interested in the details, it&apos;s all described in&lt;a href=&apos;%1&apos;&gt;Working with 154 million records on Azure Table Storage&#x200a;—&#x200a;the story of Have I Been Pwned&lt;/a&gt;.</source>
+        <oldsource>The breached accounts sit in Windows Azure table storage which contains nothing more than the email address or username and a list of sites it appeared in breaches on. If you&apos;re interested in the details, it&apos;s all described in Working with 154 million records on Azure Table Storage&#x200a;—&#x200a;the story of Have I Been Pwned</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-logging-head">
+        <source>Is anything logged on HIBP when people search for an account?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-just-harvesting-head">
+        <source>How do I know HIBP isn&apos;t just harvesting searched email addresses?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-just-harvesting-text">
+        <source>You don&apos;t, but it&apos;s not. The site is simply intended to be a free service for people to assess risk in relation to their account being caught up in a breach. As with any website, if you&apos;re concerned about the intent or security, don&apos;t use it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-submit-breach-head">
+        <source>How can I submit a data breach?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-submit-breach-text">
+        <source>If you&apos;ve come across a data breach which you&apos;d like to submit, &lt;a href=&apos;%1&apos;&gt;get in touch with Troy Hunt&lt;/a&gt;. Check out what&apos;s currently loaded into HIBP first if you&apos;re not sure whether the breach is already in the system. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-paste-info-text-par2">
+        <source>HIBP searches through pastes that are broadcast by the @dumpmon Twitter account and reported as having emails that are a potential indicator of a breach. Finding an email address in a paste does not immediately mean it has been disclosed as the result of a breach. Review the paste and determine if your account has been compromised then take appropriate action such as changing passwords.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-help-logging-text">
+        <source>Nothing is explicitly logged by the website. The only logging of any kind is via Google Analytics, Application Insights performance monitoring and any diagnostic data implicitly collected if an exception occurs in the system.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
