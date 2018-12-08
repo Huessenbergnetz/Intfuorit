@@ -452,7 +452,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-pwned-password-count" numerus="yes">
-        <source>This password has been seen %n time(s) before.</source>
+        <source>This password has been seen %Ln time(s) before.</source>
+        <oldsource>This password has been seen %n time(s) before.</oldsource>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>

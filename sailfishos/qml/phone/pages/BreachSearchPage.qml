@@ -253,7 +253,7 @@ Page {
                     font.pixelSize: Theme.fontSizeMedium
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     textFormat: Text.PlainText
-                    //% "This password has been seen %n time(s) before."
+                    //% "This password has been seen %Ln time(s) before."
                     text: qsTrId("intfuorit-pwned-password-count", cpp.count)
                 }
 
@@ -512,11 +512,12 @@ Page {
             }
 
             Item {
-                id: hibpAttribution
                 Layout.fillWidth: true
                 Layout.columnSpan: breachSearchGrid.columns
+                Layout.preferredHeight: hibpAttribution.height
                 height: Theme.itemSizeMedium
                 Text {
+                    id: hibpAttribution
                     anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                     color: Theme.secondaryColor
                     font.pixelSize: Theme.fontSizeSmall
