@@ -175,7 +175,7 @@ Page {
                     text: searchTarget.currentIndex === 0
                           //% "Check if you have an account that has been compromised in a data breach or that is published in a Paste."
                           ? qsTrId("intfuorit-check-account-desc")
-                          //% "Check if one of your passwords has previously been exposed in data breaches.
+                          //% "Check if one of your passwords has previously been exposed in data breaches."
                           : qsTrId("intfuorit-check-password-desc")
                 }
             }
