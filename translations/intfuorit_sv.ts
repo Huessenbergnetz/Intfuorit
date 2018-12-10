@@ -3,31 +3,29 @@
     <name/>
     <message id="intfuorit-about">
         <source>About</source>
+        <extracomment>Pull down menu entry and page header</extracomment>
         <translation>Om</translation>
     </message>
     <message id="intfuorit-settings">
         <source>Settings</source>
+        <extracomment>Pull down menu entry and page header</extracomment>
         <translation>Inställningar</translation>
     </message>
     <message id="intfuorit-reload">
         <source>Reload</source>
+        <extracomment>Pull down menu entry</extracomment>
         <translation>Uppdatera</translation>
     </message>
-    <message id="intfuorit-title-counts-label" numerus="yes">
-        <source>%1 account(s)</source>
-        <translation><numerusform>%1 konto</numerusform><numerusform>%1 konton</numerusform></translation>
+    <message id="intfuorit-title-counts-label">
+        <source>%1 accounts</source>
+        <oldsource>%1 account(s)</oldsource>
+        <extracomment>Text in the list of breaches. %1 will be substituted by the name of the breached service, like “Adobe accounts”</extracomment>
+        <translation type="unfinished"/>
     </message>
     <message id="intfuorit-sort-by-label">
         <source>Sort by</source>
+        <extracomment>Label for a combobox (drop down menu), value will be something like: Title (ascending)</extracomment>
         <translation>Sortera</translation>
-    </message>
-    <message id="intfuorit-sort-role-title">
-        <source>Title</source>
-        <translation>namn</translation>
-    </message>
-    <message id="intfuorit-sort-role-pwncount">
-        <source>Count</source>
-        <translation>antal</translation>
     </message>
     <message id="intfuorit-affected-accounts-label">
         <source>Affected accounts</source>
@@ -54,21 +52,19 @@
         <oldsource>Comporomised data</oldsource>
         <translation>Komprometterad data</translation>
     </message>
-    <message id="intfuorit-order-descending">
-        <source>Descending</source>
-        <translation>sjunkande</translation>
-    </message>
     <message id="intfuorit-filter-title-domain-placeholder">
         <source>Filter by title or domain</source>
         <translation>Filtrera efter namn/domän</translation>
     </message>
     <message id="intfuorit-check-account-header">
         <source>Check account</source>
+        <extracomment>Page header</extracomment>
         <translation>Kontrollera konto</translation>
     </message>
     <message id="intfuorit-check-account-desc">
-        <source>Check if you have an account that has been compromised in a data breach or that is published in a Paste. Simply enter your email address or user name into the search field and start searching.</source>
-        <translation>Kontrollera om du har ett konto som har äventyrats vid ett dataintrång, eller som har publicerats i en &quot;Paste&quot;. Ange bara din e-postadress eller ditt användarnamn i sökfältet och sök.</translation>
+        <source>Check if you have an account that has been compromised in a data breach or that is published in a Paste.</source>
+        <oldsource>Check if you have an account that has been compromised in a data breach or that is published in a Paste. Simply enter your email address or user name into the search field and start searching.</oldsource>
+        <translation type="unfinished"/>
     </message>
     <message id="intfuorit-section-header-breached-sites">
         <source>Breaches you were found in</source>
@@ -85,11 +81,14 @@
         <translation>Ett &lt;i&gt;intrång&lt;/i&gt; är här en incident där hackare illegalt har skaffat sig åtkomst till en sajts data och sedan publicerat den offentligt. Se vilka typer av data som har äventyrats (e-postadresser, lösenord, kreditkort, etc.) och vidta lämpliga åtgärder, som att ändra lösenord.</translation>
     </message>
     <message id="intfuorit-switch-include-unverified">
-        <source>Inlcude unverified breaches</source>
-        <translation>Inkludera overifierade intrång</translation>
+        <source>Include unverified breaches</source>
+        <oldsource>Inlcude unverified breaches</oldsource>
+        <extracomment>Label on a text switch</extracomment>
+        <translation type="unfinished"/>
     </message>
     <message id="intfuorit-switch-omit-cache">
         <source>Omit local cache</source>
+        <extracomment>Label on a text switch</extracomment>
         <translation>Utelämna lokal cache</translation>
     </message>
     <message id="intfuorit-section-header-pastes">
@@ -107,6 +106,7 @@
     </message>
     <message id="intfuorit-clear-result">
         <source>Clear result</source>
+        <extracomment>Pull down menu entry</extracomment>
         <translation>Rensa resultat</translation>
     </message>
     <message id="intfuorit-nothing-found">
@@ -117,49 +117,39 @@
         <source>There is no breached site matching your filter.</source>
         <translation>Det finns ingen hackad sida som motsvarar din filtrering.</translation>
     </message>
-    <message id="intfuorit-no-pwnage-found-label">
-        <source>Good news — no pwnage found!</source>
-        <translation>Goda nyheter! — Inget intrång hittades!</translation>
-    </message>
-    <message id="intfuorit-no-pwnage-found-text">
-        <source>Your user account is not included in any of the data breach records available on HIBP.</source>
-        <translation>Ditt användarkonto finns inte med i något känt dataintrång, tillgängligt på HIBP.</translation>
-    </message>
-    <message id="intfuorit-no-pastes-found-label">
-        <source>Good news — no pastes found!</source>
-        <translation>Goda nyheter! — Ingen publicering hittades!</translation>
-    </message>
-    <message id="intfuorit-no-pastes-found-text">
-        <source>Your email address is not included in any of the pastes available on HIBP.</source>
-        <translation>Din e-postadress finns inte med i någon publicering, tillgänglig på HIBP.</translation>
-    </message>
     <message id="intfuorit-error">
         <source>Error</source>
         <translation>Fel</translation>
     </message>
     <message id="intfuorit-settings-display">
         <source>Display</source>
+        <extracomment>Section header on the settings page</extracomment>
         <translation>Visning</translation>
     </message>
     <message id="intfuorit-lang-choser-label">
         <source>Language</source>
+        <extracomment>Label for a combobox (drop down menu)</extracomment>
         <translation>Språk</translation>
     </message>
     <message id="intfuorit-lang-choser-desc">
         <source>To change the language, you have to restart the application.</source>
+        <extracomment>Description for a combobox (drop down menu)</extracomment>
         <translation>Du måste starta om appen, för att byta språk.</translation>
     </message>
     <message id="intfuorit-settings-behavior">
         <source>Behavior</source>
+        <extracomment>Section header on the settings page</extracomment>
         <translation>Beteende</translation>
     </message>
     <message id="intfuorit-cache-period-choser-label">
         <source>Cache period</source>
+        <extracomment>Label for a combobox (drop down menu)</extracomment>
         <translation>Cache-period</translation>
     </message>
     <message id="intfuorit-cache-period-choser-desc">
         <source>The cache period is used to store API results for the specified duration before sending a new request to the API.</source>
         <oldsource>To change the language, you have to restart the application.</oldsource>
+        <extracomment>Description for a combobox (drop down menu)</extracomment>
         <translation>Cache-perioden används för att lagra API-resultaten angiven tid, innan en ny begäran skickas till API:n.</translation>
     </message>
     <message id="intfuorit-cache-period-disabled">
@@ -191,12 +181,9 @@
         <oldsource>Libintfuorit is a Qt based library that provides access the haveibeenpwned.com API.</oldsource>
         <translation>Libintfuorit är ett Qt-baserat bibliotek som ger tillgång till en API från haveibeenpwned.com.</translation>
     </message>
-    <message id="intfuorit-btsfoscmops-desc">
-        <source>BT SFOS Components are a set of QML components for Sailfish OS.</source>
-        <translation>BT SFOS Components är en uppsättning QML-komponenter för Sailfish OS.</translation>
-    </message>
     <message id="intfuorit-app-description">
         <source>Unofficial haveibeenpwned.com client</source>
+        <extracomment>Description on the About page</extracomment>
         <translation>Inofficiell haveibeenpwned.com-klient</translation>
     </message>
     <message id="intfuorit-germany">
@@ -257,6 +244,7 @@
     </message>
     <message id="intfuorit-help-faq">
         <source>Help/FAQ</source>
+        <extracomment>Pull down menu entry and page header</extracomment>
         <translation>Hjälp/FAQ</translation>
     </message>
     <message id="intfuorit-help-0-head">
@@ -430,12 +418,175 @@
         <source>Spam list, used for spam marketing</source>
         <translation type="unfinished"/>
     </message>
-    <message id="intfuorit-sort-role-breachdate">
-        <source>Breach date</source>
+    <message id="intfuorit-check-password-header">
+        <source>Check password</source>
+        <extracomment>Page header</extracomment>
         <translation type="unfinished"/>
     </message>
-    <message id="intfuorit-sort-role-addeddate">
-        <source>Added date</source>
+    <message id="intfuorit-search-for-label">
+        <source>Search for</source>
+        <extracomment>Label for a combobox (drop down menu), value will be either Account or Password</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-search-for-account">
+        <source>Account</source>
+        <extracomment>Value for a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-search-for-password">
+        <source>Password</source>
+        <extracomment>Value for a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-check-password-desc">
+        <source>Check if one of your passwords has previously been exposed in data breaches.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-label-pwned">
+        <source>Oh no — pwned!</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-pwned-password-count" numerus="yes">
+        <source>This password has been seen %Ln time(s) before.</source>
+        <oldsource>This password has been seen %n time(s) before.</oldsource>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+    </message>
+    <message id="intfuorit-pwned-password-hint">
+        <source>This password has previously appeared in a data breach and should never be used. If you&apos;ve ever used it anywhere before, change it!</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-pwned-acc-summary" numerus="yes">
+        <source>Pwned on %n breached site(s).</source>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+    </message>
+    <message id="intfuorit-pwned-paste-summary" numerus="yes">
+        <source>Found %n paste(s).</source>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+    </message>
+    <message id="intfuorit-label-not-pwned">
+        <source>Good news — no pwnage found!</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-desc-not-pwned-acc">
+        <source>No breached accounts and no pastes (&lt;a href=&apos;%1&apos;&gt;subscribe&lt;/a&gt; to search sensitive breaches).</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-desc-not-pwned-pass">
+        <source>This password wasn&apos;t found in any of the Pwned Passwords loaded into Have I Been Pwned. That doesn&apos;t necessarily mean it&apos;s a good password, merely that it&apos;s not indexed on the site.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-sort-by-title-asc">
+        <source>Title (ascending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-sort-by-title-desc">
+        <source>Title (descending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-sort-by-count-asc">
+        <source>Count (ascending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-sort-by-count-desc">
+        <source>Count (descending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-sort-by-breachdate-asc">
+        <source>Breach date (ascending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-sort-by-breachdate-desc">
+        <source>Breach date (descending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-sort-by-addeddate-asc">
+        <source>Added date (ascending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-sort-by-addeddate-desc">
+        <source>Added date (descending)</source>
+        <extracomment>Value in a combobox (drop down menu)</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-hbnsfoscmops-desc">
+        <source>HBN SFOS Components are a set of Qt/QML components for Sailfish OS.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-pw-stored-head">
+        <source>Are user passwords stored on HIBP?</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-pw-stored-text">
+        <source>When email addresses from a data breach are loaded into the site, no corresponding passwords are loaded with them. Separately to the pwned address search feature, the Pwned Passwords service allows you to check if an individual password has previously been seen in a data breach. No password is stored next to any personally identifiable data (such as an email address) and every password is SHA-1 hashed (&lt;a href=&apos;%1&apos;&gt;read why SHA-1 was chosen in the Pwned Passwords launch blog post&lt;/a&gt;.)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-breach-wo-pw-head">
+        <source>What about breaches where passwords aren&apos;t leaked?</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-breach-wo-pw-text">
+        <source>Occasionally, a breach will be added to the system which doesn&apos;t include credentials for an online service. This may occur when data about individuals is leaked and it may not include a username and password. However this data still has a privacy impact; it is data that those impacted would not reasonably expect to be publicly released and as such they have a vested interest in having the ability to be notified of this.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-paste-info-head">
+        <source>What is a “paste” and why include it on this site?</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-paste-info-text-par1">
+        <source>A “paste” is information that has been “pasted” to a publicly facing website designed to share content such as Pastebin. These services are favoured by hackers due to the ease of anonymously sharing information and they&apos;re frequently the first place a breach appears.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-plus-address-head">
+        <source>How does HIBP handle “plus aliasing” in email addresses?</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-plus-address-text">
+        <source>Some people choose to create accounts using a pattern known as “plus aliasing” in their email addresses. This allows them to express their email address with an additional piece of data in the alias, usually reflecting the site they&apos;ve signed up to such as test+netflix@example.com or test+amazon@example.com. There is presently &lt;a href=&apos;%1&apos;&gt;a UserVoice suggestion&lt;/a&gt; requesting support of this pattern in HIBP. However, as explained in that suggestion, usage of plus aliasing is extremely rare, appearing in approximately only 0.03% of addresses loaded into HIBP. Vote for the suggestion and follow its progress if this feature is important to you.</source>
+        <oldsource>Some people choose to create accounts using a pattern known as </oldsource>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-data-stored-head">
+        <source>How is the data stored on HIBP?</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-data-stored-text">
+        <source>The breached accounts sit in Windows Azure table storage which contains nothing more than the email address or username and a list of sites it appeared in breaches on. If you&apos;re interested in the details, it&apos;s all described in&lt;a href=&apos;%1&apos;&gt;Working with 154 million records on Azure Table Storage — the story of Have I Been Pwned&lt;/a&gt;.</source>
+        <oldsource>The breached accounts sit in Windows Azure table storage which contains nothing more than the email address or username and a list of sites it appeared in breaches on. If you're interested in the details, it's all described in Working with 154 million records on Azure Table Storage — the story of Have I Been Pwned</oldsource>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-logging-head">
+        <source>Is anything logged on HIBP when people search for an account?</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-just-harvesting-head">
+        <source>How do I know HIBP isn&apos;t just harvesting searched email addresses?</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-just-harvesting-text">
+        <source>You don&apos;t, but it&apos;s not. The site is simply intended to be a free service for people to assess risk in relation to their account being caught up in a breach. As with any website, if you&apos;re concerned about the intent or security, don&apos;t use it.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-submit-breach-head">
+        <source>How can I submit a data breach?</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-submit-breach-text">
+        <source>If you&apos;ve come across a data breach which you&apos;d like to submit, &lt;a href=&apos;%1&apos;&gt;get in touch with Troy Hunt&lt;/a&gt;. Check out what&apos;s currently loaded into HIBP first if you&apos;re not sure whether the breach is already in the system. </source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-paste-info-text-par2">
+        <source>HIBP searches through pastes that are broadcast by the @dumpmon Twitter account and reported as having emails that are a potential indicator of a breach. Finding an email address in a paste does not immediately mean it has been disclosed as the result of a breach. Review the paste and determine if your account has been compromised then take appropriate action such as changing passwords.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-help-logging-text">
+        <source>Nothing is explicitly logged by the website. The only logging of any kind is via Google Analytics, Application Insights performance monitoring and any diagnostic data implicitly collected if an exception occurs in the system.</source>
         <translation type="unfinished"/>
     </message>
 </context>
