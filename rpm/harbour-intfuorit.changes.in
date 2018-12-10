@@ -8,5 +8,12 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Mon Dec 10 2018 Matthias Fehring <> 1.1.0-1
+- new: add password check (#6)
+- new: add more sort options for the breaches list (#5)
+- new: show indicators for breach classification (#1)
+- new: Swedish translation by Åke Engelbrektson
+- changed: unify selection of sort role and sort order (#7)
+
 * Fri Sep 29 2017 Matthias Fehring <> 1.0.0-1
 - initial release
