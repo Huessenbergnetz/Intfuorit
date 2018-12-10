@@ -28,6 +28,18 @@ import QtQuick 2.6
 
 ListModel {
     ListElement {
+        version: "1.1.0"
+        date: 1544458854000
+        entries: [
+            ListElement { type: 0; issue: "6"; description: "add password check" },
+            ListElement { type: 0; issue: "5"; description: "add more sort options for the breaches list" },
+            ListElement { type: 0; issue: "1"; description: "show indicators for breach classification" },
+            ListElement { type: 0; issue: ""; description: "Swedish translation by Åke Engelbrektson" },
+            ListElement { type: 1; issue: "7"; description: "unify selection of sort role and sort order" }
+        ]
+    }
+
+    ListElement {
         version: "1.0.0"
         date: 1506692990000
         entries: [

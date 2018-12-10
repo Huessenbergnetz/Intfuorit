@@ -1,4 +1,11 @@
+------------------------------------------------------------------
+Intfuorit 1.1.0 - 2018-12-10 16:16:00 UTC
+
+* new: add password check (#6)
+* new: add more sort options for the breaches list (#5)
+* new: show indicators for breach classification (#1)
 * new: Swedish translation by Åke Engelbrektson
+* changed: unify selection of sort role and sort order (#7)
 
 ------------------------------------------------------------------
 Intfuorit 1.0.0 - 2017-09-29 13:49:50 UTC
