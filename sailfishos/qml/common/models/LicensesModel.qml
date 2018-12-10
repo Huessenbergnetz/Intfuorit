@@ -34,7 +34,7 @@ ListModel {
     ListElement {
         name: "HBN SFOS Components"
         author: "Matthias Fehring"
-        version: "1.1.3"
+        version: "1.4.0"
         license: "Modified BSD License"
         licenseFile: "BSD-3.qml"
         website: "https://github.com/Huessenbergnetz/HBN_SFOS_Components"
