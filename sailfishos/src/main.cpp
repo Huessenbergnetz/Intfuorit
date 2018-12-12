@@ -42,7 +42,7 @@
 #include "../../common/languagemodel.h"
 #include "../../common/cacheperiodmodel.h"
 
-int main(int argc, char *argv[])
+Q_DECL_EXPORT int main(int argc, char *argv[])
 {
 #ifndef CLAZY
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
