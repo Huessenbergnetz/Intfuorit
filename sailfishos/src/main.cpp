@@ -37,14 +37,6 @@
 #include "hbnsc.h"
 #include "hbnsciconprovider.h"
 
-#include <Intfuorit/Error>
-#include <Intfuorit/Objects/Breach>
-#include <Intfuorit/Models/BreachesListModel>
-#include <Intfuorit/Models/BreachesListFilterModel>
-#include <Intfuorit/Objects/Paste>
-#include <Intfuorit/Models/PastesListModel>
-#include <Intfuorit/API/CheckPwnedPassword>
-
 #include "../../common/configuration.h"
 #include "../../common/namfactory.h"
 #include "../../common/languagemodel.h"
@@ -121,17 +113,6 @@ int main(int argc, char *argv[])
 
     LanguageModel::setSupportedLangs(QStringList({QStringLiteral("en_US"), QStringLiteral("en_GB"), QStringLiteral("de"), QStringLiteral("sv")}));
 
-    qRegisterMetaType<Intfuorit::Error>();
-    QMetaType::registerEqualsComparator<Intfuorit::Error>();
-    qmlRegisterUncreatableType<Intfuorit::Error>("harbour.intfuorit", 1, 0, "Error", QStringLiteral("Can not create Intfuorit::Error in QML!"));
-    qRegisterMetaType<Intfuorit::Breach>();
-    QMetaType::registerEqualsComparator<Intfuorit::Breach>();
-    qRegisterMetaType<Intfuorit::Paste>();
-    QMetaType::registerEqualsComparator<Intfuorit::Paste>();
-    qmlRegisterType<Intfuorit::BreachesListModel>("harbour.intfuorit", 1, 0, "BreachesListModel");
-    qmlRegisterType<Intfuorit::BreachesListFilterModel>("harbour.intfuorit", 1, 0, "BreachesListFilterModel");
-    qmlRegisterType<Intfuorit::PastesListModel>("harbour.intfuorit", 1, 0, "PastesListModel");
-    qmlRegisterType<Intfuorit::CheckPwnedPassword>("harbour.intfuorit", 1, 0, "CheckPwnedPassword");
     qmlRegisterType<LanguageModel>("harbour.intfuorit", 1, 0, "LanguageModel");
     qmlRegisterType<CachePeriodModel>("harbour.intfuorit", 1, 0, "CachePeriodModel");
 

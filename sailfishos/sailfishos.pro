@@ -38,8 +38,8 @@ clazy {
 
 include(../common/common.pri)
 
-LIBS += -L$$OUT_PWD/../libintfuorit -lintfuorit
-INCLUDEPATH += $$PWD/../libintfuorit
+QML_IMPORT_PATH += $$PWD/../HBN_SFOS_Components/qml
+QML_IMPORT_PATH += $$PWD/../libintfuorit/imports
 
 SOURCES += \
     src/main.cpp

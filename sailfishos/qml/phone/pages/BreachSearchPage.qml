@@ -19,6 +19,7 @@
 import QtQuick 2.6
 import QtQuick.Layouts 1.1
 import Sailfish.Silica 1.0
+import de.huessenbergnetz.intfuorit 1.0
 import harbour.intfuorit 1.0
 
 Page {
