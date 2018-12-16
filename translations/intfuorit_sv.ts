@@ -1,6 +1,8 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="sv" sourcelanguage="en">
 <context>
-    <name/>
+    <name></name>
     <message id="intfuorit-about">
         <source>About</source>
         <extracomment>Pull down menu entry and page header</extracomment>
@@ -20,7 +22,7 @@
         <source>%1 accounts</source>
         <oldsource>%1 account(s)</oldsource>
         <extracomment>Text in the list of breaches. %1 will be substituted by the name of the breached service, like “Adobe accounts”</extracomment>
-        <translation type="unfinished"/>
+        <translation>%1 konton</translation>
     </message>
     <message id="intfuorit-sort-by-label">
         <source>Sort by</source>
@@ -64,7 +66,7 @@
     <message id="intfuorit-check-account-desc">
         <source>Check if you have an account that has been compromised in a data breach or that is published in a Paste.</source>
         <oldsource>Check if you have an account that has been compromised in a data breach or that is published in a Paste. Simply enter your email address or user name into the search field and start searching.</oldsource>
-        <translation type="unfinished"/>
+        <translation>Kontrollera om du har ett konto som har komprometterats i ett dataintrång eller som publicerats i en &quot;Paste&quot;.</translation>
     </message>
     <message id="intfuorit-section-header-breached-sites">
         <source>Breaches you were found in</source>
@@ -77,14 +79,14 @@
     </message>
     <message id="intfuorit-section-desc-breached-sites">
         <source>A &lt;i&gt;breach&lt;/i&gt; is an incident where a site’s data has been illegally accessed by hackers and then released publicly. Review the types of data that were compromised (email addresses, passwords, credit cards etc.) and take appropriate action, such as changing passwords.</source>
-        <oldsource>A &lt;i&gt;breach&lt;/i&gt; is an incident where a site's data has been illegally accessed by hackers and then released publicly. Review the types of data that were compromised (email addresses, passwords, credit cards etc.) and take appropriate action, such as changing passwords.</oldsource>
+        <oldsource>A &lt;i&gt;breach&lt;/i&gt; is an incident where a site&apos;s data has been illegally accessed by hackers and then released publicly. Review the types of data that were compromised (email addresses, passwords, credit cards etc.) and take appropriate action, such as changing passwords.</oldsource>
         <translation>Ett &lt;i&gt;intrång&lt;/i&gt; är här en incident där hackare illegalt har skaffat sig åtkomst till en sajts data och sedan publicerat den offentligt. Se vilka typer av data som har äventyrats (e-postadresser, lösenord, kreditkort, etc.) och vidta lämpliga åtgärder, som att ändra lösenord.</translation>
     </message>
     <message id="intfuorit-switch-include-unverified">
         <source>Include unverified breaches</source>
         <oldsource>Inlcude unverified breaches</oldsource>
         <extracomment>Label on a text switch</extracomment>
-        <translation type="unfinished"/>
+        <translation>Inkludera overifierade intrång</translation>
     </message>
     <message id="intfuorit-switch-omit-cache">
         <source>Omit local cache</source>
@@ -98,7 +100,10 @@
     <message id="intfuorit-emails-in-paste" numerus="yes">
         <source>%1 email(s)</source>
         <oldsource>%n email(s)</oldsource>
-        <translation><numerusform>%1 e-post</numerusform><numerusform>%1 e-post</numerusform></translation>
+        <translation>
+            <numerusform>%1 e-postadress</numerusform>
+            <numerusform>%1 e-postadresser</numerusform>
+        </translation>
     </message>
     <message id="intfuorit-section-desc-pastes">
         <source>A &lt;i&gt;paste&lt;/i&gt; is information that has been published to a publicly facing website designed to share content, usually anonymously. Often these are indicators of a data breach so review the paste and determine if your account has been compromised then take appropriate action such as changing passwords. Pastes are often removed shortly after having been posted.</source>
@@ -263,12 +268,12 @@
     </message>
     <message id="intfuorit-help-1-text">
         <source>There are often “breaches” announced by attackers which in turn are exposed as hoaxes. There is a balance between making data searchable early and performing sufficient due diligence to establish the legitimacy of the breach. The following activities are usually performed by Troy Hunt in order to validate breach legitimacy:&lt;ol&gt;&lt;li&gt;Has the impacted service publicly acknowledged the breach?&lt;/li&gt;&lt;li&gt;Does the data in the breach turn up in a Google search (i.e. it’s just copied from another source)?&lt;/li&gt;&lt;li&gt;Is the structure of the data consistent with what you’d expect to see in a breach?&lt;/li&gt;&lt;li&gt;Have the attackers provided sufficient evidence to demonstrate the attack vector?&lt;/li&gt;&lt;li&gt;Do the attackers have a track record of either reliably releasing breaches or falsifying them?&lt;/li&gt;&lt;/ol&gt;</source>
-        <oldsource>There are often “breaches” announced by attackers which in turn are exposed as hoaxes. There is a balance between making data searchable early and performing sufficient due diligence to establish the legitimacy of the breach. The following activities are usually performed by Troy Hunt in order to validate breach legitimacy:&lt;ol&gt;&lt;li&gt;Has the impacted service publicly acknowledged the breach?&lt;/li&gt;&lt;li&gt;Does the data in the breach turn up in a Google search (i.e. it’s just copied from another source)?&lt;/li&gt;&lt;li&gt;Is the structure of the data consistent with what you'd expect to see in a breach?&lt;/li&gt;&lt;li&gt;Have the attackers provided sufficient evidence to demonstrate the attack vector?&lt;/li&gt;&lt;li&gt;Do the attackers have a track record of either reliably releasing breaches or falsifying them?&lt;/li&gt;&lt;/ol&gt;</oldsource>
+        <oldsource>There are often “breaches” announced by attackers which in turn are exposed as hoaxes. There is a balance between making data searchable early and performing sufficient due diligence to establish the legitimacy of the breach. The following activities are usually performed by Troy Hunt in order to validate breach legitimacy:&lt;ol&gt;&lt;li&gt;Has the impacted service publicly acknowledged the breach?&lt;/li&gt;&lt;li&gt;Does the data in the breach turn up in a Google search (i.e. it’s just copied from another source)?&lt;/li&gt;&lt;li&gt;Is the structure of the data consistent with what you&apos;d expect to see in a breach?&lt;/li&gt;&lt;li&gt;Have the attackers provided sufficient evidence to demonstrate the attack vector?&lt;/li&gt;&lt;li&gt;Do the attackers have a track record of either reliably releasing breaches or falsifying them?&lt;/li&gt;&lt;/ol&gt;</oldsource>
         <translation>Det förekommer ofta ”överträdelser” meddelade av angripare som senare avslöjas som bluff. Det finns en balans mellan att göra data sökbara tidigt och att det utförs med tillbörlig aktsamhet, för att fastställa överträdelsens legitimitet. Följande aktiviteter utförs vanligtvis av Troy Hunt för att validera intrångets legitimitet:&lt;ol&gt;&lt;li&gt;Har den påverkade tjänsten offentligt erkänt intrånget?&lt;/li&gt;&lt;li&gt;Framkommer uppgifterna i överträdelsen vid en Google-sökning (det vill säga, det har bara kopierats från en annan källa)?&lt;/li&gt;&lt;li&gt;Är strukturen för data överensstämmande med vad du förväntar dig att se i ett dataintrång?&lt;/li&gt;&lt;li&gt;Har angriparna lämnat tillräckliga bevis för att påvisa attackvektorn?&lt;/li&gt;&lt;li&gt;Har angriparna en meritlista av antingen tillförlitligt släppta överträdelser eller förfalskningar?&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message id="intfuorit-help-2-head">
         <source>My email was reported as appearing in a paste but the paste now can’t be found</source>
-        <oldsource>My email was reported as appearing in a paste but the paste now can't be found</oldsource>
+        <oldsource>My email was reported as appearing in a paste but the paste now can&apos;t be found</oldsource>
         <translation>Min e-postadress rapporteras som förekommande i en publicering, men publiceringen kan inte längre hittas</translation>
     </message>
     <message id="intfuorit-help-2-text">
@@ -277,7 +282,7 @@
     </message>
     <message id="intfuorit-help-3-head">
         <source>My email was not found — does that mean I haven’t been pwned?</source>
-        <oldsource>My email was not found — does that mean I haven't been pwned?</oldsource>
+        <oldsource>My email was not found — does that mean I haven&apos;t been pwned?</oldsource>
         <translation>Min e-postadress hittades inte. Betyder det att den inte har äventyrats?</translation>
     </message>
     <message id="intfuorit-help-3-text">
@@ -396,198 +401,207 @@
     </message>
     <message id="intfuorit-icon-meanings">
         <source>Meaning of the icons</source>
-        <translation type="unfinished"/>
+        <translation>Ikonernas betydelse</translation>
     </message>
     <message id="intfuorit-sensitive-breach-hint">
         <source>Sensitive breach, not publicly searchable</source>
-        <translation type="unfinished"/>
+        <translation>Känsligt intrång, inte allmänt sökbart.</translation>
     </message>
     <message id="intfuorit-retired-breach-hint">
         <source>Retired breach, removed from system</source>
-        <translation type="unfinished"/>
+        <translation>Gammalt intrång, borttaget från systemet.</translation>
     </message>
     <message id="intfuorit-unverified-breach-hint">
         <source>Unverified breach, may be sourced from elsewhere</source>
-        <translation type="unfinished"/>
+        <translation>Ej verifierat intrång, kan komma från andra källor.</translation>
     </message>
     <message id="intfuorit-fabricated-breach-hint">
         <source>Fabricated breach, likely not legitimate</source>
-        <translation type="unfinished"/>
+        <translation>Påhittat intrång, sannolikt inte legitimt.</translation>
     </message>
     <message id="intfuorit-spam-list-hint">
         <source>Spam list, used for spam marketing</source>
-        <translation type="unfinished"/>
+        <translation>Spam-lista, används för spam-marknadsföring</translation>
     </message>
     <message id="intfuorit-check-password-header">
         <source>Check password</source>
         <extracomment>Page header</extracomment>
-        <translation type="unfinished"/>
+        <translation>Kontrollera lösenord</translation>
     </message>
     <message id="intfuorit-search-for-label">
         <source>Search for</source>
         <extracomment>Label for a combobox (drop down menu), value will be either Account or Password</extracomment>
-        <translation type="unfinished"/>
+        <translation>Sök efter</translation>
     </message>
     <message id="intfuorit-search-for-account">
         <source>Account</source>
         <extracomment>Value for a combobox (drop down menu)</extracomment>
-        <translation type="unfinished"/>
+        <translation>Konto</translation>
     </message>
     <message id="intfuorit-search-for-password">
         <source>Password</source>
         <extracomment>Value for a combobox (drop down menu)</extracomment>
-        <translation type="unfinished"/>
+        <translation>Lösenord</translation>
     </message>
     <message id="intfuorit-check-password-desc">
         <source>Check if one of your passwords has previously been exposed in data breaches.</source>
-        <translation type="unfinished"/>
+        <translation>Kontrollera om ett av dina lösenord har exponerats i dataintrång.</translation>
     </message>
     <message id="intfuorit-label-pwned">
         <source>Oh no — pwned!</source>
-        <translation type="unfinished"/>
+        <translation>Åh, nej — pwned!</translation>
     </message>
     <message id="intfuorit-pwned-password-count" numerus="yes">
         <source>This password has been seen %Ln time(s) before.</source>
         <oldsource>This password has been seen %n time(s) before.</oldsource>
-        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+        <translation>
+            <numerusform>Detta lösenord har setts %Ln gång tidigare.</numerusform>
+            <numerusform>Detta lösenord har setts %Ln gånger tidigare.</numerusform>
+        </translation>
     </message>
     <message id="intfuorit-pwned-password-hint">
         <source>This password has previously appeared in a data breach and should never be used. If you&apos;ve ever used it anywhere before, change it!</source>
-        <translation type="unfinished"/>
+        <translation>Detta lösenord har tidigare förekommit i ett dataintrång och bör aldrig användas. Har du använt det tidigare någonstans, bör du ändra det!</translation>
     </message>
     <message id="intfuorit-pwned-acc-summary" numerus="yes">
         <source>Pwned on %n breached site(s).</source>
-        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+        <translation>
+            <numerusform>Pwned på %n kränkt webbplats.</numerusform>
+            <numerusform>Pwned på %n kränkta webbplatser.</numerusform>
+        </translation>
     </message>
     <message id="intfuorit-pwned-paste-summary" numerus="yes">
         <source>Found %n paste(s).</source>
-        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+        <translation>
+            <numerusform>Hittades på %n paste-sida</numerusform>
+            <numerusform>Hittades på %n paste-sidor</numerusform>
+        </translation>
     </message>
     <message id="intfuorit-label-not-pwned">
         <source>Good news — no pwnage found!</source>
-        <translation type="unfinished"/>
+        <translation>Goda nyheter — inget intrång hittades!</translation>
     </message>
     <message id="intfuorit-desc-not-pwned-acc">
         <source>No breached accounts and no pastes (&lt;a href=&apos;%1&apos;&gt;subscribe&lt;/a&gt; to search sensitive breaches).</source>
-        <translation type="unfinished"/>
+        <translation>Inga hackade konton och inga paste-sidor (&lt;a href=&apos;%1&apos;&gt;subscribe&lt;/a&gt; för att söka efter känsliga intrång).</translation>
     </message>
     <message id="intfuorit-desc-not-pwned-pass">
         <source>This password wasn&apos;t found in any of the Pwned Passwords loaded into Have I Been Pwned. That doesn&apos;t necessarily mean it&apos;s a good password, merely that it&apos;s not indexed on the site.</source>
-        <translation type="unfinished"/>
+        <translation>Detta lösenord hittades inte bland de avslöjade lösenorden som laddats upp på &quot;Have I Been Pwned&quot;. Det betyder inte nödvändigtvis att det är ett bra lösenord, bara att det inte indexerats på sajten.</translation>
     </message>
     <message id="intfuorit-sort-by-title-asc">
         <source>Title (ascending)</source>
         <extracomment>Value in a combobox (drop down menu)</extracomment>
-        <translation type="unfinished"/>
+        <translation>Titel (stigande)</translation>
     </message>
     <message id="intfuorit-sort-by-title-desc">
         <source>Title (descending)</source>
         <extracomment>Value in a combobox (drop down menu)</extracomment>
-        <translation type="unfinished"/>
+        <translation>Titel (fallande)</translation>
     </message>
     <message id="intfuorit-sort-by-count-asc">
         <source>Count (ascending)</source>
         <extracomment>Value in a combobox (drop down menu)</extracomment>
-        <translation type="unfinished"/>
+        <translation>Antal (stigande)</translation>
     </message>
     <message id="intfuorit-sort-by-count-desc">
         <source>Count (descending)</source>
         <extracomment>Value in a combobox (drop down menu)</extracomment>
-        <translation type="unfinished"/>
+        <translation>Antal (fallande)</translation>
     </message>
     <message id="intfuorit-sort-by-breachdate-asc">
         <source>Breach date (ascending)</source>
         <extracomment>Value in a combobox (drop down menu)</extracomment>
-        <translation type="unfinished"/>
+        <translation>Intrångsdatum (stigande)</translation>
     </message>
     <message id="intfuorit-sort-by-breachdate-desc">
         <source>Breach date (descending)</source>
         <extracomment>Value in a combobox (drop down menu)</extracomment>
-        <translation type="unfinished"/>
+        <translation>Intrångsdatum (fallande)</translation>
     </message>
     <message id="intfuorit-sort-by-addeddate-asc">
         <source>Added date (ascending)</source>
         <extracomment>Value in a combobox (drop down menu)</extracomment>
-        <translation type="unfinished"/>
+        <translation>Inlagt-datum (stigande)</translation>
     </message>
     <message id="intfuorit-sort-by-addeddate-desc">
         <source>Added date (descending)</source>
         <extracomment>Value in a combobox (drop down menu)</extracomment>
-        <translation type="unfinished"/>
+        <translation>Inlagt-datum (fallande)</translation>
     </message>
     <message id="intfuorit-hbnsfoscmops-desc">
         <source>HBN SFOS Components are a set of Qt/QML components for Sailfish OS.</source>
-        <translation type="unfinished"/>
+        <translation>HBN SFOS Components är en uppsättning Qt/QML-komponenter för Sailfish OS.</translation>
     </message>
     <message id="intfuorit-help-pw-stored-head">
         <source>Are user passwords stored on HIBP?</source>
-        <translation type="unfinished"/>
+        <translation>Lagras lösenord på HIBP?</translation>
     </message>
     <message id="intfuorit-help-pw-stored-text">
         <source>When email addresses from a data breach are loaded into the site, no corresponding passwords are loaded with them. Separately to the pwned address search feature, the Pwned Passwords service allows you to check if an individual password has previously been seen in a data breach. No password is stored next to any personally identifiable data (such as an email address) and every password is SHA-1 hashed (&lt;a href=&apos;%1&apos;&gt;read why SHA-1 was chosen in the Pwned Passwords launch blog post&lt;/a&gt;.)</source>
-        <translation type="unfinished"/>
+        <translation>När e-postadresser från ett dataintrång laddas upp på webbplatsen, laddas inga motsvarande lösenord upp. Separerat från funktionen pwned adresssök (pwned lösenord), kan du kontrollera om ett enskilt lösenord tidigare har setts i ett dataintrång. Inget lösenord lagras tillsammans med några personligt identifierbara data (t. ex. en e-postadress) och varje lösenord är SHA-1 hashat. (&lt;a href=&apos;%1&apos;&gt;Läs varför SHA-1 valdes, i Pwned Passwords bloggpost.&lt;/a&gt;)</translation>
     </message>
     <message id="intfuorit-help-breach-wo-pw-head">
         <source>What about breaches where passwords aren&apos;t leaked?</source>
-        <translation type="unfinished"/>
+        <translation>Hur är det med intrång där lösenord inte läckts?</translation>
     </message>
     <message id="intfuorit-help-breach-wo-pw-text">
         <source>Occasionally, a breach will be added to the system which doesn&apos;t include credentials for an online service. This may occur when data about individuals is leaked and it may not include a username and password. However this data still has a privacy impact; it is data that those impacted would not reasonably expect to be publicly released and as such they have a vested interest in having the ability to be notified of this.</source>
-        <translation type="unfinished"/>
+        <translation>Ibland kommer ett intrång att läggas till i systemet, som inte innehåller autentiseringsuppgifter för en onlinetjänst. Detta kan inträffa när data om individer läckts och det kanske inte innehåller användarnamn och lösenord. Dock kan dessa data fortfarande ha en integritetspåverkan. Det är uppgifter som de drabbade rimligen inte skulle förvänta sig offentliggöras och som drabbade har de ett eget intresse av att ha möjlighet att bli underrättade om detta.</translation>
     </message>
     <message id="intfuorit-help-paste-info-head">
         <source>What is a “paste” and why include it on this site?</source>
-        <translation type="unfinished"/>
+        <translation>Vad är en &quot;paste&quot; och varför inkludera det på denna webbplats?</translation>
     </message>
     <message id="intfuorit-help-paste-info-text-par1">
         <source>A “paste” is information that has been “pasted” to a publicly facing website designed to share content such as Pastebin. These services are favoured by hackers due to the ease of anonymously sharing information and they&apos;re frequently the first place a breach appears.</source>
-        <translation type="unfinished"/>
+        <translation>En &quot;paste&quot; är information som har &quot;klistrats in&quot; på en offentligt webbplats för att dela innehåll, som t.ex. pastebin. Dessa tjänster används av hackare på grund av att det är lätt att anonymt dela information och de är ofta den första platsen som ett intrång avslöjas.</translation>
     </message>
     <message id="intfuorit-help-plus-address-head">
         <source>How does HIBP handle “plus aliasing” in email addresses?</source>
-        <translation type="unfinished"/>
+        <translation>Hur hanterar HIBP &quot;plus alias&quot; i e-postadresser?</translation>
     </message>
     <message id="intfuorit-help-plus-address-text">
         <source>Some people choose to create accounts using a pattern known as “plus aliasing” in their email addresses. This allows them to express their email address with an additional piece of data in the alias, usually reflecting the site they&apos;ve signed up to such as test+netflix@example.com or test+amazon@example.com. There is presently &lt;a href=&apos;%1&apos;&gt;a UserVoice suggestion&lt;/a&gt; requesting support of this pattern in HIBP. However, as explained in that suggestion, usage of plus aliasing is extremely rare, appearing in approximately only 0.03% of addresses loaded into HIBP. Vote for the suggestion and follow its progress if this feature is important to you.</source>
         <oldsource>Some people choose to create accounts using a pattern known as </oldsource>
-        <translation type="unfinished"/>
+        <translation>Vissa väljer att skapa konton med ett mönster som kallas &quot;plus alias&quot; i sina e-postadresser. Detta gör att de kan uttrycka sin e-postadress med ytterligare en bit data i alias, vanligtvis återspeglar det den webbplats de har registrerat sig på, t.ex. test+Netflix@example.com eller test+Amazon@example.com. Det finns för närvarande &lt;a href=&apos;%1&apos;&gt;ett användarförslag&lt;/a&gt; som ber om stöd för detta mönster i HIBP. Men som förklaras i detta förslag, är användning av plus alias extremt sällsynt, och förekommer endast i cirka 0,03% av adresser uppladdade på HIBP. Rösta på förslaget och följ dess förlopp om denna funktion är viktig för dig.</translation>
     </message>
     <message id="intfuorit-help-data-stored-head">
         <source>How is the data stored on HIBP?</source>
-        <translation type="unfinished"/>
+        <translation>Hur lagras data på HIBP?</translation>
     </message>
     <message id="intfuorit-help-data-stored-text">
         <source>The breached accounts sit in Windows Azure table storage which contains nothing more than the email address or username and a list of sites it appeared in breaches on. If you&apos;re interested in the details, it&apos;s all described in&lt;a href=&apos;%1&apos;&gt;Working with 154 million records on Azure Table Storage — the story of Have I Been Pwned&lt;/a&gt;.</source>
-        <oldsource>The breached accounts sit in Windows Azure table storage which contains nothing more than the email address or username and a list of sites it appeared in breaches on. If you're interested in the details, it's all described in Working with 154 million records on Azure Table Storage — the story of Have I Been Pwned</oldsource>
-        <translation type="unfinished"/>
+        <oldsource>The breached accounts sit in Windows Azure table storage which contains nothing more than the email address or username and a list of sites it appeared in breaches on. If you&apos;re interested in the details, it&apos;s all described in Working with 154 million records on Azure Table Storage — the story of Have I Been Pwned</oldsource>
+        <translation>De avslöjade kontona ligger i Windows Azure registerlagring och innehåller inget annat än e-postadress eller användarnamn och en lista över de webbplatser där intrången skett. Är du intresserad av detaljerna, finns allt beskrivet i &lt;a href=&apos;%1&apos;&gt;Working with 154 million records on Azure Table Storage — the story of Have I Been Pwned&lt;/a&gt;.</translation>
     </message>
     <message id="intfuorit-help-logging-head">
         <source>Is anything logged on HIBP when people search for an account?</source>
-        <translation type="unfinished"/>
+        <translation>Är det något som loggas på HIBP, när folk söker efter ett konto?</translation>
     </message>
     <message id="intfuorit-help-just-harvesting-head">
         <source>How do I know HIBP isn&apos;t just harvesting searched email addresses?</source>
-        <translation type="unfinished"/>
+        <translation>Hur vet jag att HIBP inte skördar sökta e-postadresser?</translation>
     </message>
     <message id="intfuorit-help-just-harvesting-text">
         <source>You don&apos;t, but it&apos;s not. The site is simply intended to be a free service for people to assess risk in relation to their account being caught up in a breach. As with any website, if you&apos;re concerned about the intent or security, don&apos;t use it.</source>
-        <translation type="unfinished"/>
+        <translation>Det kan du inte veta, men det gör vi inte. Webbplatsen är helt enkelt avsedd att vara en gratistjänst för att bedöma risken att deras konto används i ett brott. Som med alla webbplatser, om du är orolig för uppsåt eller säkerhet, använd den inte.</translation>
     </message>
     <message id="intfuorit-help-submit-breach-head">
         <source>How can I submit a data breach?</source>
-        <translation type="unfinished"/>
+        <translation>Hur kan jag skicka in ett dataintrång?</translation>
     </message>
     <message id="intfuorit-help-submit-breach-text">
         <source>If you&apos;ve come across a data breach which you&apos;d like to submit, &lt;a href=&apos;%1&apos;&gt;get in touch with Troy Hunt&lt;/a&gt;. Check out what&apos;s currently loaded into HIBP first if you&apos;re not sure whether the breach is already in the system. </source>
-        <translation type="unfinished"/>
+        <translation>Om du har stött på ett dataintrång som du vill skicka in, &lt;a href=&apos;%1&apos;&gt;kontakta Troy Hunt&lt;/a&gt;. Check out what&apos;s currently loaded into HIBP first if you&apos;re not sure whether the breach is already in the system. Kolla in vad som för närvarande är uppladdat på HIBP först, om du är osäker på om intrånget redan finns i systemet.</translation>
     </message>
     <message id="intfuorit-help-paste-info-text-par2">
         <source>HIBP searches through pastes that are broadcast by the @dumpmon Twitter account and reported as having emails that are a potential indicator of a breach. Finding an email address in a paste does not immediately mean it has been disclosed as the result of a breach. Review the paste and determine if your account has been compromised then take appropriate action such as changing passwords.</source>
-        <translation type="unfinished"/>
+        <translation>HIBP söker igenom &quot;pastes&quot; som sänds av @dumpmon Twitter-konto och rapporteras ha e-postadresser som är en potentiell indikator på ett intrång. Att hitta en e-postadress i en &quot;paste&quot; betyder inte omedelbart att den har avslöjats som ett resultat av ett intrång. Granska aktuell &quot;paste&quot; och kontrollera om ditt konto har komprometterats, vidta sedan lämpliga åtgärder, som att byta lösenord.</translation>
     </message>
     <message id="intfuorit-help-logging-text">
         <source>Nothing is explicitly logged by the website. The only logging of any kind is via Google Analytics, Application Insights performance monitoring and any diagnostic data implicitly collected if an exception occurs in the system.</source>
-        <translation type="unfinished"/>
+        <translation>Inget loggas uttryckligen av webbplatsen. Den enda loggning av något slag är via Google Analytics, Application Insights performance monitoring och diagnostisk data implicit insamlad om ett undantag inträffar i systemet.</translation>
     </message>
 </context>
 </TS>
