@@ -1,5 +1,5 @@
 /* Intfuorit - Qt based client for haveibeenpwned.com
- * Copyright (C) 2017 Hüssenbergnetz/Matthias Fehring
+ * Copyright (C) 2017-2019 Hüssenbergnetz/Matthias Fehring
  * https://github.com/Huessenbergnetz/Intfuorit
  *
  * This program is free software: you can redistribute it and/or modify
