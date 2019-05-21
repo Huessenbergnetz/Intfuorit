@@ -19,6 +19,7 @@
 import QtQuick 2.6
 import QtQuick.Layouts 1.1
 import Sailfish.Silica 1.0
+import de.huessenbergnetz.hbnsc 1.0
 import harbour.intfuorit 1.0
 
 Page {
@@ -60,23 +61,12 @@ Page {
 
             Item {
                 Layout.fillWidth: true
-                Layout.preferredHeight: langChoser.height
+                Layout.preferredHeight: langPicker.height
                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
 
-                ComboBox {
-                    id: langChoser
-                    //: Label for a combobox (drop down menu)
-                    //% "Language"
-                    label: qsTrId("intfuorit-lang-choser-label")
-                    //: Description for a combobox (drop down menu)
-                    //% "To change the language, you have to restart the application."
-                    description: qsTrId("intfuorit-lang-choser-desc")
-                    menu: ContextMenu {
-                        Repeater {
-                            model: LanguageModel { id: langModel }
-                            MenuItem { text: model.name; readonly property string value: model.code }
-                        }
-                    }
+                LanguagePicker {
+                    id: langPicker
+                    model: LanguageModel { id: langModel }
                     onCurrentIndexChanged: if (currentItem) { config.language = currentItem.value }
                     currentIndex: langModel.findIndex(config.language)
                 }

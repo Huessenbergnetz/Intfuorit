@@ -18,6 +18,7 @@
 
 import QtQuick 2.6
 import de.huessenbergnetz.hbnsc 1.0
+import harbour.intfuorit 1.0
 import "../models"
 
 AboutPage {

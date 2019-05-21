@@ -36,10 +36,11 @@
 #endif
 #include "hbnsc.h"
 #include "hbnsciconprovider.h"
+#include "licensesmodel.h"
+#include "languagesmodel.h"
 
 #include "../../common/configuration.h"
 #include "../../common/namfactory.h"
-#include "../../common/languagemodel.h"
 #include "../../common/cacheperiodmodel.h"
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
@@ -58,8 +59,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     if (!config->language().isEmpty()) {
         QLocale::setDefault(QLocale(config->language()));
-    } else {
-        QLocale::setDefault(QLocale::system());
     }
 
     QScopedPointer<QNetworkDiskCache> dk(new QNetworkDiskCache);
@@ -111,10 +110,9 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
         }
     }
 
-    LanguageModel::setSupportedLangs(QStringList({QStringLiteral("en_US"), QStringLiteral("en_GB"), QStringLiteral("de"), QStringLiteral("sv")}));
-
-    qmlRegisterType<LanguageModel>("harbour.intfuorit", 1, 0, "LanguageModel");
+    qmlRegisterType<LanguagesModel>("harbour.intfuorit", 1, 0, "LanguageModel");
     qmlRegisterType<CachePeriodModel>("harbour.intfuorit", 1, 0, "CachePeriodModel");
+    qmlRegisterType<LicensesModel>("harbour.intfuorit", 1, 0, "LicensesModel");
 
 #ifndef CLAZY
     QScopedPointer<QQuickView> view(SailfishApp::createView());

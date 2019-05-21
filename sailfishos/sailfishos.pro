@@ -38,11 +38,15 @@ clazy {
 
 include(../common/common.pri)
 
-QML_IMPORT_PATH += $$PWD/../HBN_SFOS_Components/qml
 QML_IMPORT_PATH += $$PWD/../libintfuorit/imports
 
+LIBS += -L$$OUT_PWD/../libintfuorit/Intfuorit -lintfuorit
+INCLUDEPATH += $$PWD/../libintfuorit
+
 SOURCES += \
-    src/main.cpp
+    src/main.cpp \
+    src/licensesmodel.cpp \
+    src/languagesmodel.cpp
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 150x150 172x172
 
@@ -74,9 +78,12 @@ DISTFILES += \
     qml/common/pages/About.qml \
     qml/common/models/ChangelogModel.qml \
     qml/common/models/ContributorsModel.qml \
-    qml/common/models/LicensesModel.qml \
     qml/common/pages/PrivacyPolicy.qml \
     qml/common/pages/Help.qml \
     qml/common/pages/Welcome.qml
 
 include(../HBN_SFOS_Components/HBN_SFOS_Components.pri)
+
+HEADERS += \
+    src/licensesmodel.h \
+    src/languagesmodel.h
