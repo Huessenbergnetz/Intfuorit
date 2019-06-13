@@ -14,6 +14,7 @@ TARGET = harbour-intfuorit
 
 CONFIG += sailfishapp
 CONFIG += c++11
+CONFIG += c++14
 
 QT += network
 
@@ -32,8 +33,8 @@ CONFIG(release, debug|release) {
 clazy {
     QT += quick qml
     DEFINES += CLAZY
-    QMAKE_CXX = clang
-    QMAKE_CXXFLAGS += "-Xclang -load -Xclang ClangLazy.so -Xclang -add-plugin -Xclang clang-lazy -Xclang -plugin-arg-clazy -Xclang level0,level1,level2"
+    QMAKE_CXX = clazy
+    QMAKE_CXXFLAGS += "-Xclang -plugin-arg-clazy -Xclang level0,level1,level2"
 }
 
 include(../common/common.pri)
