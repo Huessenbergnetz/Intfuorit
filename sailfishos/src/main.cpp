@@ -20,6 +20,8 @@
 #include <QtQuick>
 #endif
 
+#include <memory>
+
 #include <QQmlContext>
 #include <QGuiApplication>
 #include <QQuickView>
@@ -46,22 +48,22 @@
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
 #ifndef CLAZY
-    QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
+    std::unique_ptr<QGuiApplication> app(SailfishApp::application(argc, argv));
 #else
-    QScopedPointer<QGuiApplication> app(new QGuiApplication(argc, argv));
+    auto app = std::make_unique<QGuiApplication>(argc, argv);
 #endif
 
     app->setApplicationName(QStringLiteral("harbour-intfuorit"));
     app->setApplicationDisplayName(QStringLiteral("Intfuorit"));
     app->setApplicationVersion(QStringLiteral(VERSION_STRING));
 
-    auto config = new Configuration(app.data());
+    auto config = new Configuration(app.get());
 
     if (!config->language().isEmpty()) {
         QLocale::setDefault(QLocale(config->language()));
     }
 
-    QScopedPointer<QNetworkDiskCache> dk(new QNetworkDiskCache);
+    auto dk = std::make_unique<QNetworkDiskCache>();
 
     {
         QDir dataDir(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
@@ -99,7 +101,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
         const QLocale locale;
 
         for (const QString &name : {QStringLiteral("intfuorit"), QStringLiteral("libintfuorit"), QStringLiteral("hbnsc")}) {
-            auto trans = new QTranslator(app.data());
+            auto trans = new QTranslator(app.get());
             if (Q_LIKELY(trans->load(locale, name, QStringLiteral("_"), l10nDir, QStringLiteral(".qm")))) {
                 if (Q_UNLIKELY(!app->installTranslator(trans))) {
                     qWarning("Can not install translator for component \"%s\" and locale \"%s\".", qUtf8Printable(name), qUtf8Printable(locale.name()));
@@ -115,15 +117,15 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     qmlRegisterType<LicensesModel>("harbour.intfuorit", 1, 0, "LicensesModel");
 
 #ifndef CLAZY
-    QScopedPointer<QQuickView> view(SailfishApp::createView());
+    std::unique_ptr<QQuickView> view(SailfishApp::createView());
 #else
-    QScopedPointer<QQuickView> view(new QQuickView);
+    auto view = std::make_unique<QQuickView>();
 #endif
-    QScopedPointer<Hbnsc::BaseIconProvider> iconProvider(new Hbnsc::BaseIconProvider({1.0,1.25,1.5,1.75,2.0}, QString(), false, QStringLiteral("intfuorit"), view->engine()));
-    QScopedPointer<Hbnsc::HbnscIconProvider> hbnscIconProvider(new Hbnsc::HbnscIconProvider(view->engine()));
+    auto iconProvider = Hbnsc::BaseIconProvider::createProvider({1.0,1.25,1.5,1.75,2.0}, QString(), false, QStringLiteral("intfuorit"), view->engine());
+    auto hbnscIconProvider = Hbnsc::HbnscIconProvider::createProvider(view->engine());
 
-    QScopedPointer<QQmlNetworkAccessManagerFactory> qmlNamFactory(new NamFactory(dk.data()));
-    view->engine()->setNetworkAccessManagerFactory(qmlNamFactory.data());
+    auto qmlNamFactory = std::make_unique<NamFactory>(dk.get());
+    view->engine()->setNetworkAccessManagerFactory(qmlNamFactory.get());
 
     view->rootContext()->setContextProperty(QStringLiteral("config"), config);
     view->rootContext()->setContextProperty(QStringLiteral("intfuoritUserAgent"), QStringLiteral("Intfuorit %1 - SailfishOS Pwnage Checker").arg(QGuiApplication::applicationVersion()));
@@ -133,7 +135,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     view->setSource(SailfishApp::pathToMainQml());
 #endif
 
-    view->show();
+    view->showFullScreen();
 
     return app->exec();
 }
