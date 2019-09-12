@@ -57,8 +57,4 @@ AboutPage {
     contributorsAvatarBasePath: "/usr/share/harbour-intfuorit/images/contributors"
 
     privacyPolicyQmlFile: Qt.resolvedUrl("PrivacyPolicy.qml")
-
-    paypalOrganization: "Huessenbergnetz"
-    paypalItem: "Intfuorit"
-    paypalEmail: Qt.atob("cGF5bWVudEBodWVzc2VuYmVyZ25ldHouZGU=")
 }
