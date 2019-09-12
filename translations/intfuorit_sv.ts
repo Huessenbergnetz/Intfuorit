@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sv" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" sourcelanguage="en" version="2.1">
 <context>
-    <name></name>
+    <name/>
     <message id="intfuorit-about">
         <source>About</source>
         <extracomment>Pull down menu entry and page header</extracomment>
@@ -79,7 +77,7 @@
     </message>
     <message id="intfuorit-section-desc-breached-sites">
         <source>A &lt;i&gt;breach&lt;/i&gt; is an incident where a site’s data has been illegally accessed by hackers and then released publicly. Review the types of data that were compromised (email addresses, passwords, credit cards etc.) and take appropriate action, such as changing passwords.</source>
-        <oldsource>A &lt;i&gt;breach&lt;/i&gt; is an incident where a site&apos;s data has been illegally accessed by hackers and then released publicly. Review the types of data that were compromised (email addresses, passwords, credit cards etc.) and take appropriate action, such as changing passwords.</oldsource>
+        <oldsource>A &lt;i&gt;breach&lt;/i&gt; is an incident where a site's data has been illegally accessed by hackers and then released publicly. Review the types of data that were compromised (email addresses, passwords, credit cards etc.) and take appropriate action, such as changing passwords.</oldsource>
         <translation>Ett &lt;i&gt;intrång&lt;/i&gt; är här en incident där hackare illegalt har skaffat sig åtkomst till en sajts data och sedan publicerat den offentligt. Se vilka typer av data som har äventyrats (e-postadresser, lösenord, kreditkort, etc.) och vidta lämpliga åtgärder, som att ändra lösenord.</translation>
     </message>
     <message id="intfuorit-switch-include-unverified">
@@ -100,10 +98,7 @@
     <message id="intfuorit-emails-in-paste" numerus="yes">
         <source>%1 email(s)</source>
         <oldsource>%n email(s)</oldsource>
-        <translation>
-            <numerusform>%1 e-postadress</numerusform>
-            <numerusform>%1 e-postadresser</numerusform>
-        </translation>
+        <translation><numerusform>%1 e-postadress</numerusform><numerusform>%1 e-postadresser</numerusform></translation>
     </message>
     <message id="intfuorit-section-desc-pastes">
         <source>A &lt;i&gt;paste&lt;/i&gt; is information that has been published to a publicly facing website designed to share content, usually anonymously. Often these are indicators of a data breach so review the paste and determine if your account has been compromised then take appropriate action such as changing passwords. Pastes are often removed shortly after having been posted.</source>
@@ -130,16 +125,6 @@
         <source>Display</source>
         <extracomment>Section header on the settings page</extracomment>
         <translation>Visning</translation>
-    </message>
-    <message id="intfuorit-lang-choser-label">
-        <source>Language</source>
-        <extracomment>Label for a combobox (drop down menu)</extracomment>
-        <translation>Språk</translation>
-    </message>
-    <message id="intfuorit-lang-choser-desc">
-        <source>To change the language, you have to restart the application.</source>
-        <extracomment>Description for a combobox (drop down menu)</extracomment>
-        <translation>Du måste starta om appen, för att byta språk.</translation>
     </message>
     <message id="intfuorit-settings-behavior">
         <source>Behavior</source>
@@ -177,13 +162,10 @@
         <source>1 week</source>
         <translation>1 vecka</translation>
     </message>
-    <message id="intfuorit-default-lang">
-        <source>Default</source>
-        <translation>Standard</translation>
-    </message>
     <message id="intfuorit-libintfuorit-desc">
         <source>Libintfuorit is a Qt based library that provides access to the haveibeenpwned.com API.</source>
         <oldsource>Libintfuorit is a Qt based library that provides access the haveibeenpwned.com API.</oldsource>
+        <extracomment>description for libintfuorit in the list of used 3rd party components</extracomment>
         <translation>Libintfuorit är ett Qt-baserat bibliotek som ger tillgång till en API från haveibeenpwned.com.</translation>
     </message>
     <message id="intfuorit-app-description">
@@ -268,12 +250,12 @@
     </message>
     <message id="intfuorit-help-1-text">
         <source>There are often “breaches” announced by attackers which in turn are exposed as hoaxes. There is a balance between making data searchable early and performing sufficient due diligence to establish the legitimacy of the breach. The following activities are usually performed by Troy Hunt in order to validate breach legitimacy:&lt;ol&gt;&lt;li&gt;Has the impacted service publicly acknowledged the breach?&lt;/li&gt;&lt;li&gt;Does the data in the breach turn up in a Google search (i.e. it’s just copied from another source)?&lt;/li&gt;&lt;li&gt;Is the structure of the data consistent with what you’d expect to see in a breach?&lt;/li&gt;&lt;li&gt;Have the attackers provided sufficient evidence to demonstrate the attack vector?&lt;/li&gt;&lt;li&gt;Do the attackers have a track record of either reliably releasing breaches or falsifying them?&lt;/li&gt;&lt;/ol&gt;</source>
-        <oldsource>There are often “breaches” announced by attackers which in turn are exposed as hoaxes. There is a balance between making data searchable early and performing sufficient due diligence to establish the legitimacy of the breach. The following activities are usually performed by Troy Hunt in order to validate breach legitimacy:&lt;ol&gt;&lt;li&gt;Has the impacted service publicly acknowledged the breach?&lt;/li&gt;&lt;li&gt;Does the data in the breach turn up in a Google search (i.e. it’s just copied from another source)?&lt;/li&gt;&lt;li&gt;Is the structure of the data consistent with what you&apos;d expect to see in a breach?&lt;/li&gt;&lt;li&gt;Have the attackers provided sufficient evidence to demonstrate the attack vector?&lt;/li&gt;&lt;li&gt;Do the attackers have a track record of either reliably releasing breaches or falsifying them?&lt;/li&gt;&lt;/ol&gt;</oldsource>
+        <oldsource>There are often “breaches” announced by attackers which in turn are exposed as hoaxes. There is a balance between making data searchable early and performing sufficient due diligence to establish the legitimacy of the breach. The following activities are usually performed by Troy Hunt in order to validate breach legitimacy:&lt;ol&gt;&lt;li&gt;Has the impacted service publicly acknowledged the breach?&lt;/li&gt;&lt;li&gt;Does the data in the breach turn up in a Google search (i.e. it’s just copied from another source)?&lt;/li&gt;&lt;li&gt;Is the structure of the data consistent with what you'd expect to see in a breach?&lt;/li&gt;&lt;li&gt;Have the attackers provided sufficient evidence to demonstrate the attack vector?&lt;/li&gt;&lt;li&gt;Do the attackers have a track record of either reliably releasing breaches or falsifying them?&lt;/li&gt;&lt;/ol&gt;</oldsource>
         <translation>Det förekommer ofta ”överträdelser” meddelade av angripare som senare avslöjas som bluff. Det finns en balans mellan att göra data sökbara tidigt och att det utförs med tillbörlig aktsamhet, för att fastställa överträdelsens legitimitet. Följande aktiviteter utförs vanligtvis av Troy Hunt för att validera intrångets legitimitet:&lt;ol&gt;&lt;li&gt;Har den påverkade tjänsten offentligt erkänt intrånget?&lt;/li&gt;&lt;li&gt;Framkommer uppgifterna i överträdelsen vid en Google-sökning (det vill säga, det har bara kopierats från en annan källa)?&lt;/li&gt;&lt;li&gt;Är strukturen för data överensstämmande med vad du förväntar dig att se i ett dataintrång?&lt;/li&gt;&lt;li&gt;Har angriparna lämnat tillräckliga bevis för att påvisa attackvektorn?&lt;/li&gt;&lt;li&gt;Har angriparna en meritlista av antingen tillförlitligt släppta överträdelser eller förfalskningar?&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message id="intfuorit-help-2-head">
         <source>My email was reported as appearing in a paste but the paste now can’t be found</source>
-        <oldsource>My email was reported as appearing in a paste but the paste now can&apos;t be found</oldsource>
+        <oldsource>My email was reported as appearing in a paste but the paste now can't be found</oldsource>
         <translation>Min e-postadress rapporteras som förekommande i en publicering, men publiceringen kan inte längre hittas</translation>
     </message>
     <message id="intfuorit-help-2-text">
@@ -282,7 +264,7 @@
     </message>
     <message id="intfuorit-help-3-head">
         <source>My email was not found — does that mean I haven’t been pwned?</source>
-        <oldsource>My email was not found — does that mean I haven&apos;t been pwned?</oldsource>
+        <oldsource>My email was not found — does that mean I haven't been pwned?</oldsource>
         <translation>Min e-postadress hittades inte. Betyder det att den inte har äventyrats?</translation>
     </message>
     <message id="intfuorit-help-3-text">
@@ -454,10 +436,7 @@
     <message id="intfuorit-pwned-password-count" numerus="yes">
         <source>This password has been seen %Ln time(s) before.</source>
         <oldsource>This password has been seen %n time(s) before.</oldsource>
-        <translation>
-            <numerusform>Detta lösenord har setts %Ln gång tidigare.</numerusform>
-            <numerusform>Detta lösenord har setts %Ln gånger tidigare.</numerusform>
-        </translation>
+        <translation><numerusform>Detta lösenord har setts %Ln gång tidigare.</numerusform><numerusform>Detta lösenord har setts %Ln gånger tidigare.</numerusform></translation>
     </message>
     <message id="intfuorit-pwned-password-hint">
         <source>This password has previously appeared in a data breach and should never be used. If you&apos;ve ever used it anywhere before, change it!</source>
@@ -465,17 +444,11 @@
     </message>
     <message id="intfuorit-pwned-acc-summary" numerus="yes">
         <source>Pwned on %n breached site(s).</source>
-        <translation>
-            <numerusform>Pwned på %n kränkt webbplats.</numerusform>
-            <numerusform>Pwned på %n kränkta webbplatser.</numerusform>
-        </translation>
+        <translation><numerusform>Pwned på %n kränkt webbplats.</numerusform><numerusform>Pwned på %n kränkta webbplatser.</numerusform></translation>
     </message>
     <message id="intfuorit-pwned-paste-summary" numerus="yes">
         <source>Found %n paste(s).</source>
-        <translation>
-            <numerusform>Hittades på %n paste-sida</numerusform>
-            <numerusform>Hittades på %n paste-sidor</numerusform>
-        </translation>
+        <translation><numerusform>Hittades på %n paste-sida</numerusform><numerusform>Hittades på %n paste-sidor</numerusform></translation>
     </message>
     <message id="intfuorit-label-not-pwned">
         <source>Good news — no pwnage found!</source>
@@ -529,10 +502,6 @@
         <extracomment>Value in a combobox (drop down menu)</extracomment>
         <translation>Inlagt-datum (fallande)</translation>
     </message>
-    <message id="intfuorit-hbnsfoscmops-desc">
-        <source>HBN SFOS Components are a set of Qt/QML components for Sailfish OS.</source>
-        <translation>HBN SFOS Components är en uppsättning Qt/QML-komponenter för Sailfish OS.</translation>
-    </message>
     <message id="intfuorit-help-pw-stored-head">
         <source>Are user passwords stored on HIBP?</source>
         <translation>Lagras lösenord på HIBP?</translation>
@@ -572,7 +541,7 @@
     </message>
     <message id="intfuorit-help-data-stored-text">
         <source>The breached accounts sit in Windows Azure table storage which contains nothing more than the email address or username and a list of sites it appeared in breaches on. If you&apos;re interested in the details, it&apos;s all described in&lt;a href=&apos;%1&apos;&gt;Working with 154 million records on Azure Table Storage — the story of Have I Been Pwned&lt;/a&gt;.</source>
-        <oldsource>The breached accounts sit in Windows Azure table storage which contains nothing more than the email address or username and a list of sites it appeared in breaches on. If you&apos;re interested in the details, it&apos;s all described in Working with 154 million records on Azure Table Storage — the story of Have I Been Pwned</oldsource>
+        <oldsource>The breached accounts sit in Windows Azure table storage which contains nothing more than the email address or username and a list of sites it appeared in breaches on. If you're interested in the details, it's all described in Working with 154 million records on Azure Table Storage — the story of Have I Been Pwned</oldsource>
         <translation>De avslöjade kontona ligger i Windows Azure registerlagring och innehåller inget annat än e-postadress eller användarnamn och en lista över de webbplatser där intrången skett. Är du intresserad av detaljerna, finns allt beskrivet i &lt;a href=&apos;%1&apos;&gt;Working with 154 million records on Azure Table Storage — the story of Have I Been Pwned&lt;/a&gt;.</translation>
     </message>
     <message id="intfuorit-help-logging-head">
@@ -602,6 +571,34 @@
     <message id="intfuorit-help-logging-text">
         <source>Nothing is explicitly logged by the website. The only logging of any kind is via Google Analytics, Application Insights performance monitoring and any diagnostic data implicitly collected if an exception occurs in the system.</source>
         <translation>Inget loggas uttryckligen av webbplatsen. Den enda loggning av något slag är via Google Analytics, Application Insights performance monitoring och diagnostisk data implicit insamlad om ett undantag inträffar i systemet.</translation>
+    </message>
+    <message id="intfuorid-help-account-search-disabled-head">
+        <source>Why was the account search deactivated?</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorid-help-account-search-disabled-text">
+        <source>Troy Hunt, the operator of “Have I been Pwned?”, introduced a new API for its service in July 2019. A paid API key is now required to retrieve email addresses. Troy Hunt explained the background in his blog article “&lt;a href=&apos;%1&apos;&gt;Authentication and the Have I Been Pwned API&lt;/a&gt;”. If you have an API key, you can enter it in the settings.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-libintfuorit-trans-desc">
+        <source>Libintfuorit is a Qt based library that provides access to the haveibeenpwned.com API. Translations are provided by the community. </source>
+        <extracomment>description for libintfuorit translations in the list of used 3rd party components</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-hibp-desc">
+        <source>“Have I been Pwned?” is a web service created by Troy Hunt that allows internet users to check if their personal data has been compromised by data breaches.</source>
+        <extracomment>description for HIBP in the list of used 3rd party components</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-trans-desc">
+        <source>The translations for Intfuorit are provided by the community. To see who is responsible for which translation, open the contributors page.</source>
+        <extracomment>description for Intfuorit Translations in the list of used 3rd party components</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message id="intfuorit-font-awesome-desc">
+        <source>Font Awesome is a font and icon toolkit initially created by Dave Gandy.</source>
+        <extracomment>description for Font Awesome in the list of used 3rd party components</extracomment>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

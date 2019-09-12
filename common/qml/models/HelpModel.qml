@@ -268,6 +268,17 @@ ListModel {
         format: Text.StyledText
     }
 
+    ListElement {
+        header: true
+        //% "Why was the account search deactivated?"
+        text: qsTrId("intfuorid-help-account-search-disabled-head")
+    }
+
+    ListElement {
+        // index: 46
+        format: Text.StyledText
+    }
+
     Component.onCompleted: {
         //% "When email addresses from a data breach are loaded into the site, no corresponding passwords are loaded with them. Separately to the pwned address search feature, the Pwned Passwords service allows you to check if an individual password has previously been seen in a data breach. No password is stored next to any personally identifiable data (such as an email address) and every password is SHA-1 hashed (<a href='%1'>read why SHA-1 was chosen in the Pwned Passwords launch blog post</a>.)"
         hm.get(5).text =  qsTrId("intfuorit-help-pw-stored-text").arg("https://www.troyhunt.com/introducing-306-million-freely-downloadable-pwned-passwords/")
@@ -301,5 +312,8 @@ ListModel {
 
         //% "Read the <a href='%1'>full FAQ</a> on haveibeenpwned.com or visit <a href='%2'>Troy Hunt’s blog</a> to learn more about it."
         hm.get(44).text = qsTrId("intfuorit-help-11-text").arg("https://haveibeenpwned.com/FAQs").arg("https://www.troyhunt.com/tag/have-i-been-pwned-3f/")
+
+        //% "Troy Hunt, the operator of “Have I been Pwned?”, introduced a new API for its service in July 2019. A paid API key is now required to retrieve email addresses. Troy Hunt explained the background in his blog article “<a href='%1'>Authentication and the Have I Been Pwned API</a>”. If you have an API key, you can enter it in the settings."
+        hm.get(46).text = qsTrId("intfuorid-help-account-search-disabled-text").arg("https://www.troyhunt.com/authentication-and-the-have-i-been-pwned-api/")
     }
 }

@@ -131,16 +131,6 @@
         <extracomment>Section header on the settings page</extracomment>
         <translation type="unfinished"></translation>
     </message>
-    <message id="intfuorit-lang-choser-label">
-        <source>Language</source>
-        <extracomment>Label for a combobox (drop down menu)</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="intfuorit-lang-choser-desc">
-        <source>To change the language, you have to restart the application.</source>
-        <extracomment>Description for a combobox (drop down menu)</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="intfuorit-settings-behavior">
         <source>Behavior</source>
         <extracomment>Section header on the settings page</extracomment>
@@ -177,13 +167,10 @@
         <source>1 week</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="intfuorit-default-lang">
-        <source>Default</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="intfuorit-libintfuorit-desc">
         <source>Libintfuorit is a Qt based library that provides access to the haveibeenpwned.com API.</source>
         <oldsource>Libintfuorit is a Qt based library that provides access the haveibeenpwned.com API.</oldsource>
+        <extracomment>description for libintfuorit in the list of used 3rd party components</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="intfuorit-app-description">
@@ -529,10 +516,6 @@
         <extracomment>Value in a combobox (drop down menu)</extracomment>
         <translation type="unfinished"></translation>
     </message>
-    <message id="intfuorit-hbnsfoscmops-desc">
-        <source>HBN SFOS Components are a set of Qt/QML components for Sailfish OS.</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="intfuorit-help-pw-stored-head">
         <source>Are user passwords stored on HIBP?</source>
         <translation type="unfinished"></translation>
@@ -601,6 +584,34 @@
     </message>
     <message id="intfuorit-help-logging-text">
         <source>Nothing is explicitly logged by the website. The only logging of any kind is via Google Analytics, Application Insights performance monitoring and any diagnostic data implicitly collected if an exception occurs in the system.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorid-help-account-search-disabled-head">
+        <source>Why was the account search deactivated?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorid-help-account-search-disabled-text">
+        <source>Troy Hunt, the operator of “Have I been Pwned?”, introduced a new API for its service in July 2019. A paid API key is now required to retrieve email addresses. Troy Hunt explained the background in his blog article “&lt;a href=&apos;%1&apos;&gt;Authentication and the Have I Been Pwned API&lt;/a&gt;”. If you have an API key, you can enter it in the settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-libintfuorit-trans-desc">
+        <source>Libintfuorit is a Qt based library that provides access to the haveibeenpwned.com API. Translations are provided by the community. </source>
+        <extracomment>description for libintfuorit translations in the list of used 3rd party components</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-hibp-desc">
+        <source>“Have I been Pwned?” is a web service created by Troy Hunt that allows internet users to check if their personal data has been compromised by data breaches.</source>
+        <extracomment>description for HIBP in the list of used 3rd party components</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-trans-desc">
+        <source>The translations for Intfuorit are provided by the community. To see who is responsible for which translation, open the contributors page.</source>
+        <extracomment>description for Intfuorit Translations in the list of used 3rd party components</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-font-awesome-desc">
+        <source>Font Awesome is a font and icon toolkit initially created by Dave Gandy.</source>
+        <extracomment>description for Font Awesome in the list of used 3rd party components</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
