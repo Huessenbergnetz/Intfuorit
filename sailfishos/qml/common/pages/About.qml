@@ -60,5 +60,5 @@ AboutPage {
 
     paypalOrganization: "Huessenbergnetz"
     paypalItem: "Intfuorit"
-    paypalEmail: Qt.atob("a29udGFrdEBodWVzc2VuYmVyZ25ldHouZGU=")
+    paypalEmail: Qt.atob("cGF5bWVudEBodWVzc2VuYmVyZ25ldHouZGU=")
 }
