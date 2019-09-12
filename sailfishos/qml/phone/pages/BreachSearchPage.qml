@@ -151,12 +151,13 @@ Page {
                     menu: ContextMenu {
                         //: Value for a combobox (drop down menu)
                         //% "Account"
-                        MenuItem { text: qsTrId("intfuorit-search-for-account") }
+                        MenuItem { text: qsTrId("intfuorit-search-for-account"); enabled: false }
                         //: Value for a combobox (drop down menu)
                         //% "Password"
                         MenuItem { text: qsTrId("intfuorit-search-for-password") }
                     }
                     onCurrentIndexChanged: accountSearch.text = ""
+                    currentIndex: 1
                 }
             }
 
