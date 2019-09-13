@@ -125,6 +125,9 @@ Page {
                     font.pixelSize: Theme.fontSizeExtraSmall
                     color: Theme.secondaryColor
                     wrapMode: Text.WordWrap
+                    textFormat: Text.StyledText
+                    linkColor: Theme.secondaryHighlightColor
+                    onLinkActivated: Qt.openUrlExternally(link)
                 }
 
                 TextField {
