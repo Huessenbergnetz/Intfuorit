@@ -82,7 +82,7 @@ Page {
 
             Item {
                 Layout.fillWidth: true
-                Layout.preferredHeight: langChoser.height
+                Layout.preferredHeight: cachePeriodChoser.height
                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
 
                 ComboBox {
@@ -103,6 +103,43 @@ Page {
                     currentIndex: cachePeriodModel.findIndex(config.cachePeriod)
                 }
             }
+
+            SectionHeader {
+                //: Section header on settings page
+                //% "API key"
+                text: qsTrId("intfuorit-settings-api-key-header")
+                Layout.columnSpan: settingsGrid.columns
+                Layout.preferredWidth: settingsGrid.width - Theme.horizontalPageMargin
+            }
+
+            Item {
+                Layout.fillWidth: true
+                Layout.preferredHeight: apiKeyDesc.height + apiKey.height
+                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+
+                Text {
+                    id: apiKeyDesc
+                    //% "Since July 2019 HIBP requires a fee-based API key for account queries. You can <a href="%1">purchase this API key here</a>. Then enter your key in the text field below."
+                    text: qsTrId("intfuorit-settings-api-key-desc").arg("https://haveibeenpwned.com/API/Key")
+                    anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
+                    font.pixelSize: Theme.fontSizeExtraSmall
+                    color: Theme.secondaryColor
+                    wrapMode: Text.WordWrap
+                }
+
+                TextField {
+                    id: apiKey
+                    anchors { left: parent.left; right: parent.right; top: apiKeyDesc.bottom }
+                    label: qsTrId("intfuorit-settings-api-key-header"); placeholderText: label
+                    EnterKey.iconSource: "image://theme/icon-m-enter-close"
+                    EnterKey.onClicked: focus = false
+                    text: config.apiKey
+                }
+            }
         }
+    }
+
+    Component.onDestruction: {
+        config.apiKey = apiKey.text
     }
 }
