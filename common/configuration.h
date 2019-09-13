@@ -37,6 +37,7 @@ class Configuration : public QSettings
      * \li void languageChanged(const QString &language)
      */
     Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY languageChanged)
+    Q_PROPERTY(QString apiKey READ apiKey WRITE setApiKey NOTIFY apiKeyChanged)
     /*!
      * This property holds the stored cache period in seconds. The default value is 2 days.
      *
@@ -87,6 +88,8 @@ public:
      */
     QString language() const;
 
+    QString apiKey() const;
+
     /*!
      * Getter function for the \link Configuration::cachePeriod cachePeriod \endlink property.
      * \sa setCachePeriod(), cachePeriodChanged()
@@ -111,6 +114,8 @@ public:
      * \sa language(), languageChanged()
      */
     void setLanguage(const QString &nLanguage);
+
+    void setApiKey(const QString &nApiKey);
 
     /*!
      * Setter function for the \link Configuration::cachePeriod cachePeriod \endlink property.
@@ -137,6 +142,8 @@ signals:
      */
     void languageChanged(const QString &language);
 
+    void apiKeyChanged(const QString &apiKey);
+
     /*!
      * Notifier signal for the \link Configuration::cachePeriod cachePeriod \endlink property.
      * \sa cachePeriod(), setCachePeriod()
@@ -156,7 +163,11 @@ signals:
     void includeUnverifiedChanged(bool includeUnverified);
 
 private:
+    QString encPw(const QString &pw) const;
+    QString decPw(const QString &pw) const;
+
     QString m_language;
+    QString m_apiKey;
     quint32 m_cachePeriod = 3600*48;
     bool m_firstStart = true;
     bool m_includeUnverified = false;

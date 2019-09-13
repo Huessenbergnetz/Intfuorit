@@ -14,6 +14,12 @@ DISTFILES += \
     $$PWD/qml/models/PrivacyPolicyModel.qml \
     $$PWD/qml/models/HelpModel.qml
 
+isEmpty(AES256_KEY) {
+    error("You need to define a 32 byte AES256 encryption key with AES256_KEY")
+}
+DEFINES += AES256_KEY=\"\\\"$${AES256_KEY}\\\"\"
+PKGCONFIG += openssl
+
 commonQmlFiles.files = $$PWD/qml/*
 
 sfos {
