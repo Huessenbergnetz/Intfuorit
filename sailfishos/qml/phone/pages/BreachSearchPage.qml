@@ -118,11 +118,11 @@ Page {
                         accountSearch.focus = false;
                         breachSearchPage.clear()
                         if (searchTarget.currentIndex === 0) {
-                            blm.getBreachesForAccount(accountSearch.text, "", includeUnverified.checked, omitCache.checked)
+                            blm.getBreachesForAccount(config.apiKey, accountSearch.text, "", includeUnverified.checked, omitCache.checked)
                             var atPos = text.lastIndexOf("@")
                             var dotPos = text.lastIndexOf(".")
                             if ((atPos > -1) && (dotPos > -1) && (dotPos > atPos) && ((text.length - dotPos + 1) > 1)) {
-                                plm.getPastesForAccount(accountSearch.text, omitCache.checked)
+                                plm.getPastesForAccount(config.apiKey, accountSearch.text, omitCache.checked)
                             }
                         } else {
                             cpp.execute(accountSearch.text, omitCache.checked)
@@ -151,13 +151,22 @@ Page {
                     menu: ContextMenu {
                         //: Value for a combobox (drop down menu)
                         //% "Account"
-                        MenuItem { text: qsTrId("intfuorit-search-for-account"); enabled: false }
+                        MenuItem { text: qsTrId("intfuorit-search-for-account"); enabled: config.apiKey.length > 0 }
                         //: Value for a combobox (drop down menu)
                         //% "Password"
                         MenuItem { text: qsTrId("intfuorit-search-for-password") }
                     }
                     onCurrentIndexChanged: accountSearch.text = ""
-                    currentIndex: 1
+                    currentIndex: config.apiKey.length > 0 ? 0 : 1
+                }
+            }
+
+            Connections {
+                target: config
+                onApiKeyChanged: {
+                    if (config.apiKey.length === 0 && searchTarget.currentIndex === 0) {
+                        searchTarget.currentIndex = 1
+                    }
                 }
             }
 
