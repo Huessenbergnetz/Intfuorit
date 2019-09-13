@@ -119,7 +119,7 @@ Page {
 
                 Text {
                     id: apiKeyDesc
-                    //% "Since July 2019 HIBP requires a fee-based API key for account queries. You can <a href="%1">purchase this API key here</a>. Then enter your key in the text field below."
+                    //% "Since July 2019 HIBP requires a fee-based API key for account queries. You can <a href='%1'>purchase this API key here</a>. Then enter your key in the text field below."
                     text: qsTrId("intfuorit-settings-api-key-desc").arg("https://haveibeenpwned.com/API/Key")
                     anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
                     font.pixelSize: Theme.fontSizeExtraSmall
