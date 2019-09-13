@@ -614,5 +614,15 @@
         <extracomment>description for Font Awesome in the list of used 3rd party components</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message id="intfuorit-settings-api-key-header">
+        <source>API key</source>
+        <extracomment>Section header on settings page</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="intfuorit-settings-api-key-desc">
+        <source>Since July 2019 HIBP requires a fee-based API key for account queries. You can &lt;a href=&apos;%1&apos;&gt;purchase this API key here&lt;/a&gt;. Then enter your key in the text field below.</source>
+        <oldsource>Since July 2019 HIBP requires a fee-based API key for account queries. You can &lt;a href=</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
