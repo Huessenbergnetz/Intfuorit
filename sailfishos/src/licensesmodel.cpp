@@ -81,6 +81,18 @@ LicensesModel::LicensesModel(QObject *parent) : Hbnsc::LicenseModel(parent)
         QUrl(QStringLiteral("https://fontawesome.com/license/free")),
         QUrl());
 
+    add(QStringLiteral("ADVobfuscator"),
+        QStringLiteral("Sebastien Andrivet"),
+        QString(),
+        QUrl(QStringLiteral("https://github.com/andrivet/ADVobfuscator")),
+        //: description for ADVobfuscator in the list of used 3rd party components
+        //% "ADVobfuscator is an obfuscation library based on C++11/14 and metaprogramming. It is used by Intfuorit to obfuscate the internal used AES key to encrypt stored API keys."
+        qtTrId("fuoten-advobfuscator-desc"),
+        QStringLiteral("Modified BSD License"),
+        QStringLiteral("BSD-3.qml"),
+        QUrl(),
+        QUrl());
+
     sortLicenses();
 }
 

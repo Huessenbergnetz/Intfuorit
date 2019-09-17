@@ -624,5 +624,10 @@
         <oldsource>Since July 2019 HIBP requires a fee-based API key for account queries. You can &lt;a href=</oldsource>
         <translation type="unfinished"></translation>
     </message>
+    <message id="fuoten-advobfuscator-desc">
+        <source>ADVobfuscator is an obfuscation library based on C++11/14 and metaprogramming. It is used by Intfuorit to obfuscate the internal used AES key to encrypt stored API keys.</source>
+        <extracomment>description for ADVobfuscator in the list of used 3rd party components</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
